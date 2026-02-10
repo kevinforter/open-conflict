@@ -5,7 +5,7 @@ import ScrambledText from "@/components/ScrambledText";
 import TextType from "@/components/TextType";
 import BoldCornerButton from "@/components/BoldCornerButton";
 import Noise from "@/components/Noise";
-import { n27, majorMono, geistSans, jetbrainsMono } from "./fonts/fonts";
+import { n27, majorMono, geistMono, jetbrainsMono } from "./fonts/fonts";
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
               />
             </h1>
             <p
-              className={`${geistSans.className} max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-white/60`}
+              className={`${geistMono.className} max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-white/60`}
             >
               The project develops a data-driven platform to visualize and
               analyze global conflicts and humanitarian incidents.
@@ -71,8 +71,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-6 md:px-8 md:py-0 flex-none bg-transparent w-full">
-        <div className="flex flex-col items-center justify-between gap-4 md:h-12 md:flex-row w-full px-4 md:px-8">
+      <footer className="py-6 md:py-0 flex-none bg-transparent w-full">
+        <div className="flex flex-col items-center justify-between gap-4 md:h-12 md:flex-row w-full px-4 md:px-16">
           <p
             className={`${n27.className} antialiased text-center text-sm leading-loose text-muted-foreground md:text-left`}
           >
