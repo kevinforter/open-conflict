@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { geistSans, geistMono } from "./fonts/fonts";
+import { CustomCursor } from "@/components/CustomCursor";
+import NavBar from "@/components/NavBar";
 
 export const metadata: Metadata = {
   title: "Open Conflict",
@@ -17,6 +19,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NavBar />
+        <CustomCursor />
         {children}
       </body>
     </html>
