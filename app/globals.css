@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+@media (hover: hover) and (pointer: fine) {
+
+  body,
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea,
+  svg,
+  path,
+  a,
+  link,
+  li,
+  span,
+  div {
+    cursor: none !important;
+  }
+}
+
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
