@@ -46,7 +46,7 @@ export default function MethodologyPage() {
                   <br />
                   DEEP DIVE
                 </h2>
-                <p className="font-[family-name:var(--font-geist-mono)] text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl font-light">
+                <p className="font-[geistMono] text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl font-light">
                   How we transform fragmented global conflict data into
                   actionable intelligence through autonomous collection,
                   normalization, and aggregation.
@@ -62,7 +62,7 @@ export default function MethodologyPage() {
             </div>
 
             <div className="mt-24 text-white/30 hidden md:block">
-              <span className="font-mono text-[10px] uppercase tracking-widest">
+              <span className="font-[geistMono] text-[10px] uppercase tracking-widest">
                 Scroll to Explore
               </span>
               <div className="h-12 w-px bg-white/20 mt-2 ml-4" />
@@ -77,7 +77,7 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               <div className="lg:col-span-4 self-end">
-                <span className="block text-[#ff9a65] font-mono text-xs uppercase tracking-widest mb-4">
+                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-4">
                   The Challenge
                 </span>
                 <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
@@ -88,12 +88,12 @@ export default function MethodologyPage() {
               </div>
 
               <div className="lg:col-span-8 flex flex-col justify-center space-y-8">
-                <p className="font-light font-[family-name:var(--font-geist-mono)] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                <p className="font-light font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
                   Global conflict data is often fragmented across disparate
                   sources—academic studies, NGO field reports, and news
                   aggregators. This fragmentation creates blind spots.
                 </p>
-                <p className="font-light font-[family-name:var(--font-geist-mono)] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                <p className="font-light font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
                   Without a unified view, humanitarian response is reactive
                   rather than proactive. We bridge these gaps by normalizing and
                   visualizing multi-source data in a single accessible
@@ -105,7 +105,7 @@ export default function MethodologyPage() {
                     href="#collect"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-mono text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
                       Standard 01
                     </span>
                     <span className="block font-[n27] text-lg">Collect</span>
@@ -114,7 +114,7 @@ export default function MethodologyPage() {
                     href="#normalize"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-mono text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
                       Standard 02
                     </span>
                     <span className="block font-[n27] text-lg">Normalize</span>
@@ -123,7 +123,7 @@ export default function MethodologyPage() {
                     href="#aggregate"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-mono text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
                       Standard 03
                     </span>
                     <span className="block font-[n27] text-lg">Aggregate</span>
@@ -132,7 +132,7 @@ export default function MethodologyPage() {
                     href="#visualize"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-mono text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
                       Standard 04
                     </span>
                     <span className="block font-[n27] text-lg">Visualize</span>
@@ -148,7 +148,7 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
               <div className="lg:col-span-4">
-                <span className="block text-[#ff9a65] font-mono text-xs uppercase tracking-widest mb-4">
+                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-4">
                   Architecture
                 </span>
                 <h2 className="font-[n27] text-4xl md:text-6xl text-white mb-6">
@@ -156,7 +156,7 @@ export default function MethodologyPage() {
                   <br />
                   STACK
                 </h2>
-                <p className="font-[family-name:var(--font-geist-mono)] text-white/60 text-base md:text-lg leading-relaxed mb-8">
+                <p className="font-[geistMono] text-white/60 text-base md:text-lg leading-relaxed mb-8">
                   A modern, scalable architecture designed for real-time data
                   ingestion, processing, and high-performance visualization.
                 </p>
@@ -164,7 +164,7 @@ export default function MethodologyPage() {
 
               <div className="lg:col-span-8">
                 <div className="border border-white/10 rounded-lg overflow-hidden">
-                  <div className="grid grid-cols-12 bg-white/5 border-b border-white/10 p-4 font-mono text-xs text-white/40 uppercase tracking-wider">
+                  <div className="grid grid-cols-12 bg-white/5 border-b border-white/10 p-4 font-[geistMono] text-xs text-white/40 uppercase tracking-wider">
                     <div className="col-span-4 md:col-span-3">Layer</div>
                     <div className="col-span-8 md:col-span-9">
                       Technology / Tools
@@ -204,7 +204,7 @@ export default function MethodologyPage() {
                         <div className="col-span-4 md:col-span-3 font-[n27] text-white text-sm md:text-base group-hover:text-[#ff9a65] transition-colors">
                           {item.layer}
                         </div>
-                        <div className="col-span-8 md:col-span-9 font-[family-name:var(--font-geist-mono)] text-white/70 text-xs md:text-sm leading-relaxed">
+                        <div className="col-span-8 md:col-span-9 font-[geistMono] text-white/70 text-xs md:text-sm leading-relaxed">
                           {item.tools}
                         </div>
                       </div>
@@ -224,14 +224,14 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-                <span className="block text-[#ff9a65] font-mono text-xs uppercase tracking-widest mb-1">
+                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
                   Standard 01
                 </span>
                 <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
                   COLLECT
                 </h2>
 
-                <p className="font-[family-name:var(--font-geist-mono)] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
+                <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
                   Before analysis begins, we must gather intelligence. We
                   autonomously scrape, fetch, and ingest raw reports from
                   verified global conflict databases like UCDP, ACLED, AWSD and
@@ -252,7 +252,7 @@ export default function MethodologyPage() {
                       {["UCDP", "ACLED", "AWSD"].map((source, i) => (
                         <div key={source} className="relative group/source">
                           <div
-                            className={`w-24 h-10 border rounded flex items-center justify-center text-xs font-mono backdrop-blur-sm z-10 relative
+                            className={`w-24 h-10 border rounded flex items-center justify-center text-xs font-[geistMono] backdrop-blur-sm z-10 relative
                                                 ${i === 0 ? "border-purple-500/60 text-purple-400 bg-purple-500/10" : ""}
                                                 ${i === 1 ? "border-blue-500/60 text-blue-400 bg-blue-500/10" : ""}
                                                 ${i === 2 ? "border-yellow-500/60 text-yellow-400 bg-yellow-500/10" : ""}
@@ -341,7 +341,7 @@ export default function MethodologyPage() {
                       <div className="absolute inset-0 rounded-full border border-white/5 animate-[spin_10s_linear_infinite]" />
                       <div className="absolute inset-2 rounded-full border border-white/5 animate-[spin_15s_linear_infinite_reverse]" />
                       <div className="text-center">
-                        <div className="text-[10px] font-mono text-white/40 mb-1">
+                        <div className="text-[10px] font-[geistMono] text-white/40 mb-1">
                           DATABASE
                         </div>
                         <Database className="w-8 h-8 text-white/80 mx-auto" />
@@ -362,20 +362,20 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-                <span className="block text-[#ff9a65] font-mono text-xs uppercase tracking-widest mb-1">
+                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
                   Standard 02
                 </span>
                 <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
                   NORMALIZE
                 </h2>
 
-                <p className="font-[family-name:var(--font-geist-mono)] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
+                <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
                   Raw data varies wildly—timestamps, coordinates, and event
                   types are inconsistent across sources. We ingest disparate
                   formats and map them to a unified schema through a rigorous
                   Silver Layer ETL process:
                 </p>
-                <ul className="space-y-4 font-mono text-sm text-white/80 mt-6">
+                <ul className="space-y-4 font-[geistMono] text-sm text-white/80 mt-6">
                   <li className="flex gap-4">
                     <span className="text-[#ff9a65]">01.</span>
                     <span>
@@ -469,19 +469,19 @@ export default function MethodologyPage() {
                   <div className="absolute top-1/2 left-8 -translate-y-1/2 flex flex-col gap-3 z-10">
                     <div className="flex items-center gap-2 group/item">
                       <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-purple-300 w-48 truncate">
+                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-[geistMono] text-purple-300 w-48 truncate">
                         ucdp_gedevents_etl.py
                       </div>
                     </div>
                     <div className="flex items-center gap-2 group/item">
                       <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse delay-75" />
-                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-blue-300 w-48 truncate">
+                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-[geistMono] text-blue-300 w-48 truncate">
                         acled_events_etl.py
                       </div>
                     </div>
                     <div className="flex items-center gap-2 group/item">
                       <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse delay-150" />
-                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-yellow-300 w-48 truncate">
+                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-[geistMono] text-yellow-300 w-48 truncate">
                         ngo_security_incidents_etl.py
                       </div>
                     </div>
@@ -532,14 +532,14 @@ export default function MethodologyPage() {
                   {/* Silver Layer Script */}
                   <div className="absolute top-1/2 right-1/3 -translate-y-1/2 transform translate-x-4 z-10 flex flex-col items-center gap-2">
                     <div className="w-24 h-24 border border-white/20 bg-black/80 backdrop-blur rounded-lg flex flex-col items-center justify-center relative shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                      <div className="absolute -top-3 bg-[#ff9a65] text-black text-[8px] font-bold px-1.5 py-0.5 rounded font-mono">
+                      <div className="absolute -top-3 bg-[#ff9a65] text-black text-[8px] font-bold px-1.5 py-0.5 rounded font-[geistMono]">
                         SILVER
                       </div>
-                      <div className="font-mono text-[10px] text-white/80 mb-1">
+                      <div className="font-[geistMono] text-[10px] text-white/80 mb-1">
                         silver_etl.py
                       </div>
                       <div className="w-16 h-px bg-white/10 my-1" />
-                      <div className="flex flex-col gap-0.5 text-[8px] font-mono text-white/40">
+                      <div className="flex flex-col gap-0.5 text-[8px] font-[geistMono] text-white/40">
                         <span>.normalize()</span>
                         <span>.clean_geom()</span>
                         <span>.dedup()</span>
@@ -551,24 +551,24 @@ export default function MethodologyPage() {
                   <div className="absolute top-1/2 right-4 -translate-y-1/2 flex flex-col gap-3 z-10 w-48">
                     {/* UCDP Schema */}
                     <div className="bg-[#1e1e1e] border border-white/10 rounded overflow-hidden shadow-lg">
-                      <div className="bg-white/5 px-2 py-1 text-[8px] font-mono text-white/40 border-b border-white/5 flex justify-between items-center">
+                      <div className="bg-white/5 px-2 py-1 text-[8px] font-[geistMono] text-white/40 border-b border-white/5 flex justify-between items-center">
                         <span>dw.fact_ucdp_gedevents</span>
                         <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
                       </div>
                       <div className="p-2 space-y-1">
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-purple-300">id</span>
                           <span className="text-white/30">INT PK</span>
                         </div>
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-white/70">date_start</span>
                           <span className="text-white/30">DATE</span>
                         </div>
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-white/70">fatalities</span>
                           <span className="text-white/30">INT</span>
                         </div>
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-green-400">geom</span>
                           <span className="text-white/30">POINT</span>
                         </div>
@@ -577,24 +577,24 @@ export default function MethodologyPage() {
 
                     {/* ACLED Schema */}
                     <div className="bg-[#1e1e1e] border border-white/10 rounded overflow-hidden shadow-lg">
-                      <div className="bg-white/5 px-2 py-1 text-[8px] font-mono text-white/40 border-b border-white/5 flex justify-between items-center">
+                      <div className="bg-white/5 px-2 py-1 text-[8px] font-[geistMono] text-white/40 border-b border-white/5 flex justify-between items-center">
                         <span>dw.fact_acled_events</span>
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                       </div>
                       <div className="p-2 space-y-1">
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-blue-300">event_code</span>
                           <span className="text-white/30">TEXT PK</span>
                         </div>
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-white/70">event_type</span>
                           <span className="text-white/30">TEXT</span>
                         </div>
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-white/70">fatalities</span>
                           <span className="text-white/30">INT</span>
                         </div>
-                        <div className="flex justify-between text-[7px] font-mono hover:bg-white/5 px-1 rounded">
+                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
                           <span className="text-green-400">geom</span>
                           <span className="text-white/30">POINT</span>
                         </div>
@@ -623,25 +623,25 @@ export default function MethodologyPage() {
                   <div className="flex justify-between items-center w-full max-w-2xl relative z-10 gap-4">
                     {/* 1. Ingestion Subgraph */}
                     <div className="flex flex-col gap-2 p-3 border border-white/5 rounded-lg bg-white/5 backdrop-blur-sm relative">
-                      <div className="absolute -top-2 left-2 text-[8px] font-mono text-white/40 bg-[#050505] px-1">
+                      <div className="absolute -top-2 left-2 text-[8px] font-[geistMono] text-white/40 bg-[#050505] px-1">
                         INGESTION (PREFECT)
                       </div>
                       <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                          <span className="text-[9px] font-mono text-white/60">
+                          <span className="text-[9px] font-[geistMono] text-white/60">
                             InvokeHttp (UCDP)
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                          <span className="text-[9px] font-mono text-white/60">
+                          <span className="text-[9px] font-[geistMono] text-white/60">
                             CSVReader (AWSD)
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                          <span className="text-[9px] font-mono text-white/60">
+                          <span className="text-[9px] font-[geistMono] text-white/60">
                             ExcelReader (ACLED)
                           </span>
                         </div>
@@ -657,14 +657,14 @@ export default function MethodologyPage() {
 
                     {/* 2. Python Scripts Subgraph */}
                     <div className="flex flex-col gap-2 p-3 border border-white/5 rounded-lg bg-white/5 backdrop-blur-sm relative">
-                      <div className="absolute -top-2 left-2 text-[8px] font-mono text-white/40 bg-[#050505] px-1">
+                      <div className="absolute -top-2 left-2 text-[8px] font-[geistMono] text-white/40 bg-[#050505] px-1">
                         PYTHON PROCESS
                       </div>
-                      <div className="text-[9px] font-mono text-white/80 text-center py-1">
+                      <div className="text-[9px] font-[geistMono] text-white/80 text-center py-1">
                         Merge & Normalize
                       </div>
                       <div className="h-px w-full bg-white/10" />
-                      <div className="text-[8px] font-mono text-[#336791] text-center">
+                      <div className="text-[8px] font-[geistMono] text-[#336791] text-center">
                         Transform &rarr; Schema
                       </div>
                       {/* Outputs */}
@@ -682,7 +682,7 @@ export default function MethodologyPage() {
                       {/* Silver Layer */}
                       <div className="flex flex-col gap-2 items-center">
                         <div className="w-16 h-20 border border-[#336791]/30 bg-[#336791]/10 rounded-lg flex flex-col items-center justify-center relative group-hover:bg-[#336791]/20 transition-colors">
-                          <div className="text-[8px] font-mono text-[#336791] mb-1">
+                          <div className="text-[8px] font-[geistMono] text-[#336791] mb-1">
                             SILVER
                           </div>
                           <div className="w-8 h-8 rounded border border-[#336791]/50 flex flex-col items-center justify-center gap-0.5">
@@ -690,7 +690,7 @@ export default function MethodologyPage() {
                             <div className="w-6 h-1 bg-[#336791] rounded-sm" />
                             <div className="w-6 h-1 bg-[#336791] rounded-sm" />
                           </div>
-                          <div className="absolute -bottom-2 px-1 bg-[#050505] text-[8px] font-mono text-white/40 border border-white/10 rounded">
+                          <div className="absolute -bottom-2 px-1 bg-[#050505] text-[8px] font-[geistMono] text-white/40 border border-white/10 rounded">
                             Facts
                           </div>
                         </div>
@@ -704,13 +704,13 @@ export default function MethodologyPage() {
                       {/* Gold Layer */}
                       <div className="flex flex-col gap-2 items-center">
                         <div className="w-16 h-20 border border-[#ff9a65]/30 bg-[#ff9a65]/10 rounded-lg flex flex-col items-center justify-center relative group-hover:bg-[#ff9a65]/20 transition-colors">
-                          <div className="text-[8px] font-mono text-[#ff9a65] mb-1">
+                          <div className="text-[8px] font-[geistMono] text-[#ff9a65] mb-1">
                             GOLD
                           </div>
                           <div className="w-8 h-8 rounded-full border border-[#ff9a65] flex items-center justify-center">
                             <div className="w-4 h-4 bg-[#ff9a65] rounded-full shadow-[0_0_10px_#ff9a65] animate-pulse" />
                           </div>
-                          <div className="absolute -bottom-2 px-1 bg-[#050505] text-[8px] font-mono text-white/40 border border-white/10 rounded">
+                          <div className="absolute -bottom-2 px-1 bg-[#050505] text-[8px] font-[geistMono] text-white/40 border border-white/10 rounded">
                             Marts
                           </div>
                         </div>
@@ -724,11 +724,11 @@ export default function MethodologyPage() {
 
                     {/* 4. API & Frontend */}
                     <div className="flex flex-col gap-2">
-                      <div className="px-3 py-1.5 border border-green-500/30 bg-green-900/10 rounded text-[9px] font-mono text-green-400 text-center">
+                      <div className="px-3 py-1.5 border border-green-500/30 bg-green-900/10 rounded text-[9px] font-[geistMono] text-green-400 text-center">
                         Supabase API
                       </div>
                       <div className="h-4 w-px bg-white/10 mx-auto" />
-                      <div className="px-3 py-1.5 border border-[#ff9a65]/30 bg-[#ff9a65]/10 rounded text-[9px] font-mono text-[#ff9a65] text-center">
+                      <div className="px-3 py-1.5 border border-[#ff9a65]/30 bg-[#ff9a65]/10 rounded text-[9px] font-[geistMono] text-[#ff9a65] text-center">
                         Frontend UI
                       </div>
                     </div>
@@ -737,7 +737,7 @@ export default function MethodologyPage() {
               </div>
 
               <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-center space-y-8 lg:text-right">
-                <span className="block text-[#ff9a65] font-mono text-xs uppercase tracking-widest mb-1">
+                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
                   Standard 03
                 </span>
                 <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
@@ -749,8 +749,8 @@ export default function MethodologyPage() {
                     <h3 className="text-white font-[n27] text-lg">
                       Structured & Geospatial Data
                     </h3>
-                    <p className="font-[family-name:var(--font-geist-mono)] text-white/60 text-sm leading-relaxed">
-                      <span className="text-[#ff9a65] font-mono text-xs uppercase tracking-wider block mb-1">
+                    <p className="font-[geistMono] text-white/60 text-sm leading-relaxed">
+                      <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-wider block mb-1">
                         PostgreSQL + PostGIS
                       </span>
                       Stores strict relational data, conflict statistics, and
@@ -763,8 +763,8 @@ export default function MethodologyPage() {
                     <h3 className="text-white font-[n27] text-lg">
                       Aggregated Data Marts
                     </h3>
-                    <p className="font-[family-name:var(--font-geist-mono)] text-white/60 text-sm leading-relaxed">
-                      <span className="text-[#ff9a65] font-mono text-xs uppercase tracking-wider block mb-1">
+                    <p className="font-[geistMono] text-white/60 text-sm leading-relaxed">
+                      <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-wider block mb-1">
                         Gold Layer (Materialized Views)
                       </span>
                       Pre-calculated statistical views (e.g., country_year,
@@ -777,8 +777,8 @@ export default function MethodologyPage() {
                     <h3 className="text-white font-[n27] text-lg">
                       Real-time API Layer
                     </h3>
-                    <p className="font-[family-name:var(--font-geist-mono)] text-white/60 text-sm leading-relaxed">
-                      <span className="text-[#ff9a65] font-mono text-xs uppercase tracking-wider block mb-1">
+                    <p className="font-[geistMono] text-white/60 text-sm leading-relaxed">
+                      <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-wider block mb-1">
                         Supabase
                       </span>
                       Bridges the database and frontend. Generates consolidated,
@@ -800,19 +800,19 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-                <span className="block text-[#ff9a65] font-mono text-xs uppercase tracking-widest mb-1">
+                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
                   Standard 04
                 </span>
                 <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
                   VISUALIZE
                 </h2>
 
-                <p className="font-[family-name:var(--font-geist-mono)] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
+                <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
                   Data is useless if it's not actionable. We transform millions
                   of data points into interactive heatmaps, temporal timelines,
                   and cluster analyses for immediate insight.
                 </p>
-                <p className="font-[family-name:var(--font-geist-mono)] text-white/50 leading-relaxed text-sm md:text-base max-w-xl mt-6 border-l border-white/20 pl-4">
+                <p className="font-[geistMono] text-white/50 leading-relaxed text-sm md:text-base max-w-xl mt-6 border-l border-white/20 pl-4">
                   Events are precisely located on the map using a robust
                   geocoding hierarchy: prioritizing standard ISO codes (
                   <span className="text-emerald-400">cca2</span>,{" "}
