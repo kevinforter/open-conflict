@@ -233,7 +233,7 @@ export default function NavBar() {
                 </Link>
 
                 <Link
-                  href="https://github.com/kevinforter/oda-project"
+                  href="https://github.com/kevinforter/open-conflict"
                   target="_blank"
                   onClick={() => setActiveMenu(null)}
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
