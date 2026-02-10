@@ -48,7 +48,7 @@ export default function NavBar() {
         {/* Logo / Home Link */}
         <div className="flex justify-start">
           <Link href="/" className="group relative">
-            <span className="font-mono text-xl tracking-widest text-white group-hover:text-[#ff9a65] transition-colors">
+            <span className="font-[geistMono] text-xl tracking-widest text-white group-hover:text-[#ff9a65] transition-colors">
               [ ODA ]
             </span>
           </Link>
@@ -61,12 +61,12 @@ export default function NavBar() {
             className="relative h-full flex items-center"
             onMouseEnter={() => setActiveMenu("about")}
           >
-            <span className="mr-2 text-white/50 text-sm font-mono uppercase tracking-widest transition-colors cursor-pointer py-4">
+            <span className="mr-2 text-white/50 text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4">
               [
             </span>
             <span
               className={cn(
-                "text-sm font-mono uppercase tracking-widest transition-colors cursor-pointer py-4",
+                "text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4",
                 activeMenu === "about" ||
                   pathname.includes("/about") ||
                   pathname.includes("/team") ||
@@ -86,7 +86,7 @@ export default function NavBar() {
           >
             <span
               className={cn(
-                "text-sm font-mono uppercase tracking-widest transition-colors cursor-pointer py-4",
+                "text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4",
                 activeMenu === "sources" ||
                   pathname.includes("/source") ||
                   pathname.includes("/impressum")
@@ -96,7 +96,7 @@ export default function NavBar() {
             >
               Index
             </span>
-            <span className="ml-2 text-white/50 text-sm font-mono uppercase tracking-widest transition-colors cursor-pointer py-4">
+            <span className="ml-2 text-white/50 text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4">
               ]
             </span>
           </div>
@@ -139,13 +139,13 @@ export default function NavBar() {
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-mono text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [The Project]
                     </span>
                     <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
                       Overview
                     </h3>
-                    <p className="text-white/40 text-xs font-mono leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Mission, vision, and the challenge of visualizing
                       invisible data.
                     </p>
@@ -158,13 +158,13 @@ export default function NavBar() {
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-mono text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [The Tech]
                     </span>
                     <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
                       Methodology
                     </h3>
-                    <p className="text-white/40 text-xs font-mono leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Deep dive into data collection, normalization, and our
                       stack.
                     </p>
@@ -177,13 +177,13 @@ export default function NavBar() {
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-mono text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [The People]
                     </span>
                     <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
                       Team
                     </h3>
-                    <p className="text-white/40 text-xs font-mono leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Meet the students behind the Open Data Analysis
                       initiative.
                     </p>
@@ -201,13 +201,13 @@ export default function NavBar() {
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-mono text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [Data Origin]
                     </span>
                     <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
                       Sources
                     </h3>
-                    <p className="text-white/40 text-xs font-mono leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Detailed documentation of UCDP, ACLED, and NGO incident
                       data.
                     </p>
@@ -220,13 +220,13 @@ export default function NavBar() {
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-mono text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [Legal]
                     </span>
                     <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
                       Impressum
                     </h3>
-                    <p className="text-white/40 text-xs font-mono leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Legal information, contact details, and project credits.
                     </p>
                   </div>
@@ -239,13 +239,13 @@ export default function NavBar() {
                   className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-mono text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [Codebase]
                     </span>
                     <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
                       GitHub
                     </h3>
-                    <p className="text-white/40 text-xs font-mono leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Explore the source code and contribute to the project.
                     </p>
                   </div>
