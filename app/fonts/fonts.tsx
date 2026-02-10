@@ -23,6 +23,12 @@ export const disketMono = localFont({
   weight: "400",
 });
 
+export const majorMono = localFont({
+  src: "./MajorMonoDisplay-Regular.ttf",
+  variable: "--font-major-mono",
+  weight: "400",
+});
+
 export const n27 = localFont({
   src: "./N27-Regular.otf",
   variable: "--font-n27",
