@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { CountryYearData } from "./mockData";
 
 interface SpiderChartProps {
   data: any; // Relaxed type to accept formatted data
