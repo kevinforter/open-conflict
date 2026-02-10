@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import localFont from "next/font/local";
 
 export const geistSans = Geist({
@@ -6,9 +6,10 @@ export const geistSans = Geist({
   subsets: ["latin"],
 });
 
-export const geistMono = Geist_Mono({
+export const geistMono = localFont({
+  src: "./GeistMono-VariableFont_wght.ttf",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 400 700 900",
 });
 
 export const jetbrainsMono = localFont({
