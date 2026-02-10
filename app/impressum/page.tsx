@@ -13,7 +13,7 @@ export default function ImpressumPage() {
     <div className="flex h-screen flex-col overflow-hidden relative bg-black text-white">
       <Noise />
       {/* Background Gradient */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-[#050510] to-black z-[-1]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-black via-[#050510] to-black z-[-1]" />
       
       {/* Content Container */}
       <main ref={mainRef} className="flex-1 overflow-y-auto relative z-10 custom-scrollbar">
@@ -35,7 +35,7 @@ export default function ImpressumPage() {
               <h2 className="font-[n27] text-3xl md:text-4xl text-[#ff9a65]">
                 Legal Disclosure
               </h2>
-              <p className="font-light font-[family-name:var(--font-geist-mono)] text-white/60 text-base md:text-lg leading-relaxed">
+              <p className="font-light font-(family-name:--font-geist-mono) text-white/60 text-base md:text-lg leading-relaxed">
                 Information according to § 5 TMG. This website is a project demonstration and is not a commercially registered entity.
               </p>
               
@@ -52,7 +52,7 @@ export default function ImpressumPage() {
                 <div className="bg-black p-8 md:p-12 space-y-2 group hover:bg-[#0a0a0a] transition-colors">
                     <span className="text-[#ff9a65] font-mono text-xs uppercase tracking-widest block mb-4">Project</span>
                     <p className="font-[n27] text-2xl">Open Data Analysis</p>
-                    <p className="font-[family-name:var(--font-geist-mono)] text-white/50 text-sm">Student Initiative</p>
+                    <p className="font-(family-name:--font-geist-mono) text-white/50 text-sm">Student Initiative</p>
                 </div>
 
                 {/* Director */}
@@ -69,7 +69,7 @@ export default function ImpressumPage() {
                 <div className="bg-black p-8 md:p-12 space-y-2 group hover:bg-[#0a0a0a] transition-colors">
                      <span className="text-[#ff9a65] font-mono text-xs uppercase tracking-widest block mb-4">Contact</span>
                     <p className="font-[n27] text-xl">@technikum-wien.at</p>
-                    <p className="font-[family-name:var(--font-geist-mono)] text-white/50 text-sm">Academic Inquiries Only</p>
+                    <p className="font-(family-name:--font-geist-mono) text-white/50 text-sm">Academic Inquiries Only</p>
                 </div>
 
                 {/* Address */}

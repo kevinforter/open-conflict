@@ -47,7 +47,7 @@ export const CustomCursor = () => {
     <>
       {/* Primary Dot - Strict Follow */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[10001] mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-10001 mix-blend-difference"
         style={{
           x: cursorX,
           y: cursorY,
@@ -58,7 +58,7 @@ export const CustomCursor = () => {
       
       {/* Secondary Ring - Spring Follow */}
       <motion.div
-        className="fixed top-0 left-0 border border-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
+        className="fixed top-0 left-0 border border-white rounded-full pointer-events-none z-10000 mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
