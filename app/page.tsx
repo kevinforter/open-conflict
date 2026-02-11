@@ -5,7 +5,7 @@ import ScrambledText from "@/components/ScrambledText";
 import TextType from "@/components/TextType";
 import BoldCornerButton from "@/components/BoldCornerButton";
 import Noise from "@/components/Noise";
-import { n27, majorMono, geistMono, jetbrainsMono } from "./fonts/fonts";
+import { n27, majorMono, geistMono, jetbrainsMono, rx100 } from "./fonts/fonts";
 
 export default function Home() {
   return (
@@ -26,14 +26,16 @@ export default function Home() {
         <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-20">
           <div className="container flex max-w-5xl flex-col items-center gap-4 text-center mx-auto px-4">
             <h1 className="flex flex-wrap items-center justify-center font-sans text-3xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className={`${majorMono.className} text-white`}>open</span>
+              <span className={`${majorMono.className} antialiased text-white`}>
+                open
+              </span>
               <FuzzyText
+                className={`${rx100.className} antialiased`}
                 baseIntensity={0.2}
                 hoverIntensity={0.5}
                 enableHover
                 fontSize={64}
-                fontFamily="RX100"
-                color="#ff9a65"
+                color="#ff4d01ff"
               >
                 [ ]
               </FuzzyText>
@@ -44,11 +46,11 @@ export default function Home() {
                 showCursor={true}
                 cursorCharacter="|"
                 loop={false}
-                className={`${majorMono.className} text-white`}
+                className={`${majorMono.className} antialiased text-white`}
               />
             </h1>
             <p
-              className={`${geistMono.className} max-w-2xl leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-white/60`}
+              className={`${geistMono.className} antialiased max-w-2xl leading-normal text-muted-foreground sm:text-xl sm:leading-8 text-white/60`}
             >
               The project develops a data-driven platform to visualize and
               analyze global conflicts and humanitarian incidents.
@@ -98,7 +100,7 @@ export default function Home() {
             duration={0.9}
             speed={0.6}
             scrambleChars=".:-"
-            className={jetbrainsMono.className}
+            className={`${jetbrainsMono.className} antialiased`}
             style={{
               color: "white",
               fontSize: "12px",
