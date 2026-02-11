@@ -16,22 +16,22 @@ export default function SourcesPage() {
         <Noise />
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-[#050510] to-black z-[-1]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-black via-[#050510] to-black z-[-1]" />
 
       <main
         ref={mainRef}
         className="flex-1 overflow-y-auto relative z-10 custom-scrollbar snap-y snap-mandatory scroll-smooth"
       >
         {/* Header Section - 100vh */}
-        <section className="w-full min-h-screen flex flex-col justify-center snap-start px-6 md:px-16 py-20 max-w-[1600px] mx-auto relative">
+        <section className="w-full min-h-screen flex flex-col justify-center snap-start px-6 md:px-12 lg:px-20 pt-24 pb-12 md:py-16 lg:py-20 xl:py-24 max-w-[1600px] mx-auto relative">
           <div className="w-full">
-            <h1 className="text-white/60 font-[n27] text-2xl md:text-4xl leading-[0.8] tracking-tighter mb-8 uppercase">
+            <h1 className="text-white/60 font-[n27] text-3xl md:text-4xl lg:text-5xl leading-[0.8] tracking-tighter mb-8 uppercase">
               [data sources]
             </h1>
             <div className="w-full h-px bg-white/20 mb-8" />
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
               <div className="md:col-span-6">
-                <p className="font-light font-[geistMono] text-xl md:text-2xl text-white/80 leading-relaxed">
+                <p className="font-light font-[geistMono] text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed">
                   Precision data aggregated from world-leading conflict
                   monitoring organizations to provide granular situational
                   awareness.
@@ -55,13 +55,13 @@ export default function SourcesPage() {
         </section>
 
         {/* UCDP SECTION - 100vh */}
-        <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <section className="w-full min-h-screen flex flex-col justify-start pt-24 lg:justify-center lg:pt-0 lg:items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 pb-12 pt-4 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
-                  <h2 className="font-[n27] text-7xl md:text-9xl text-purple-400 mb-6 leading-none">
+                  <h2 className="font-[n27] text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-purple-400 mb-6 leading-none">
                     UCDP
                   </h2>
                   <span className="font-[geistMono] text-[10px] uppercase border border-white/20 px-3 py-1.5 text-white/50 tracking-wider">
@@ -79,17 +79,17 @@ export default function SourcesPage() {
               {/* Right: Content */}
               <div className="lg:col-span-8 space-y-12 flex flex-col justify-center">
                 <div className="space-y-8">
-                  <h3 className="text-3xl md:text-5xl font-[n27] text-white font-light">
+                  <h3 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-[n27] text-white font-light">
                     Uppsala Conflict Data Program
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     The UCDP is the world’s main provider of data on organized
                     violence and the oldest ongoing data collection project for
                     civil war, with a history of almost 40 years. Its definition
                     of armed conflict has become the global standard of how
                     conflicts are systematically defined and studied.
                   </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     Data is collected continuously and updated annually,
                     covering state-based armed conflict, non-state conflict, and
                     one-sided violence.
@@ -101,7 +101,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Coverage
                     </span>
-                    <span className="font-[geistMono] text-2xl">Global</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Global
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       1997-Present
                     </span>
@@ -110,7 +112,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Update Cycle
                     </span>
-                    <span className="font-[geistMono] text-2xl">Annual</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Annual
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Monthly Prelim
                     </span>
@@ -119,7 +123,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Type
                     </span>
-                    <span className="font-[geistMono] text-2xl">Casualty</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Casualty
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Verified Counts
                     </span>
@@ -128,7 +134,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Methodology
                     </span>
-                    <span className="font-[geistMono] text-2xl">Academic</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Academic
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Peer Reviewed
                     </span>
@@ -139,7 +147,7 @@ export default function SourcesPage() {
                   <Link
                     href="https://ucdp.uu.se/"
                     target="_blank"
-                    className="inline-flex items-center gap-3 text-lg font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
+                    className="inline-flex items-center gap-3 text-base md:text-lg lg:text-xl font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
                   >
                     Access Database{" "}
                     <span className="group-hover/link:translate-x-2 transition-transform duration-300">
@@ -154,12 +162,12 @@ export default function SourcesPage() {
 
         {/* ACLED SECTION - 100vh */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
-                  <h2 className="font-[n27] text-7xl md:text-9xl text-blue-400 mb-6 leading-none">
+                  <h2 className="font-[n27] text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-blue-400 mb-6 leading-none">
                     ACLED
                   </h2>
                   <span className="font-[geistMono] text-[10px] uppercase border border-white/20 px-3 py-1.5 text-white/50 tracking-wider">
@@ -177,17 +185,17 @@ export default function SourcesPage() {
               {/* Right: Content */}
               <div className="lg:col-span-8 space-y-12 flex flex-col justify-center">
                 <div className="space-y-8">
-                  <h3 className="text-3xl md:text-5xl font-[n27] text-white font-light">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-[n27] text-white font-light">
                     Armed Conflict Location & Event Data
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     ACLED is a disaggregated data collection, analysis, and
                     crisis mapping project. It collects information on the
                     dates, actors, locations, fatalities, and types of all
                     reported political violence and protest events around the
                     world.
                   </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     The project focuses on granular, event-level data, allowing
                     for deeper analysis of conflict dynamics, pattern
                     recognition, and trend forecasting than aggregated
@@ -200,7 +208,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Focus
                     </span>
-                    <span className="font-[geistMono] text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
                       Granularity
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -211,7 +219,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Update Cycle
                     </span>
-                    <span className="font-[geistMono] text-2xl">Weekly</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Weekly
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Real-time
                     </span>
@@ -220,7 +230,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Scope
                     </span>
-                    <span className="font-[geistMono] text-2xl">Global</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Global
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       All Regions
                     </span>
@@ -229,7 +241,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Access
                     </span>
-                    <span className="font-[geistMono] text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
                       Open Source
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -242,7 +254,7 @@ export default function SourcesPage() {
                   <Link
                     href="https://acleddata.com/"
                     target="_blank"
-                    className="inline-flex items-center gap-3 text-lg font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
+                    className="inline-flex items-center gap-3 text-base md:text-lg lg:text-xl font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
                   >
                     Access ACLED Data{" "}
                     <span className="group-hover/link:translate-x-2 transition-transform duration-300">
@@ -257,12 +269,12 @@ export default function SourcesPage() {
 
         {/* AWSD SECTION - 100vh */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
-                  <h2 className="font-[n27] text-7xl md:text-9xl text-yellow-500 mb-6 leading-none">
+                  <h2 className="font-[n27] text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-yellow-500 mb-6 leading-none">
                     AWSD
                   </h2>
                   <span className="font-[geistMono] text-[10px] uppercase border border-white/20 px-3 py-1.5 text-white/50 tracking-wider">
@@ -280,17 +292,17 @@ export default function SourcesPage() {
               {/* Right: Content */}
               <div className="lg:col-span-8 space-y-12 flex flex-col justify-center">
                 <div className="space-y-8">
-                  <h3 className="text-3xl md:text-5xl font-[n27] text-white font-light">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-[n27] text-white font-light">
                     Global Security Incident Tracking
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed texts-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     The AWSD is the authoritative global source for data on
                     major security incidents affecting aid workers. It records
                     deliberate acts of violence, including killings,
                     kidnappings, and serious injuries, providing a critical
                     evidence base for the humanitarian community.
                   </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     By tracking these incidents, AWSD enables organizations to
                     analyze the evolving security landscape, identify trends in
                     violence, and develop better strategies to protect aid
@@ -303,7 +315,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Coverage
                     </span>
-                    <span className="font-[geistMono] text-2xl">Global</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Global
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Order of Operations
                     </span>
@@ -312,7 +326,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Focus
                     </span>
-                    <span className="font-[geistMono] text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
                       Major Violence
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -323,7 +337,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Latency
                     </span>
-                    <span className="font-[geistMono] text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
                       Continuous
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -334,7 +348,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Status
                     </span>
-                    <span className="font-[geistMono] text-2xl">Public</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Public
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Open Access
                     </span>
@@ -345,7 +361,7 @@ export default function SourcesPage() {
                   <Link
                     href="https://aidworkersecurity.org/"
                     target="_blank"
-                    className="inline-flex items-center gap-3 text-lg font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
+                    className="inline-flex items-center gap-3 text-base md:text-lg lg:text-xl font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
                   >
                     Access AWSD Data{" "}
                     <span className="group-hover/link:translate-x-2 transition-transform duration-300">
@@ -360,12 +376,12 @@ export default function SourcesPage() {
 
         {/* REST COUNTRIES SECTION - 100vh */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
-                  <h2 className="font-[n27] text-5xl md:text-6xl lg:text-7xl text-emerald-400 mb-6 leading-none break-words">
+                  <h2 className="font-[n27] text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-emerald-400 mb-6 leading-none wrap-break-word">
                     REST
                     <br />
                     COUNTRIES
@@ -385,17 +401,17 @@ export default function SourcesPage() {
               {/* Right: Content */}
               <div className="lg:col-span-8 space-y-12 flex flex-col justify-center">
                 <div className="space-y-8">
-                  <h3 className="text-3xl md:text-5xl font-[n27] text-white font-light">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-[n27] text-white font-light">
                     Rest Countries API
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     Rest Countries provides a comprehensive JSON API for
                     currency, language, calling code, and capital city data for
                     all countries. We use this as a foundational reference layer
                     to enrich conflict data with standardized geopolitical
                     metadata.
                   </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
                     By integrating this static reference data, we ensure
                     consistent normalization of country names, codes, and
                     regional classifications across all incoming data streams.
@@ -407,7 +423,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Focus
                     </span>
-                    <span className="font-[geistMono] text-2xl">Metadata</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Metadata
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Geopolitical
                     </span>
@@ -416,7 +434,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Update Cycle
                     </span>
-                    <span className="font-[geistMono] text-2xl">Stable</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Stable
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       Reference Data
                     </span>
@@ -425,7 +445,9 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Scope
                     </span>
-                    <span className="font-[geistMono] text-2xl">Global</span>
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                      Global
+                    </span>
                     <span className="block text-white/30 text-xs mt-1">
                       All Nations
                     </span>
@@ -434,7 +456,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Access
                     </span>
-                    <span className="font-[geistMono] text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
                       Public API
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -447,7 +469,7 @@ export default function SourcesPage() {
                   <Link
                     href="https://restcountries.com/"
                     target="_blank"
-                    className="inline-flex items-center gap-3 text-lg font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
+                    className="inline-flex items-center gap-3 text-base md:text-lg lg:text-xl font-[geistMono] uppercase tracking-widest hover:text-[#ff9a65] transition-colors group/link"
                   >
                     Access API Docs{" "}
                     <span className="group-hover/link:translate-x-2 transition-transform duration-300">
