@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { createPortal } from "react-dom";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -213,15 +214,17 @@ export default function NavBar() {
 
           {/* Desktop Dashboard Button */}
           <Link href="/dashboard" className="hidden md:block">
-            <div className="group relative inline-flex h-12">
+            <div className="group relative inline-flex h-12 w-fit">
               {/* Bold Corners on Wrapper */}
               <span className="absolute -top-0.25 -left-0.25 w-1.5 h-1.5 border-t border-l border-[#ff9a65] transition-all group-hover:top-0 group-hover:left-0 group-hover:border-[#ff9a65]/0" />
               <span className="absolute -top-0.25 -right-0.25 w-1.5 h-1.5 border-t border-r border-[#ff9a65] transition-all group-hover:top-0 group-hover:right-0 group-hover:border-[#ff9a65]/0" />
               <span className="absolute -bottom-0.25 -left-0.25 w-1.5 h-1.5 border-b border-l border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:left-0 group-hover:border-[#ff9a65]/0" />
               <span className="absolute -bottom-0.25 -right-0.25 w-1.5 h-1.5 border-b border-r border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:right-0 group-hover:border-[#ff9a65]/0" />
 
-              <div className="relative flex items-center px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm font-[n27] uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10">
-                Open Dashboard
+              <div className="relative flex items-center px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm font-[n27] uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10 gap-2">
+                <span className="lg:hidden">Dashboard</span>
+                <span className="hidden lg:inline">Open Dashboard</span>
+                <ChevronRightIcon className="w-4 h-4 lg:hidden" />
               </div>
             </div>
           </Link>
