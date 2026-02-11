@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
@@ -48,9 +49,13 @@ export default function NavBar() {
         {/* Logo / Home Link */}
         <div className="flex justify-start">
           <Link href="/" className="group relative">
-            <span className="font-[geistMono] text-xl tracking-widest text-white group-hover:text-[#ff9a65] transition-colors">
-              [ ODA ]
-            </span>
+            <Image
+              src="/oc_logo.svg"
+              alt="Open Conflict Logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 group-hover:opacity-80 transition-opacity"
+            />
           </Link>
         </div>
 
