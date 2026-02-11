@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import globeImage from "../../public/map/globe-map.jpg";
@@ -245,109 +246,13 @@ export default function MethodologyPage() {
                   {/* Background Grid */}
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]" />
 
-                  {/* Sources to Ingestion Animation */}
-                  <div className="relative w-full max-w-lg h-60 flex items-center justify-between">
-                    {/* Sources */}
-                    <div className="flex flex-col gap-6">
-                      {["UCDP", "ACLED", "AWSD"].map((source, i) => (
-                        <div key={source} className="relative group/source">
-                          <div
-                            className={`w-24 h-10 border rounded flex items-center justify-center text-xs font-[geistMono] backdrop-blur-sm z-10 relative
-                                                ${i === 0 ? "border-purple-500/60 text-purple-400 bg-purple-500/10" : ""}
-                                                ${i === 1 ? "border-blue-500/60 text-blue-400 bg-blue-500/10" : ""}
-                                                ${i === 2 ? "border-yellow-500/60 text-yellow-400 bg-yellow-500/10" : ""}
-                                            `}
-                          >
-                            {source}
-                          </div>
-                          {/* Emission Particle */}
-                          <div
-                            className="absolute top-1/2 right-0 w-2 h-2 rounded-full translate-x-1/2 -translate-y-1/2 opacity-0 animate-[ping_2s_infinite]"
-                            style={{
-                              animationDelay: `${i * 0.5}s`,
-                              backgroundColor:
-                                i === 0
-                                  ? "#a855f7"
-                                  : i === 1
-                                    ? "#3b82f6"
-                                    : "#eab308",
-                            }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Flow Lines */}
-                    <div className="flex-1 px-4 relative h-full">
-                      <svg
-                        className="w-full h-full overflow-visible"
-                        viewBox="0 0 100 240"
-                        preserveAspectRatio="none"
-                      >
-                        <path
-                          d="M 0 56 C 50 56, 50 120, 100 120"
-                          fill="none"
-                          stroke="#a855f7"
-                          strokeWidth="1"
-                          strokeDasharray="4 4"
-                          className="opacity-30"
-                        />
-                        <path
-                          d="M 0 120 C 50 120, 50 120, 100 120"
-                          fill="none"
-                          stroke="#3b82f6"
-                          strokeWidth="1"
-                          strokeDasharray="4 4"
-                          className="opacity-30"
-                        />
-                        <path
-                          d="M 0 184 C 50 184, 50 120, 100 120"
-                          fill="none"
-                          stroke="#eab308"
-                          strokeWidth="1"
-                          strokeDasharray="4 4"
-                          className="opacity-30"
-                        />
-
-                        {/* Particles */}
-                        <circle r="2" fill="#a855f7">
-                          <animateMotion
-                            dur="3s"
-                            repeatCount="indefinite"
-                            path="M 0 56 C 50 56, 50 120, 100 120"
-                          />
-                        </circle>
-                        <circle r="2" fill="#3b82f6">
-                          <animateMotion
-                            dur="3s"
-                            begin="0.5s"
-                            repeatCount="indefinite"
-                            path="M 0 120 C 50 120, 50 120, 100 120"
-                          />
-                        </circle>
-                        <circle r="2" fill="#eab308">
-                          <animateMotion
-                            dur="3s"
-                            begin="1s"
-                            repeatCount="indefinite"
-                            path="M 0 184 C 50 184, 50 120, 100 120"
-                          />
-                        </circle>
-                      </svg>
-                    </div>
-
-                    {/* Ingestion Node */}
-                    <div className="w-32 h-32 rounded-full border border-white/10 bg-white/5 backdrop-blur flex items-center justify-center relative shadow-[0_0_50px_rgba(255,255,255,0.05)]">
-                      <div className="absolute inset-0 rounded-full border border-white/5 animate-[spin_10s_linear_infinite]" />
-                      <div className="absolute inset-2 rounded-full border border-white/5 animate-[spin_15s_linear_infinite_reverse]" />
-                      <div className="text-center">
-                        <div className="text-[10px] font-[geistMono] text-white/40 mb-1">
-                          DATABASE
-                        </div>
-                        <Database className="w-8 h-8 text-white/80 mx-auto" />
-                      </div>
-                    </div>
-                  </div>
+                  <Image
+                    src="/methodology/collect.svg"
+                    alt="Collection Visualization"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
             </div>
@@ -459,148 +364,18 @@ export default function MethodologyPage() {
               </div>
 
               <div className="lg:col-span-7">
-                {/* Placeholder for Normalization Graph */}
-                {/* Normalization Visualization - Detailed */}
-                <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative overflow-hidden group">
+                {/* Collection Visualization */}
+                <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative flex items-center justify-center overflow-hidden p-6 group">
                   {/* Background Grid */}
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]" />
 
-                  {/* Input Scripts (Bronze) */}
-                  <div className="absolute top-1/2 left-8 -translate-y-1/2 flex flex-col gap-3 z-10">
-                    <div className="flex items-center gap-2 group/item">
-                      <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-[geistMono] text-purple-300 w-48 truncate">
-                        ucdp_gedevents_etl.py
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 group/item">
-                      <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse delay-75" />
-                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-[geistMono] text-blue-300 w-48 truncate">
-                        acled_events_etl.py
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 group/item">
-                      <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse delay-150" />
-                      <div className="bg-white/5 border border-white/10 px-2 py-1 rounded text-[10px] font-[geistMono] text-yellow-300 w-48 truncate">
-                        ngo_security_incidents_etl.py
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Schema Mapping Visualization */}
-                  <div className="absolute top-1/2 left-[45%] -translate-y-1/2 -translate-x-1/2 flex flex-col gap-4 z-0">
-                    {/* Mapping Lines (SVG) */}
-                    <svg className="w-32 h-32 overflow-visible">
-                      <path
-                        d="M 0 20 C 50 20, 50 64, 120 64"
-                        fill="none"
-                        stroke="#a855f7"
-                        strokeWidth="1"
-                        strokeDasharray="2 2"
-                        className="opacity-50"
-                      />
-                      <path
-                        d="M 0 64 C 50 64, 50 64, 120 64"
-                        fill="none"
-                        stroke="#3b82f6"
-                        strokeWidth="1"
-                        strokeDasharray="2 2"
-                        className="opacity-50"
-                      />
-                      <path
-                        d="M 0 108 C 50 108, 50 64, 120 64"
-                        fill="none"
-                        stroke="#eab308"
-                        strokeWidth="1"
-                        strokeDasharray="2 2"
-                        className="opacity-50"
-                      />
-
-                      {/* Transformation Node */}
-                      <circle
-                        cx="128"
-                        cy="64"
-                        r="16"
-                        fill="#111"
-                        stroke="white"
-                        strokeWidth="1"
-                        className="opacity-20"
-                      />
-                    </svg>
-                  </div>
-
-                  {/* Silver Layer Script */}
-                  <div className="absolute top-1/2 right-1/3 -translate-y-1/2 transform translate-x-4 z-10 flex flex-col items-center gap-2">
-                    <div className="w-24 h-24 border border-white/20 bg-black/80 backdrop-blur rounded-lg flex flex-col items-center justify-center relative shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                      <div className="absolute -top-3 bg-[#ff9a65] text-black text-[8px] font-bold px-1.5 py-0.5 rounded font-[geistMono]">
-                        SILVER
-                      </div>
-                      <div className="font-[geistMono] text-[10px] text-white/80 mb-1">
-                        silver_etl.py
-                      </div>
-                      <div className="w-16 h-px bg-white/10 my-1" />
-                      <div className="flex flex-col gap-0.5 text-[8px] font-[geistMono] text-white/40">
-                        <span>.normalize()</span>
-                        <span>.clean_geom()</span>
-                        <span>.dedup()</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Output Tables (Silver Schemas) */}
-                  <div className="absolute top-1/2 right-4 -translate-y-1/2 flex flex-col gap-3 z-10 w-48">
-                    {/* UCDP Schema */}
-                    <div className="bg-[#1e1e1e] border border-white/10 rounded overflow-hidden shadow-lg">
-                      <div className="bg-white/5 px-2 py-1 text-[8px] font-[geistMono] text-white/40 border-b border-white/5 flex justify-between items-center">
-                        <span>dw.fact_ucdp_gedevents</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                      </div>
-                      <div className="p-2 space-y-1">
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-purple-300">id</span>
-                          <span className="text-white/30">INT PK</span>
-                        </div>
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-white/70">date_start</span>
-                          <span className="text-white/30">DATE</span>
-                        </div>
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-white/70">fatalities</span>
-                          <span className="text-white/30">INT</span>
-                        </div>
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-green-400">geom</span>
-                          <span className="text-white/30">POINT</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* ACLED Schema */}
-                    <div className="bg-[#1e1e1e] border border-white/10 rounded overflow-hidden shadow-lg">
-                      <div className="bg-white/5 px-2 py-1 text-[8px] font-[geistMono] text-white/40 border-b border-white/5 flex justify-between items-center">
-                        <span>dw.fact_acled_events</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                      </div>
-                      <div className="p-2 space-y-1">
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-blue-300">event_code</span>
-                          <span className="text-white/30">TEXT PK</span>
-                        </div>
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-white/70">event_type</span>
-                          <span className="text-white/30">TEXT</span>
-                        </div>
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-white/70">fatalities</span>
-                          <span className="text-white/30">INT</span>
-                        </div>
-                        <div className="flex justify-between text-[7px] font-[geistMono] hover:bg-white/5 px-1 rounded">
-                          <span className="text-green-400">geom</span>
-                          <span className="text-white/30">POINT</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Image
+                    src="/methodology/normalize.svg"
+                    alt="Collection Visualization"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
             </div>
@@ -615,124 +390,18 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-7 order-2 lg:order-1">
-                {/* Flowchart Visualization */}
+                {/* Collection Visualization */}
                 <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative flex items-center justify-center overflow-hidden p-6 group">
                   {/* Background Grid */}
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]" />
 
-                  <div className="flex justify-between items-center w-full max-w-2xl relative z-10 gap-4">
-                    {/* 1. Ingestion Subgraph */}
-                    <div className="flex flex-col gap-2 p-3 border border-white/5 rounded-lg bg-white/5 backdrop-blur-sm relative">
-                      <div className="absolute -top-2 left-2 text-[8px] font-[geistMono] text-white/40 bg-[#050505] px-1">
-                        INGESTION (PREFECT)
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                          <span className="text-[9px] font-[geistMono] text-white/60">
-                            InvokeHttp (UCDP)
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                          <span className="text-[9px] font-[geistMono] text-white/60">
-                            CSVReader (AWSD)
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                          <span className="text-[9px] font-[geistMono] text-white/60">
-                            ExcelReader (ACLED)
-                          </span>
-                        </div>
-                      </div>
-                      {/* Outputs */}
-                      <div className="absolute top-1/2 -right-1 w-1 h-1 bg-white/20 rounded-full" />
-                    </div>
-
-                    {/* Connector 1 */}
-                    <div className="w-8 h-px bg-white/10 relative">
-                      <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-white/40 rounded-full -translate-y-1/2 animate-[packet_2s_infinite]" />
-                    </div>
-
-                    {/* 2. Python Scripts Subgraph */}
-                    <div className="flex flex-col gap-2 p-3 border border-white/5 rounded-lg bg-white/5 backdrop-blur-sm relative">
-                      <div className="absolute -top-2 left-2 text-[8px] font-[geistMono] text-white/40 bg-[#050505] px-1">
-                        PYTHON PROCESS
-                      </div>
-                      <div className="text-[9px] font-[geistMono] text-white/80 text-center py-1">
-                        Merge & Normalize
-                      </div>
-                      <div className="h-px w-full bg-white/10" />
-                      <div className="text-[8px] font-[geistMono] text-[#336791] text-center">
-                        Transform &rarr; Schema
-                      </div>
-                      {/* Outputs */}
-                      <div className="absolute top-1/2 -left-1 w-1 h-1 bg-white/20 rounded-full" />
-                      <div className="absolute top-1/2 -right-1 w-1 h-1 bg-white/20 rounded-full" />
-                    </div>
-
-                    {/* Connector 2 */}
-                    <div className="w-8 h-px bg-white/10 relative">
-                      <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-white/40 rounded-full -translate-y-1/2 animate-[packet_2s_infinite_0.5s]" />
-                    </div>
-
-                    {/* 3. Database Layers (Silver -> Gold) */}
-                    <div className="flex items-center gap-2">
-                      {/* Silver Layer */}
-                      <div className="flex flex-col gap-2 items-center">
-                        <div className="w-16 h-20 border border-[#336791]/30 bg-[#336791]/10 rounded-lg flex flex-col items-center justify-center relative group-hover:bg-[#336791]/20 transition-colors">
-                          <div className="text-[8px] font-[geistMono] text-[#336791] mb-1">
-                            SILVER
-                          </div>
-                          <div className="w-8 h-8 rounded border border-[#336791]/50 flex flex-col items-center justify-center gap-0.5">
-                            <div className="w-6 h-1 bg-[#336791] rounded-sm" />
-                            <div className="w-6 h-1 bg-[#336791] rounded-sm" />
-                            <div className="w-6 h-1 bg-[#336791] rounded-sm" />
-                          </div>
-                          <div className="absolute -bottom-2 px-1 bg-[#050505] text-[8px] font-[geistMono] text-white/40 border border-white/10 rounded">
-                            Facts
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Arrow */}
-                      <div className="w-4 h-px bg-white/10 relative">
-                        <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-white/40 rounded-full -translate-y-1/2 animate-[packet_2s_infinite]" />
-                      </div>
-
-                      {/* Gold Layer */}
-                      <div className="flex flex-col gap-2 items-center">
-                        <div className="w-16 h-20 border border-[#ff9a65]/30 bg-[#ff9a65]/10 rounded-lg flex flex-col items-center justify-center relative group-hover:bg-[#ff9a65]/20 transition-colors">
-                          <div className="text-[8px] font-[geistMono] text-[#ff9a65] mb-1">
-                            GOLD
-                          </div>
-                          <div className="w-8 h-8 rounded-full border border-[#ff9a65] flex items-center justify-center">
-                            <div className="w-4 h-4 bg-[#ff9a65] rounded-full shadow-[0_0_10px_#ff9a65] animate-pulse" />
-                          </div>
-                          <div className="absolute -bottom-2 px-1 bg-[#050505] text-[8px] font-[geistMono] text-white/40 border border-white/10 rounded">
-                            Marts
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Connector 3 */}
-                    <div className="w-8 h-px bg-white/10 relative">
-                      <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-white/40 rounded-full -translate-y-1/2 animate-[packet_2s_infinite_1s]" />
-                    </div>
-
-                    {/* 4. API & Frontend */}
-                    <div className="flex flex-col gap-2">
-                      <div className="px-3 py-1.5 border border-green-500/30 bg-green-900/10 rounded text-[9px] font-[geistMono] text-green-400 text-center">
-                        Supabase API
-                      </div>
-                      <div className="h-4 w-px bg-white/10 mx-auto" />
-                      <div className="px-3 py-1.5 border border-[#ff9a65]/30 bg-[#ff9a65]/10 rounded text-[9px] font-[geistMono] text-[#ff9a65] text-center">
-                        Frontend UI
-                      </div>
-                    </div>
-                  </div>
+                  <Image
+                    src="/methodology/aggregate.svg"
+                    alt="Collection Visualization"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
 
@@ -948,14 +617,6 @@ export default function MethodologyPage() {
                           },
                         ]}
                       />
-                    </div>
-
-                    {/* UI Overlay: Sidebar (Filters) */}
-                    <div className="absolute left-4 top-4 bottom-12 w-16 border border-white/10 bg-[#050505]/80 backdrop-blur rounded flex flex-col gap-2 p-2">
-                      <div className="w-full aspect-square rounded bg-white/10" />
-                      <div className="w-full aspect-square rounded bg-white/5" />
-                      <div className="w-full aspect-square rounded bg-white/5" />
-                      <div className="mt-auto w-full aspect-square rounded bg-[#ff9a65]/20 border border-[#ff9a65]/30" />
                     </div>
                   </div>
                 </div>
