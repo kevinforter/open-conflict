@@ -240,23 +240,23 @@ export default function NavBar() {
           )}
           onMouseEnter={() => {}} // Keep menu open when hovering dropdown
         >
-          <div className="w-[1000px] flex bg-white/5 shadow-2xl shadow-black/50">
+          <div className="w-[90vw] md:w-[700px] lg:w-[1000px] flex bg-white/5 shadow-2xl shadow-black/50">
             {/* About Menu Content */}
             {activeMenu === "about" && (
               <>
                 <Link
                   href="/about"
                   onClick={() => setActiveMenu(null)}
-                  className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
+                  className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [The Project]
                     </span>
-                    <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
+                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
                       Overview
                     </h3>
-                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Mission, vision, and the challenge of visualizing
                       invisible data.
                     </p>
@@ -266,16 +266,16 @@ export default function NavBar() {
                 <Link
                   href="/methodology"
                   onClick={() => setActiveMenu(null)}
-                  className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
+                  className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [The Tech]
                     </span>
-                    <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
+                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
                       Methodology
                     </h3>
-                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Deep dive into data collection, normalization, and our
                       stack.
                     </p>
@@ -285,16 +285,16 @@ export default function NavBar() {
                 <Link
                   href="/team"
                   onClick={() => setActiveMenu(null)}
-                  className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
+                  className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [The People]
                     </span>
-                    <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
+                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
                       Team
                     </h3>
-                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Meet the students behind the Open Data Analysis
                       initiative.
                     </p>
@@ -309,16 +309,16 @@ export default function NavBar() {
                 <Link
                   href="/source"
                   onClick={() => setActiveMenu(null)}
-                  className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
+                  className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [Data Origin]
                     </span>
-                    <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
+                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
                       Sources
                     </h3>
-                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Detailed documentation of UCDP, ACLED, and NGO incident
                       data.
                     </p>
@@ -328,16 +328,16 @@ export default function NavBar() {
                 <Link
                   href="/impressum"
                   onClick={() => setActiveMenu(null)}
-                  className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
+                  className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [Legal]
                     </span>
-                    <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
+                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
                       Impressum
                     </h3>
-                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Legal information, contact details, and project credits.
                     </p>
                   </div>
@@ -347,16 +347,16 @@ export default function NavBar() {
                   href="https://github.com/kevinforter/open-conflict"
                   target="_blank"
                   onClick={() => setActiveMenu(null)}
-                  className="flex-1 group/item p-6 hover:bg-white transition-colors relative overflow-hidden"
+                  className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
                       [Codebase]
                     </span>
-                    <h3 className="font-[n27] text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-20">
+                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
                       GitHub
                     </h3>
-                    <p className="text-white/40 text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
                       Explore the source code and contribute to the project.
                     </p>
                   </div>
