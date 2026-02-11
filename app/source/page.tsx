@@ -24,7 +24,7 @@ export default function SourcesPage() {
         className="flex-1 overflow-y-auto relative z-10 custom-scrollbar snap-y snap-mandatory scroll-smooth"
       >
         {/* Header Section - 100vh */}
-        <section className="w-full min-h-screen flex flex-col justify-center snap-start px-6 md:px-12 lg:px-20 pt-24 pb-12 md:py-16 lg:py-20 xl:py-24 max-w-[1600px] mx-auto relative">
+        <section className="w-full min-h-screen flex flex-col justify-center snap-start px-6 md:px-12 lg:px-12 xl:px-20 pt-24 pb-12 md:py-16 lg:py-20 xl:py-24 max-w-[1600px] mx-auto relative">
           <div className="w-full">
             <h1 className="text-white/60 font-[n27] text-3xl md:text-4xl lg:text-5xl leading-[0.8] tracking-tighter mb-8 uppercase">
               [data sources]
@@ -57,8 +57,8 @@ export default function SourcesPage() {
 
         {/* UCDP SECTION - 100vh */}
         <section className="w-full min-h-screen flex flex-col justify-start pt-24 lg:justify-center lg:pt-0 lg:items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 pb-12 pt-4 md:py-16 lg:py-20 xl:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-12 xl:px-20 pb-12 pt-4 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-12 xl:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
@@ -100,12 +100,12 @@ export default function SourcesPage() {
                   </CollapsibleDescription>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-4 xl:gap-12 border-t border-white/10 pt-12">
                   <div>
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Coverage
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Global
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -116,7 +116,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Update Cycle
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Annual
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -127,7 +127,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Type
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Casualty
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -138,7 +138,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Methodology
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Academic
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -166,8 +166,8 @@ export default function SourcesPage() {
 
         {/* ACLED SECTION - 100vh */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-12 xl:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-12 xl:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
@@ -209,12 +209,12 @@ export default function SourcesPage() {
                   </CollapsibleDescription>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-4 xl:gap-12 border-t border-white/10 pt-12">
                   <div>
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Focus
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Granularity
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -225,7 +225,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Update Cycle
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Weekly
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -236,7 +236,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Scope
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Global
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -247,7 +247,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Access
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Open Source
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -275,8 +275,8 @@ export default function SourcesPage() {
 
         {/* AWSD SECTION - 100vh */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-12 xl:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-12 xl:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
@@ -318,12 +318,12 @@ export default function SourcesPage() {
                   </CollapsibleDescription>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-4 xl:gap-12 border-t border-white/10 pt-12">
                   <div>
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Coverage
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Global
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -334,7 +334,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Focus
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Major Violence
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -345,7 +345,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Latency
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Continuous
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -356,7 +356,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Status
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Public
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -384,8 +384,8 @@ export default function SourcesPage() {
 
         {/* REST COUNTRIES SECTION - 100vh */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 group overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-12 xl:px-20 py-12 md:py-16 lg:py-20 xl:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-12 xl:gap-24">
               {/* Left: Identity */}
               <div className="lg:col-span-4 flex flex-col justify-center lg:justify-between lg:h-[60vh]">
                 <div>
@@ -428,12 +428,12 @@ export default function SourcesPage() {
                   </CollapsibleDescription>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-4 xl:gap-12 border-t border-white/10 pt-12">
                   <div>
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Focus
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Metadata
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -444,7 +444,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Update Cycle
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Stable
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -455,7 +455,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Scope
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Global
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
@@ -466,7 +466,7 @@ export default function SourcesPage() {
                     <span className="block text-[#ff9a65] font-[geistMono] text-[10px] uppercase mb-2 tracking-widest">
                       Access
                     </span>
-                    <span className="font-[geistMono] text-lg md:text-xl lg:text-2xl">
+                    <span className="font-[geistMono] text-lg md:text-xl lg:text-xl xl:text-2xl">
                       Public API
                     </span>
                     <span className="block text-white/30 text-xs mt-1">
