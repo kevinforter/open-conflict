@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import * as d3 from "d3";
 import { createPortal } from "react-dom";
 import { CountryEventLocation } from "@/lib/db/selectCountryEventLocations";
+import { geistMono } from "@/app/fonts/fonts";
 
 interface BeeswarmChartProps {
   data: CountryEventLocation[];
@@ -177,7 +178,7 @@ const BeeswarmChart: React.FC<BeeswarmChartProps> = ({
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2 border-b border-white/10 pb-1 mb-1">
                 <span
-                  className={`text-[10px] uppercase font-mono px-1.5 py-0.5 rounded-sm ${
+                  className={`text-[10px] uppercase ${geistMono.className} px-1.5 py-0.5 rounded-sm ${
                     d.source === "UCDP"
                       ? "bg-purple-500/20 text-purple-300"
                       : d.source === "ACLED"
@@ -197,7 +198,7 @@ const BeeswarmChart: React.FC<BeeswarmChartProps> = ({
               )}
               <div className="flex justify-between items-center mt-1">
                 <span className="text-white/40 text-[10px]">Fatalities</span>
-                <span className="text-red-400 font-mono text-xs">
+                <span className={`text-red-400 ${geistMono.className} text-xs`}>
                   {d.fatalities}
                 </span>
               </div>
@@ -229,7 +230,9 @@ const BeeswarmChart: React.FC<BeeswarmChartProps> = ({
       {/* No Data Overlay */}
       {processedData.length === 0 && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span className="text-white/30 text-[10px] font-mono">No data</span>
+          <span className={`text-white/30 text-[10px] ${geistMono.className}`}>
+            No data
+          </span>
         </div>
       )}
 

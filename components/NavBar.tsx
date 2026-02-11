@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { createPortal } from "react-dom";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { n27, geistMono } from "@/app/fonts/fonts";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -57,25 +58,27 @@ export default function NavBar() {
         <div className="flex flex-col gap-8">
           {/* About Section */}
           <div className="border-b border-white/10 pb-8">
-            <h3 className="text-xs font-[geistMono] uppercase text-white/40 tracking-widest mb-6">
+            <h3
+              className={`text-xs ${geistMono.className} uppercase text-white/40 tracking-widest mb-6`}
+            >
               [About]
             </h3>
             <div className="flex flex-col gap-4">
               <Link
                 href="/about"
-                className="text-3xl font-[n27] text-white hover:text-[#ff9a65] transition-colors"
+                className={`text-3xl ${n27.className} text-white hover:text-[#ff9a65] transition-colors`}
               >
                 Overview
               </Link>
               <Link
                 href="/methodology"
-                className="text-3xl font-[n27] text-white hover:text-[#ff9a65] transition-colors"
+                className={`text-3xl ${n27.className} text-white hover:text-[#ff9a65] transition-colors`}
               >
                 Methodology
               </Link>
               <Link
                 href="/team"
-                className="text-3xl font-[n27] text-white hover:text-[#ff9a65] transition-colors"
+                className={`text-3xl ${n27.className} text-white hover:text-[#ff9a65] transition-colors`}
               >
                 Team
               </Link>
@@ -84,26 +87,28 @@ export default function NavBar() {
 
           {/* Index Section */}
           <div className="border-b border-white/10 pb-8">
-            <h3 className="text-xs font-[geistMono] uppercase text-white/40 tracking-widest mb-6">
+            <h3
+              className={`text-xs ${geistMono.className} uppercase text-white/40 tracking-widest mb-6`}
+            >
               [Index]
             </h3>
             <div className="flex flex-col gap-4">
               <Link
                 href="/source"
-                className="text-3xl font-[n27] text-white hover:text-[#ff9a65] transition-colors"
+                className={`text-3xl ${n27.className} text-white hover:text-[#ff9a65] transition-colors`}
               >
                 Sources
               </Link>
               <Link
                 href="/impressum"
-                className="text-3xl font-[n27] text-white hover:text-[#ff9a65] transition-colors"
+                className={`text-3xl ${n27.className} text-white hover:text-[#ff9a65] transition-colors`}
               >
                 Impressum
               </Link>
               <Link
                 href="https://github.com/kevinforter/open-conflict"
                 target="_blank"
-                className="text-3xl font-[n27] text-white hover:text-[#ff9a65] transition-colors"
+                className={`text-3xl ${n27.className} text-white hover:text-[#ff9a65] transition-colors`}
               >
                 GitHub
               </Link>
@@ -119,7 +124,9 @@ export default function NavBar() {
                 <span className="absolute -bottom-0.25 -left-0.25 w-1.5 h-1.5 border-b border-l border-[#ff9a65]" />
                 <span className="absolute -bottom-0.25 -right-0.25 w-1.5 h-1.5 border-b border-r border-[#ff9a65]" />
 
-                <div className="relative flex items-center justify-center w-full h-full border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-base font-[n27] uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors">
+                <div
+                  className={`relative flex items-center justify-center w-full h-full border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-base ${n27.className} uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors`}
+                >
                   Open Dashboard
                 </div>
               </div>
@@ -157,12 +164,14 @@ export default function NavBar() {
             className="relative h-full flex items-center"
             onMouseEnter={() => setActiveMenu("about")}
           >
-            <span className="mr-2 text-white/50 text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4">
+            <span
+              className={`mr-2 text-white/50 text-sm ${geistMono.className} uppercase tracking-widest transition-colors cursor-pointer py-4`}
+            >
               [
             </span>
             <span
               className={cn(
-                "text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4",
+                `text-sm ${geistMono.className} uppercase tracking-widest transition-colors cursor-pointer py-4`,
                 activeMenu === "about" ||
                   pathname.includes("/about") ||
                   pathname.includes("/team") ||
@@ -182,7 +191,7 @@ export default function NavBar() {
           >
             <span
               className={cn(
-                "text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4",
+                `text-sm ${geistMono.className} uppercase tracking-widest transition-colors cursor-pointer py-4`,
                 activeMenu === "sources" ||
                   pathname.includes("/source") ||
                   pathname.includes("/impressum")
@@ -192,7 +201,9 @@ export default function NavBar() {
             >
               Index
             </span>
-            <span className="ml-2 text-white/50 text-sm font-[geistMono] uppercase tracking-widest transition-colors cursor-pointer py-4">
+            <span
+              className={`ml-2 text-white/50 text-sm ${geistMono.className} uppercase tracking-widest transition-colors cursor-pointer py-4`}
+            >
               ]
             </span>
           </div>
@@ -221,7 +232,9 @@ export default function NavBar() {
               <span className="absolute -bottom-0.25 -left-0.25 w-1.5 h-1.5 border-b border-l border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:left-0 group-hover:border-[#ff9a65]/0" />
               <span className="absolute -bottom-0.25 -right-0.25 w-1.5 h-1.5 border-b border-r border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:right-0 group-hover:border-[#ff9a65]/0" />
 
-              <div className="relative flex items-center px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm font-[n27] uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10 gap-2">
+              <div
+                className={`relative flex items-center px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm ${n27.className} uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10 gap-2`}
+              >
                 <span className="lg:hidden">Dashboard</span>
                 <span className="hidden lg:inline">Open Dashboard</span>
                 <ChevronRightIcon className="w-4 h-4 lg:hidden" />
@@ -250,13 +263,19 @@ export default function NavBar() {
                   className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span
+                      className={`block text-white ${geistMono.className} text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors`}
+                    >
                       [The Project]
                     </span>
-                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
+                    <h3
+                      className={`${n27.className} text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20`}
+                    >
                       Overview
                     </h3>
-                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p
+                      className={`text-white/40 text-[10px] md:text-xs ${geistMono.className} leading-relaxed group-hover/item:text-black transition-colors`}
+                    >
                       Mission, vision, and the challenge of visualizing
                       invisible data.
                     </p>
@@ -269,13 +288,19 @@ export default function NavBar() {
                   className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span
+                      className={`block text-white ${geistMono.className} text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors`}
+                    >
                       [The Tech]
                     </span>
-                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
+                    <h3
+                      className={`${n27.className} text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20`}
+                    >
                       Methodology
                     </h3>
-                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p
+                      className={`text-white/40 text-[10px] md:text-xs ${geistMono.className} leading-relaxed group-hover/item:text-black transition-colors`}
+                    >
                       Deep dive into data collection, normalization, and our
                       stack.
                     </p>
@@ -288,13 +313,19 @@ export default function NavBar() {
                   className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span
+                      className={`block text-white ${geistMono.className} text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors`}
+                    >
                       [The People]
                     </span>
-                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
+                    <h3
+                      className={`${n27.className} text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20`}
+                    >
                       Team
                     </h3>
-                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p
+                      className={`text-white/40 text-[10px] md:text-xs ${geistMono.className} leading-relaxed group-hover/item:text-black transition-colors`}
+                    >
                       Meet the students behind the Open Data Analysis
                       initiative.
                     </p>
@@ -312,13 +343,19 @@ export default function NavBar() {
                   className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span
+                      className={`block text-white ${geistMono.className} text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors`}
+                    >
                       [Data Origin]
                     </span>
-                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
+                    <h3
+                      className={`${n27.className} text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20`}
+                    >
                       Sources
                     </h3>
-                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p
+                      className={`text-white/40 text-[10px] md:text-xs ${geistMono.className} leading-relaxed group-hover/item:text-black transition-colors`}
+                    >
                       Detailed documentation of UCDP, ACLED, and NGO incident
                       data.
                     </p>
@@ -331,13 +368,19 @@ export default function NavBar() {
                   className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span
+                      className={`block text-white ${geistMono.className} text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors`}
+                    >
                       [Legal]
                     </span>
-                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
+                    <h3
+                      className={`${n27.className} text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20`}
+                    >
                       Impressum
                     </h3>
-                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p
+                      className={`text-white/40 text-[10px] md:text-xs ${geistMono.className} leading-relaxed group-hover/item:text-black transition-colors`}
+                    >
                       Legal information, contact details, and project credits.
                     </p>
                   </div>
@@ -350,13 +393,19 @@ export default function NavBar() {
                   className="flex-1 group/item p-4 md:p-5 lg:p-6 hover:bg-white transition-colors relative overflow-hidden"
                 >
                   <div className="relative z-10">
-                    <span className="block text-white font-[geistMono] text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors">
+                    <span
+                      className={`block text-white ${geistMono.className} text-xs md:text-sm lg:text-md uppercase tracking-widest mb-2 group-hover/item:text-black transition-colors`}
+                    >
                       [Codebase]
                     </span>
-                    <h3 className="font-[n27] text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20">
+                    <h3
+                      className={`${n27.className} text-3xl md:text-4xl lg:text-5xl text-white mb-1 group-hover/item:text-[#ff9a65] transition-colors pt-12 md:pt-16 lg:pt-20`}
+                    >
                       GitHub
                     </h3>
-                    <p className="text-white/40 text-[10px] md:text-xs font-[geistMono] leading-relaxed group-hover/item:text-black transition-colors">
+                    <p
+                      className={`text-white/40 text-[10px] md:text-xs ${geistMono.className} leading-relaxed group-hover/item:text-black transition-colors`}
+                    >
                       Explore the source code and contribute to the project.
                     </p>
                   </div>

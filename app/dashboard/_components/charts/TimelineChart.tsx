@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
+import { geistMono } from "@/app/fonts/fonts";
 
 interface TimelineChartProps {
   data: any[]; // Expecting CountryMonthStats[]
@@ -8,19 +9,24 @@ interface TimelineChartProps {
   height?: number;
 }
 
-const TimelineChart: React.FC<TimelineChartProps> = ({ 
-  data, 
+const TimelineChart: React.FC<TimelineChartProps> = ({
+  data,
   className,
-  height = 150 
+  height = 150,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: height });
-  const [tooltip, setTooltip] = useState<{ visible: boolean; x: number; y: number; data: any | null }>({
+  const [tooltip, setTooltip] = useState<{
+    visible: boolean;
+    x: number;
+    y: number;
+    data: any | null;
+  }>({
     visible: false,
     x: 0,
     y: 0,
-    data: null
+    data: null,
   });
 
   useEffect(() => {
@@ -51,19 +57,22 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
 
     // Define gradients
     const defs = svg.append("defs");
-    const gradient = defs.append("linearGradient")
+    const gradient = defs
+      .append("linearGradient")
       .attr("id", "area-gradient")
       .attr("x1", "0%")
       .attr("y1", "0%")
       .attr("x2", "0%")
       .attr("y2", "100%");
-    
-    gradient.append("stop")
+
+    gradient
+      .append("stop")
       .attr("offset", "0%")
       .attr("stop-color", "#ff9a65") // Theme Orange
       .attr("stop-opacity", 0.6);
-    
-    gradient.append("stop")
+
+    gradient
+      .append("stop")
       .attr("offset", "100%")
       .attr("stop-color", "#ff9a65")
       .attr("stop-opacity", 0.05);
@@ -75,42 +84,60 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
     // X axis (Months)
-    const x = d3.scaleLinear()
+    const x = d3
+      .scaleLinear()
       .domain([1, 12]) // Jan - Dec
       .range([0, chartWidth]);
 
     g.append("g")
       .attr("transform", `translate(0,${chartHeight})`)
-      .call(d3.axisBottom(x).ticks(6).tickFormat(d => d.toString())) 
-      .call(g => g.select(".domain").attr("stroke", "#ffffff33"))
-      .call(g => g.selectAll(".tick line").attr("stroke", "#ffffff33"))
-      .call(g => g.selectAll(".tick text").attr("fill", "#ffffff66").attr("font-family", "monospace").attr("font-size", "10px"));
+      .call(
+        d3
+          .axisBottom(x)
+          .ticks(6)
+          .tickFormat((d) => d.toString()),
+      )
+      .call((g) => g.select(".domain").attr("stroke", "#ffffff33"))
+      .call((g) => g.selectAll(".tick line").attr("stroke", "#ffffff33"))
+      .call((g) =>
+        g
+          .selectAll(".tick text")
+          .attr("fill", "#ffffff66")
+          .attr("class", geistMono.className)
+          .attr("font-size", "10px"),
+      );
 
     // Y axis
-    const maxVal = d3.max(sortedData, d => d.acled_events || 0) || 10;
-    const y = d3.scaleLinear()
-      .domain([0, maxVal])
-      .range([chartHeight, 0]);
+    const maxVal = d3.max(sortedData, (d) => d.acled_events || 0) || 10;
+    const y = d3.scaleLinear().domain([0, maxVal]).range([chartHeight, 0]);
 
     g.append("g")
       .call(d3.axisLeft(y).ticks(4).tickSize(-chartWidth)) // Grid lines
-      .call(g => g.select(".domain").remove())
-      .call(g => g.selectAll(".tick line").attr("stroke", "#ffffff11")) // Faint grid
-      .call(g => g.selectAll(".tick text").attr("fill", "#ffffff66").attr("font-family", "monospace").attr("font-size", "10px"));
+      .call((g) => g.select(".domain").remove())
+      .call((g) => g.selectAll(".tick line").attr("stroke", "#ffffff11")) // Faint grid
+      .call((g) =>
+        g
+          .selectAll(".tick text")
+          .attr("fill", "#ffffff66")
+          .attr("class", geistMono.className)
+          .attr("font-size", "10px"),
+      );
 
     // Area Generator
-    const area = d3.area<any>()
-      .defined(d => d.acled_events !== undefined)
-      .x(d => x(d.month))
+    const area = d3
+      .area<any>()
+      .defined((d) => d.acled_events !== undefined)
+      .x((d) => x(d.month))
       .y0(chartHeight)
-      .y1(d => y(d.acled_events || 0))
+      .y1((d) => y(d.acled_events || 0))
       .curve(d3.curveMonotoneX);
 
     // Line Generator (for the top stroke)
-    const lineEvents = d3.line<any>()
-      .defined(d => d.acled_events !== undefined)
-      .x(d => x(d.month))
-      .y(d => y(d.acled_events || 0))
+    const lineEvents = d3
+      .line<any>()
+      .defined((d) => d.acled_events !== undefined)
+      .x((d) => x(d.month))
+      .y((d) => y(d.acled_events || 0))
       .curve(d3.curveMonotoneX);
 
     // Render Area
@@ -143,63 +170,66 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
         const d1 = sortedData[i];
         let d = d0;
         if (d1 && d0) {
-            d = x0 - d0.month > d1.month - x0 ? d1 : d0;
+          d = x0 - d0.month > d1.month - x0 ? d1 : d0;
         } else if (d1) {
-            d = d1;
+          d = d1;
         }
 
         if (d) {
-            setTooltip({
-                visible: true,
-                x: x(d.month) + margin.left,
-                y: y(d.acled_events || 0) + margin.top, // Option: Position at data point
-                data: d
-            });
+          setTooltip({
+            visible: true,
+            x: x(d.month) + margin.left,
+            y: y(d.acled_events || 0) + margin.top, // Option: Position at data point
+            data: d,
+          });
         }
       })
       .on("mouseleave", () => {
-        setTooltip(prev => ({ ...prev, visible: false }));
+        setTooltip((prev) => ({ ...prev, visible: false }));
       });
-      
+
     // Optional: Draw a circle for the active point if tooltip is visible
     if (tooltip.visible && tooltip.data) {
-        g.append("circle")
-           .attr("cx", x(tooltip.data.month))
-           .attr("cy", y(tooltip.data.acled_events || 0))
-           .attr("r", 4)
-           .attr("fill", "#ff9a65")
-           .attr("stroke", "#fff")
-           .attr("stroke-width", 1.5)
-           .style("pointer-events", "none"); // Ignore events so mousemove on rect works
+      g.append("circle")
+        .attr("cx", x(tooltip.data.month))
+        .attr("cy", y(tooltip.data.acled_events || 0))
+        .attr("r", 4)
+        .attr("fill", "#ff9a65")
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 1.5)
+        .style("pointer-events", "none"); // Ignore events so mousemove on rect works
     }
-
   }, [data, dimensions, tooltip.visible, tooltip.data]); // Re-render when tooltip state changes (for the circle)
 
   // Month names helper
   const getMonthName = (m: number) => {
-      const date = new Date();
-      date.setMonth(m - 1);
-      return date.toLocaleString('default', { month: 'short' });
+    const date = new Date();
+    date.setMonth(m - 1);
+    return date.toLocaleString("default", { month: "short" });
   };
 
   return (
     <div ref={containerRef} className={`w-full relative ${className}`}>
       <svg ref={svgRef} className="block overflow-visible"></svg>
-      
+
       {/* HTML Tooltip Overlay */}
       {tooltip.visible && tooltip.data && (
-          <div 
-            className="absolute z-10 pointer-events-none bg-black/40 backdrop-blur-md border border-white/10 p-2 rounded shadow-xl text-xs transform -translate-x-1/2 -translate-y-full mt-[-8px]"
-            style={{ left: tooltip.x, top: tooltip.y }}
+        <div
+          className="absolute z-10 pointer-events-none bg-black/40 backdrop-blur-md border border-white/10 p-2 rounded shadow-xl text-xs transform -translate-x-1/2 -translate-y-full mt-[-8px]"
+          style={{ left: tooltip.x, top: tooltip.y }}
+        >
+          <div
+            className={`${geistMono.className} text-white/50 mb-1 border-b border-white/10 pb-1`}
           >
-              <div className="font-mono text-white/50 mb-1 border-b border-white/10 pb-1">
-                  {getMonthName(tooltip.data.month)}
-              </div>
-              <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#ff9a65]"></div>
-                  <span className="text-white font-mono">{tooltip.data.acled_events} Events</span>
-              </div>
+            {getMonthName(tooltip.data.month)}
           </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#ff9a65]"></div>
+            <span className={`text-white ${geistMono.className}`}>
+              {tooltip.data.acled_events} Events
+            </span>
+          </div>
+        </div>
       )}
     </div>
   );

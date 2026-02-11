@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
+import { geistMono } from "@/app/fonts/fonts";
+
 gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 
 export interface ScrambledTextProps {
@@ -76,7 +78,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
   return (
     <div
       ref={rootRef}
-      className={`w-fit font-mono text-[clamp(14px,4vw,32px)] text-white ${className}`}
+      className={`w-fit ${geistMono.className} text-[clamp(14px,4vw,32px)] text-white ${className}`}
       style={style}
     >
       <p>{children}</p>

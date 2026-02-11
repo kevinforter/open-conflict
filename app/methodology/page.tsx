@@ -14,6 +14,7 @@ const World = dynamic(
 import { Database, ShieldCheck } from "lucide-react";
 import BoldCornerButton from "@/components/BoldCornerButton";
 import Noise from "@/components/Noise";
+import { n27, geistMono } from "@/app/fonts/fonts";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function MethodologyPage() {
@@ -35,19 +36,25 @@ export default function MethodologyPage() {
         {/* Intro Section */}
         <section className="w-full min-h-screen flex flex-col pt-40 pb-20 snap-start px-6 md:px-16 max-w-[1600px] mx-auto relative">
           <div className="w-full">
-            <h1 className="text-white/60 font-[n27] text-2xl md:text-4xl leading-[0.8] tracking-tighter mb-8 uppercase">
+            <h1
+              className={`text-white/60 ${n27.className} text-2xl md:text-4xl leading-[0.8] tracking-tighter mb-8 uppercase`}
+            >
               [methodology]
             </h1>
             <div className="w-full h-px bg-white/20 mb-12" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-8">
-                <h2 className="font-[n27] text-5xl md:text-8xl leading-[0.85] tracking-tighter mb-8">
+                <h2
+                  className={`${n27.className} text-5xl md:text-8xl leading-[0.85] tracking-tighter mb-8`}
+                >
                   TECHNICAL
                   <br />
                   DEEP DIVE
                 </h2>
-                <p className="font-[geistMono] text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl font-light">
+                <p
+                  className={`${geistMono.className} text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl font-light`}
+                >
                   How we transform fragmented global conflict data into
                   actionable intelligence through autonomous collection,
                   normalization, and aggregation.
@@ -63,7 +70,9 @@ export default function MethodologyPage() {
             </div>
 
             <div className="mt-24 text-white/30 hidden md:block">
-              <span className="font-[geistMono] text-[10px] uppercase tracking-widest">
+              <span
+                className={`${geistMono.className} text-[10px] uppercase tracking-widest`}
+              >
                 Scroll to Explore
               </span>
               <div className="h-12 w-px bg-white/20 mt-2 ml-4" />
@@ -78,10 +87,14 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
               <div className="lg:col-span-4 self-end">
-                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-4">
+                <span
+                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
+                >
                   The Challenge
                 </span>
-                <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
+                <h2
+                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
+                >
                   DATA
                   <br />
                   SILOS
@@ -89,12 +102,16 @@ export default function MethodologyPage() {
               </div>
 
               <div className="lg:col-span-8 flex flex-col justify-center space-y-8">
-                <p className="font-light font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                <p
+                  className={`font-light ${geistMono.className} text-white/60 leading-relaxed text-base md:text-lg max-w-4xl`}
+                >
                   Global conflict data is often fragmented across disparate
                   sources—academic studies, NGO field reports, and news
                   aggregators. This fragmentation creates blind spots.
                 </p>
-                <p className="font-light font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-4xl">
+                <p
+                  className={`font-light ${geistMono.className} text-white/60 leading-relaxed text-base md:text-lg max-w-4xl`}
+                >
                   Without a unified view, humanitarian response is reactive
                   rather than proactive. We bridge these gaps by normalizing and
                   visualizing multi-source data in a single accessible
@@ -106,37 +123,53 @@ export default function MethodologyPage() {
                     href="#collect"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span
+                      className={`block ${geistMono.className} text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors`}
+                    >
                       Standard 01
                     </span>
-                    <span className="block font-[n27] text-lg">Collect</span>
+                    <span className={`block ${n27.className} text-lg`}>
+                      Collect
+                    </span>
                   </Link>
                   <Link
                     href="#normalize"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span
+                      className={`block ${geistMono.className} text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors`}
+                    >
                       Standard 02
                     </span>
-                    <span className="block font-[n27] text-lg">Normalize</span>
+                    <span className={`block ${n27.className} text-lg`}>
+                      Normalize
+                    </span>
                   </Link>
                   <Link
                     href="#aggregate"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span
+                      className={`block ${geistMono.className} text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors`}
+                    >
                       Standard 03
                     </span>
-                    <span className="block font-[n27] text-lg">Aggregate</span>
+                    <span className={`block ${n27.className} text-lg`}>
+                      Aggregate
+                    </span>
                   </Link>
                   <Link
                     href="#visualize"
                     className="border border-white/20 p-4 hover:bg-white/10 hover:border-white/40 transition-all cursor-pointer group"
                   >
-                    <span className="block font-[geistMono] text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors">
+                    <span
+                      className={`block ${geistMono.className} text-xs text-white/50 mb-1 group-hover:text-[#ff9a65] transition-colors`}
+                    >
                       Standard 04
                     </span>
-                    <span className="block font-[n27] text-lg">Visualize</span>
+                    <span className={`block ${n27.className} text-lg`}>
+                      Visualize
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -149,15 +182,21 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
               <div className="lg:col-span-4">
-                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-4">
+                <span
+                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
+                >
                   Architecture
                 </span>
-                <h2 className="font-[n27] text-4xl md:text-6xl text-white mb-6">
+                <h2
+                  className={`${n27.className} text-4xl md:text-6xl text-white mb-6`}
+                >
                   TECH
                   <br />
                   STACK
                 </h2>
-                <p className="font-[geistMono] text-white/60 text-base md:text-lg leading-relaxed mb-8">
+                <p
+                  className={`${geistMono.className} text-white/60 text-base md:text-lg leading-relaxed mb-8`}
+                >
                   A modern, scalable architecture designed for real-time data
                   ingestion, processing, and high-performance visualization.
                 </p>
@@ -165,7 +204,9 @@ export default function MethodologyPage() {
 
               <div className="lg:col-span-8">
                 <div className="border border-white/10 rounded-lg overflow-hidden">
-                  <div className="grid grid-cols-12 bg-white/5 border-b border-white/10 p-4 font-[geistMono] text-xs text-white/40 uppercase tracking-wider">
+                  <div
+                    className={`grid grid-cols-12 bg-white/5 border-b border-white/10 p-4 ${geistMono.className} text-xs text-white/40 uppercase tracking-wider`}
+                  >
                     <div className="col-span-4 md:col-span-3">Layer</div>
                     <div className="col-span-8 md:col-span-9">
                       Technology / Tools
@@ -202,10 +243,14 @@ export default function MethodologyPage() {
                         key={i}
                         className="grid grid-cols-12 p-4 md:p-6 hover:bg-white/5 transition-colors group"
                       >
-                        <div className="col-span-4 md:col-span-3 font-[n27] text-white text-sm md:text-base group-hover:text-[#ff9a65] transition-colors">
+                        <div
+                          className={`col-span-4 md:col-span-3 ${n27.className} text-white text-sm md:text-base group-hover:text-[#ff9a65] transition-colors`}
+                        >
                           {item.layer}
                         </div>
-                        <div className="col-span-8 md:col-span-9 font-[geistMono] text-white/70 text-xs md:text-sm leading-relaxed">
+                        <div
+                          className={`col-span-8 md:col-span-9 ${geistMono.className} text-white/70 text-xs md:text-sm leading-relaxed`}
+                        >
                           {item.tools}
                         </div>
                       </div>
@@ -225,14 +270,20 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
+                <span
+                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
+                >
                   Standard 01
                 </span>
-                <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
+                <h2
+                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
+                >
                   COLLECT
                 </h2>
 
-                <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
+                <p
+                  className={`${geistMono.className} text-white/60 leading-relaxed text-base md:text-lg max-w-xl`}
+                >
                   Before analysis begins, we must gather intelligence. We
                   autonomously scrape, fetch, and ingest raw reports from
                   verified global conflict databases like UCDP, ACLED, AWSD and
@@ -267,20 +318,28 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
+                <span
+                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
+                >
                   Standard 02
                 </span>
-                <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
+                <h2
+                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
+                >
                   NORMALIZE
                 </h2>
 
-                <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
+                <p
+                  className={`${geistMono.className} text-white/60 leading-relaxed text-base md:text-lg max-w-xl`}
+                >
                   Raw data varies wildly—timestamps, coordinates, and event
                   types are inconsistent across sources. We ingest disparate
                   formats and map them to a unified schema through a rigorous
                   Silver Layer ETL process:
                 </p>
-                <ul className="space-y-4 font-[geistMono] text-sm text-white/80 mt-6">
+                <ul
+                  className={`space-y-4 ${geistMono.className} text-sm text-white/80 mt-6`}
+                >
                   <li className="flex gap-4">
                     <span className="text-[#ff9a65]">01.</span>
                     <span>
@@ -406,20 +465,28 @@ export default function MethodologyPage() {
               </div>
 
               <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-center space-y-8 lg:text-right">
-                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
+                <span
+                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
+                >
                   Standard 03
                 </span>
-                <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
+                <h2
+                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
+                >
                   AGGREGATE
                 </h2>
 
                 <div className="space-y-6 text-right">
                   <div className="space-y-2">
-                    <h3 className="text-white font-[n27] text-lg">
+                    <h3 className={`text-white ${n27.className} text-lg`}>
                       Structured & Geospatial Data
                     </h3>
-                    <p className="font-[geistMono] text-white/60 text-sm leading-relaxed">
-                      <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-wider block mb-1">
+                    <p
+                      className={`${geistMono.className} text-white/60 text-sm leading-relaxed`}
+                    >
+                      <span
+                        className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-wider block mb-1`}
+                      >
                         PostgreSQL + PostGIS
                       </span>
                       Stores strict relational data, conflict statistics, and
@@ -429,11 +496,15 @@ export default function MethodologyPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-white font-[n27] text-lg">
+                    <h3 className={`text-white ${n27.className} text-lg`}>
                       Aggregated Data Marts
                     </h3>
-                    <p className="font-[geistMono] text-white/60 text-sm leading-relaxed">
-                      <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-wider block mb-1">
+                    <p
+                      className={`${geistMono.className} text-white/60 text-sm leading-relaxed`}
+                    >
+                      <span
+                        className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-wider block mb-1`}
+                      >
                         Gold Layer (Materialized Views)
                       </span>
                       Pre-calculated statistical views (e.g., country_year,
@@ -443,11 +514,15 @@ export default function MethodologyPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-white font-[n27] text-lg">
+                    <h3 className={`text-white ${n27.className} text-lg`}>
                       Real-time API Layer
                     </h3>
-                    <p className="font-[geistMono] text-white/60 text-sm leading-relaxed">
-                      <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-wider block mb-1">
+                    <p
+                      className={`${geistMono.className} text-white/60 text-sm leading-relaxed`}
+                    >
+                      <span
+                        className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-wider block mb-1`}
+                      >
                         Supabase
                       </span>
                       Bridges the database and frontend. Generates consolidated,
@@ -469,19 +544,27 @@ export default function MethodologyPage() {
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
               <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
-                <span className="block text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest mb-1">
+                <span
+                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
+                >
                   Standard 04
                 </span>
-                <h2 className="font-[n27] text-5xl md:text-7xl text-white mb-6 leading-none">
+                <h2
+                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
+                >
                   VISUALIZE
                 </h2>
 
-                <p className="font-[geistMono] text-white/60 leading-relaxed text-base md:text-lg max-w-xl">
+                <p
+                  className={`${geistMono.className} text-white/60 leading-relaxed text-base md:text-lg max-w-xl`}
+                >
                   Data is useless if it's not actionable. We transform millions
                   of data points into interactive heatmaps, temporal timelines,
                   and cluster analyses for immediate insight.
                 </p>
-                <p className="font-[geistMono] text-white/50 leading-relaxed text-sm md:text-base max-w-xl mt-6 border-l border-white/20 pl-4">
+                <p
+                  className={`${geistMono.className} text-white/50 leading-relaxed text-sm md:text-base max-w-xl mt-6 border-l border-white/20 pl-4`}
+                >
                   Events are precisely located on the map using a robust
                   geocoding hierarchy: prioritizing standard ISO codes (
                   <span className="text-emerald-400">cca2</span>,{" "}
@@ -628,7 +711,9 @@ export default function MethodologyPage() {
         {/* Footer CTA */}
         <section className="w-full flex flex-col justify-center snap-start bg-black border-t border-white/10 px-6 py-20 relative">
           <div className="max-w-[1600px] mx-auto w-full text-center">
-            <h2 className="font-[n27] text-4xl md:text-6xl text-white mb-8">
+            <h2
+              className={`${n27.className} text-4xl md:text-6xl text-white mb-8`}
+            >
               EXPLORE THE CODE
             </h2>
             <div className="flex justify-center gap-6">
@@ -649,7 +734,9 @@ export default function MethodologyPage() {
                   <span className="absolute -bottom-0.25 -left-0.25 w-1.5 h-1.5 border-b border-l border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:left-0 group-hover:border-[#ff9a65]/0" />
                   <span className="absolute -bottom-0.25 -right-0.25 w-1.5 h-1.5 border-b border-r border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:right-0 group-hover:border-[#ff9a65]/0" />
 
-                  <button className="relative px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm font-[n27] uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10">
+                  <button
+                    className={`relative px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm ${n27.className} uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10`}
+                  >
                     View on GitHub
                   </button>
                 </div>

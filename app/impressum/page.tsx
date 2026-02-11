@@ -5,6 +5,7 @@ import { useRef } from "react";
 import BoldCornerButton from "@/components/BoldCornerButton";
 import Noise from "@/components/Noise";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { n27, geistMono } from "@/app/fonts/fonts";
 
 export default function ImpressumPage() {
   const mainRef = useRef<HTMLElement>(null);
@@ -23,7 +24,9 @@ export default function ImpressumPage() {
         <div className="w-full max-w-[1400px] mx-auto px-6 py-20 md:py-32">
           {/* Header Section */}
           <div className="mb-24">
-            <h1 className="text-white/60 font-[n27] text-2xl md:text-4xl leading-[0.8] tracking-tighter mb-8 uppercase">
+            <h1
+              className={`text-white/60 ${n27.className} text-2xl md:text-4xl leading-[0.8] tracking-tighter mb-8 uppercase`}
+            >
               [Impressum]
             </h1>
             <div className="w-full h-px bg-white/20" />
@@ -33,10 +36,14 @@ export default function ImpressumPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
             {/* Left Column: Context */}
             <div className="md:col-span-4 space-y-8">
-              <h2 className="font-[n27] text-3xl md:text-4xl text-[#ff9a65]">
+              <h2
+                className={`${n27.className} text-3xl md:text-4xl text-[#ff9a65]`}
+              >
                 Legal Disclosure
               </h2>
-              <p className="font-light font-[geistMono] text-white/60 text-base md:text-lg leading-relaxed">
+              <p
+                className={`font-light ${geistMono.className} text-white/60 text-base md:text-lg leading-relaxed`}
+              >
                 Information according to § 5 TMG. This website is a project
                 demonstration and is not a commercially registered entity.
               </p>
@@ -54,21 +61,27 @@ export default function ImpressumPage() {
             <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
               {/* Operator */}
               <div className="bg-black p-8 md:p-12 space-y-2 group hover:bg-[#0a0a0a] transition-colors">
-                <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest block mb-4">
+                <span
+                  className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest block mb-4`}
+                >
                   Project
                 </span>
-                <p className="font-[n27] text-2xl">Open Data Analysis</p>
-                <p className="font-[geistMono] text-white/50 text-sm">
+                <p className={`${n27.className} text-2xl`}>
+                  Open Data Analysis
+                </p>
+                <p className={`${geistMono.className} text-white/50 text-sm`}>
                   Student Initiative
                 </p>
               </div>
 
               {/* Director */}
               <div className="bg-black p-8 md:p-12 space-y-2 group hover:bg-[#0a0a0a] transition-colors">
-                <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest block mb-4">
+                <span
+                  className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest block mb-4`}
+                >
                   Developed By
                 </span>
-                <p className="font-[n27] text-lg leading-relaxed">
+                <p className={`${n27.className} text-lg leading-relaxed`}>
                   Kevin Forter
                   <br />
                   Luca Bachmann
@@ -79,21 +92,25 @@ export default function ImpressumPage() {
 
               {/* Contact */}
               <div className="bg-black p-8 md:p-12 space-y-2 group hover:bg-[#0a0a0a] transition-colors">
-                <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest block mb-4">
+                <span
+                  className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest block mb-4`}
+                >
                   Contact
                 </span>
-                <p className="font-[n27] text-xl">@technikum-wien.at</p>
-                <p className="font-[geistMono] text-white/50 text-sm">
+                <p className={`${n27.className} text-xl`}>@technikum-wien.at</p>
+                <p className={`${geistMono.className} text-white/50 text-sm`}>
                   Academic Inquiries Only
                 </p>
               </div>
 
               {/* Address */}
               <div className="bg-black p-8 md:p-12 space-y-2 group hover:bg-[#0a0a0a] transition-colors">
-                <span className="text-[#ff9a65] font-[geistMono] text-xs uppercase tracking-widest block mb-4">
+                <span
+                  className={`text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest block mb-4`}
+                >
                   Location
                 </span>
-                <p className="font-[n27] text-xl leading-relaxed">
+                <p className={`${n27.className} text-xl leading-relaxed`}>
                   Vienna
                   <br />
                   Austria

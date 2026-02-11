@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { n27 } from "@/app/fonts/fonts";
 
 interface BoldCornerButtonProps {
   onClick?: () => void;
@@ -6,7 +7,11 @@ interface BoldCornerButtonProps {
   className?: string;
 }
 
-export const BoldCornerButton: React.FC<BoldCornerButtonProps> = ({ onClick, children, className = '' }) => {
+export const BoldCornerButton: React.FC<BoldCornerButtonProps> = ({
+  onClick,
+  children,
+  className = "",
+}) => {
   return (
     <div className={`group relative inline-flex ${className}`}>
       {/* Bold Corners on Wrapper - Animate Position instead of Padding */}
@@ -17,7 +22,7 @@ export const BoldCornerButton: React.FC<BoldCornerButtonProps> = ({ onClick, chi
 
       <button
         onClick={onClick}
-        className="relative px-4 py-2 border border-white/30 text-white text-sm font-[n27] uppercase tracking-[0.15em] hover:bg-[rgba(255,154,101,0.1)] hover:border-[#ff9a65] hover:text-[#ff9a65] transition-colors cursor-pointer z-10"
+        className={`relative px-4 py-2 border border-white/30 text-white text-sm ${n27.className} uppercase tracking-[0.15em] hover:bg-[rgba(255,154,101,0.1)] hover:border-[#ff9a65] hover:text-[#ff9a65] transition-colors cursor-pointer z-10`}
       >
         {children}
       </button>
