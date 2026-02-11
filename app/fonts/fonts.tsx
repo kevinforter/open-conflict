@@ -35,3 +35,9 @@ export const n27 = localFont({
   variable: "--font-n27",
   weight: "400",
 });
+
+export const rx100 = localFont({
+  src: "./RX100-Regular.woff2",
+  variable: "--font-rx100",
+  weight: "100 400 700 900",
+});
