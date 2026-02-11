@@ -5,6 +5,7 @@ import { useRef } from "react";
 import BoldCornerButton from "@/components/BoldCornerButton";
 import Noise from "@/components/Noise";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import CollapsibleDescription from "./_components/CollapsibleDescription";
 
 export default function SourcesPage() {
   const mainRef = useRef<HTMLElement>(null);
@@ -82,18 +83,21 @@ export default function SourcesPage() {
                   <h3 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-[n27] text-white font-light">
                     Uppsala Conflict Data Program
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    The UCDP is the world’s main provider of data on organized
-                    violence and the oldest ongoing data collection project for
-                    civil war, with a history of almost 40 years. Its definition
-                    of armed conflict has become the global standard of how
-                    conflicts are systematically defined and studied.
-                  </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    Data is collected continuously and updated annually,
-                    covering state-based armed conflict, non-state conflict, and
-                    one-sided violence.
-                  </p>
+                  <CollapsibleDescription>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
+                      The UCDP is the world’s main provider of data on organized
+                      violence and the oldest ongoing data collection project
+                      for civil war, with a history of almost 40 years. Its
+                      definition of armed conflict has become the global
+                      standard of how conflicts are systematically defined and
+                      studied.
+                    </p>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl mt-4">
+                      Data is collected continuously and updated annually,
+                      covering state-based armed conflict, non-state conflict,
+                      and one-sided violence.
+                    </p>
+                  </CollapsibleDescription>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
@@ -188,19 +192,21 @@ export default function SourcesPage() {
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-[n27] text-white font-light">
                     Armed Conflict Location & Event Data
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    ACLED is a disaggregated data collection, analysis, and
-                    crisis mapping project. It collects information on the
-                    dates, actors, locations, fatalities, and types of all
-                    reported political violence and protest events around the
-                    world.
-                  </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    The project focuses on granular, event-level data, allowing
-                    for deeper analysis of conflict dynamics, pattern
-                    recognition, and trend forecasting than aggregated
-                    statistics allow.
-                  </p>
+                  <CollapsibleDescription>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
+                      ACLED is a disaggregated data collection, analysis, and
+                      crisis mapping project. It collects information on the
+                      dates, actors, locations, fatalities, and types of all
+                      reported political violence and protest events around the
+                      world.
+                    </p>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl mt-4">
+                      The project focuses on granular, event-level data,
+                      allowing for deeper analysis of conflict dynamics, pattern
+                      recognition, and trend forecasting than aggregated
+                      statistics allow.
+                    </p>
+                  </CollapsibleDescription>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
@@ -295,19 +301,21 @@ export default function SourcesPage() {
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-[n27] text-white font-light">
                     Global Security Incident Tracking
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    The AWSD is the authoritative global source for data on
-                    major security incidents affecting aid workers. It records
-                    deliberate acts of violence, including killings,
-                    kidnappings, and serious injuries, providing a critical
-                    evidence base for the humanitarian community.
-                  </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    By tracking these incidents, AWSD enables organizations to
-                    analyze the evolving security landscape, identify trends in
-                    violence, and develop better strategies to protect aid
-                    workers in conflict zones.
-                  </p>
+                  <CollapsibleDescription>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
+                      The AWSD is the authoritative global source for data on
+                      major security incidents affecting aid workers. It records
+                      deliberate acts of violence, including killings,
+                      kidnappings, and serious injuries, providing a critical
+                      evidence base for the humanitarian community.
+                    </p>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl mt-4">
+                      By tracking these incidents, AWSD enables organizations to
+                      analyze the evolving security landscape, identify trends
+                      in violence, and develop better strategies to protect aid
+                      workers in conflict zones.
+                    </p>
+                  </CollapsibleDescription>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
@@ -404,18 +412,20 @@ export default function SourcesPage() {
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-[n27] text-white font-light">
                     Rest Countries API
                   </h3>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    Rest Countries provides a comprehensive JSON API for
-                    currency, language, calling code, and capital city data for
-                    all countries. We use this as a foundational reference layer
-                    to enrich conflict data with standardized geopolitical
-                    metadata.
-                  </p>
-                  <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
-                    By integrating this static reference data, we ensure
-                    consistent normalization of country names, codes, and
-                    regional classifications across all incoming data streams.
-                  </p>
+                  <CollapsibleDescription>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl">
+                      Rest Countries provides a comprehensive JSON API for
+                      currency, language, calling code, and capital city data
+                      for all countries. We use this as a foundational reference
+                      layer to enrich conflict data with standardized
+                      geopolitical metadata.
+                    </p>
+                    <p className="font-[geistMono] text-white/60 leading-relaxed text-sm md:text-base lg:text-lg max-w-4xl mt-4">
+                      By integrating this static reference data, we ensure
+                      consistent normalization of country names, codes, and
+                      regional classifications across all incoming data streams.
+                    </p>
+                  </CollapsibleDescription>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
