@@ -14,7 +14,7 @@
     <linearGradient
        id="swatch9">
       <stop
-         style="stop-color:#ff6201;stop-opacity:1;"
+         style="stop-color:#ff9a65;stop-opacity:1;"
          offset="0"
          id="stop9" />
     </linearGradient>
@@ -108,36 +108,36 @@
        fill="#000000"
        stroke="#000000"
        id="path1"
-       style="fill:#ff6200;fill-opacity:1;stroke-width:0.839506" />
+       style="fill:#ff9a65;fill-opacity:1;stroke-width:0.839506" />
     <path
        d="M 73.828407,25.912866 C 71.225938,23.310397 68.203716,21.295582 64.845691,19.868422 L 79.956803,34.979533 C 78.445691,31.537558 76.430876,28.515335 73.828407,25.912866 Z"
        fill="#000000"
        stroke="#000000"
        id="path2"
-       style="fill:#ff6200;fill-opacity:1;stroke-width:0.839506" />
+       style="fill:#ff9a65;fill-opacity:1;stroke-width:0.839506" />
     <path
        d="m 33.364378,66.293113 c 2.602469,2.602469 5.624691,4.617283 8.982716,6.044444 L 27.235983,57.226446 c 1.511111,3.441975 3.525926,6.464197 6.128395,9.066667 z"
        fill="#000000"
        stroke="#000000"
        id="path3"
-       style="fill:#ff6200;fill-opacity:1;stroke-width:0.839506" />
+       style="fill:#ff9a65;fill-opacity:1;stroke-width:0.839506" />
     <path
        d="M 70.470382,69.147517 30.509889,29.187024 c -0.419753,0.587655 -0.923457,1.259259 -1.34321,1.930864 l 39.288889,39.288889 c 0.755555,-0.335803 1.42716,-0.755556 2.014814,-1.25926 z"
        fill="#000000"
        stroke="#000000"
        id="path4"
-       style="fill:#ff6200;fill-opacity:1;stroke-width:0.839506" />
+       style="fill:#ff9a65;fill-opacity:1;stroke-width:0.839506" />
     <path
        d="m 59.640921,74.016569 -34,-33.999999 c -0.167901,0.923457 -0.335802,1.846913 -0.503703,2.77037 L 56.87055,74.520273 c 0.923457,-0.08395 1.846914,-0.251852 2.770371,-0.503704 z"
        fill="#000000"
        stroke="#000000"
        id="path5"
-       style="fill:#ff6200;fill-opacity:1;stroke-width:0.839506" />
+       style="fill:#ff9a65;fill-opacity:1;stroke-width:0.839506" />
     <path
        d="M 77.941987,61.004392 38.653099,21.715503 c -0.671605,0.419753 -1.34321,0.839507 -1.930864,1.34321 l 39.960493,39.960493 c 0.419753,-0.671605 0.839506,-1.343209 1.259259,-2.014814 z"
        fill="#000000"
        stroke="#000000"
        id="path6"
-       style="fill:#ff6200;fill-opacity:1;stroke-width:0.839506" />
+       style="fill:#ff9a65;fill-opacity:1;stroke-width:0.839506" />
   </g>
 </svg>

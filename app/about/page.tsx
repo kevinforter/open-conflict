@@ -24,7 +24,7 @@ export default function AboutPage() {
         className="flex-1 overflow-y-auto relative z-10 custom-scrollbar snap-y snap-mandatory scroll-smooth"
       >
         {/* Intro Section */}
-        <section className="w-full min-h-screen flex flex-col pt-40 pb-20 snap-start px-6 md:px-16 max-w-[1600px] mx-auto relative">
+        <section className="w-full min-h-screen flex flex-col pt-28 md:pt-40 pb-20 snap-start px-4 md:px-16 max-w-[1600px] mx-auto relative">
           <div className="w-full">
             <h1
               className={`text-white/60 ${n27.className} text-2xl md:text-4xl leading-[0.8] tracking-tighter mb-8 uppercase`}
@@ -33,10 +33,10 @@ export default function AboutPage() {
             </h1>
             <div className="w-full h-px bg-white/20 mb-12" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-8">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
+              <div className="xl:col-span-8">
                 <h2
-                  className={`${n27.className} text-5xl md:text-8xl leading-[0.85] tracking-tighter mb-8`}
+                  className={`${n27.className} text-4xl sm:text-5xl lg:text-6xl xl:text-8xl leading-[0.85] tracking-tighter mb-8`}
                 >
                   VISUALIZING
                   <br />
@@ -50,9 +50,9 @@ export default function AboutPage() {
                   humanitarian awareness.
                 </p>
               </div>
-              <div className="lg:col-span-4 flex justify-start lg:justify-end">
+              <div className="xl:col-span-4 flex justify-start xl:justify-end mt-8 xl:mt-0">
                 <Link href="/">
-                  <BoldCornerButton className="h-12 text-sm">
+                  <BoldCornerButton className="h-12 text-sm w-full md:w-auto">
                     Return Home
                   </BoldCornerButton>
                 </Link>
@@ -72,23 +72,23 @@ export default function AboutPage() {
 
         {/* General Idea Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-5">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-16 lg:px-20 py-12 md:py-20 relative z-10">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-24 items-center">
+              <div className="xl:col-span-5">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
                 >
                   The Vision
                 </span>
                 <h2
-                  className={`${n27.className} text-4xl md:text-6xl text-white mb-6`}
+                  className={`${n27.className} text-3xl sm:text-4xl md:text-6xl text-white mb-6`}
                 >
                   GENERAL IDEA &<br />
                   GOAL OF THE PROJECT
                 </h2>
               </div>
 
-              <div className="lg:col-span-7 space-y-8">
+              <div className="xl:col-span-7 space-y-8">
                 <p
                   className={`${geistMono.className} text-white/70 leading-relaxed text-base md:text-lg`}
                 >
@@ -125,16 +125,16 @@ export default function AboutPage() {
 
         {/* Classifying Armed Conflicts Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-5">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-16 lg:px-20 py-12 md:py-20 relative z-10">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-24 items-center">
+              <div className="xl:col-span-5">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
                 >
                   CLASSIFYING ARMED CONFLICTS
                 </span>
                 <h2
-                  className={`${n27.className} text-4xl md:text-6xl text-white mb-6`}
+                  className={`${n27.className} text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-6`}
                 >
                   WHAT IS AN
                   <br />
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 </h2>
               </div>
 
-              <div className="lg:col-span-7 space-y-8">
+              <div className="xl:col-span-7 space-y-8">
                 <blockquote className="border-l-2 border-[#ff9a65] pl-6 py-2">
                   <p
                     className={`${geistMono.className} text-white/70 leading-relaxed text-base md:text-lg italic`}
@@ -181,16 +181,16 @@ export default function AboutPage() {
 
         {/* Temporal Scope Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-5">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-16 lg:px-20 py-12 md:py-20 relative z-10">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-24 items-center">
+              <div className="xl:col-span-5">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
                 >
                   TEMPORAL SCOPE
                 </span>
                 <h2
-                  className={`${n27.className} text-4xl md:text-6xl text-white mb-6`}
+                  className={`${n27.className} text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-6`}
                 >
                   WHAT TIME PERIOD
                   <br />
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 </h2>
               </div>
 
-              <div className="lg:col-span-7 space-y-8">
+              <div className="xl:col-span-7 space-y-8">
                 <div className="flex flex-col gap-6">
                   <p
                     className={`${geistMono.className} text-white/70 leading-relaxed text-base md:text-lg`}
@@ -259,9 +259,9 @@ export default function AboutPage() {
 
         {/* The Solution Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-              <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-between h-full space-y-12">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-16 lg:px-20 py-12 md:py-20">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-24">
+              <div className="xl:col-span-5 order-2 xl:order-1 flex flex-col justify-between h-full space-y-12">
                 <div className="space-y-6">
                   <p
                     className={`${geistMono.className} text-white/60 leading-relaxed text-lg`}
@@ -298,14 +298,14 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 order-1 lg:order-2 text-right">
+              <div className="xl:col-span-7 order-1 xl:order-2 text-right">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
                 >
                   The Solution
                 </span>
                 <h2
-                  className={`${n27.className} text-5xl md:text-8xl text-white mb-6 leading-[0.85]`}
+                  className={`${n27.className} text-4xl sm:text-5xl lg:text-6xl xl:text-8xl text-white mb-6 leading-[0.85]`}
                 >
                   INTELLIGENT
                   <br />
@@ -318,16 +318,16 @@ export default function AboutPage() {
 
         {/* Benefits Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-              <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-16 lg:px-20 py-16 md:py-24">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-24 items-center">
+              <div className="xl:col-span-5 flex flex-col justify-center space-y-4 md:space-y-8">
                 <span
-                  className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
+                  className={`block text-[#ff9a65] ${geistMono.className} text-[10px] md:text-xs uppercase tracking-widest mb-1`}
                 >
                   The Impact
                 </span>
                 <h2
-                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
+                  className={`${n27.className} text-3xl sm:text-4xl lg:text-5xl xl:text-7xl text-white mb-6 leading-none`}
                 >
                   VALUE FOR
                   <br />
@@ -336,22 +336,24 @@ export default function AboutPage() {
                 </h2>
               </div>
 
-              <div className="lg:col-span-7 flex flex-col justify-center space-y-12">
+              <div className="xl:col-span-7 flex flex-col justify-center space-y-8 md:space-y-12">
                 {/* Point 1 */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-2 md:space-y-4">
+                  <div className="flex items-center gap-3 md:gap-4">
                     <span
-                      className={`text-[#ff9a65] ${geistMono.className} text-xl`}
+                      className={`text-[#ff9a65] ${geistMono.className} text-sm md:text-lg`}
                     >
                       01
                     </span>
-                    <h3 className="font-[n27] text-2xl md:text-3xl text-white">
+                    <h3
+                      className={`${n27.className} text-lg md:text-xl lg:text-2xl text-white`}
+                    >
                       Transparency & Overview
                     </h3>
                   </div>
-                  <ul className="space-y-4 pl-10 border-l border-white/10 ml-2">
+                  <ul className="space-y-2 md:space-y-4 pl-6 md:pl-8 border-l border-white/10 ml-1.5 md:ml-2">
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       Complex event data (violence, protests, humanitarian
                       incidents) is made{" "}
@@ -361,7 +363,7 @@ export default function AboutPage() {
                       .
                     </li>
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       Users can identify{" "}
                       <strong className="text-white">spatial patterns</strong>,
@@ -373,20 +375,22 @@ export default function AboutPage() {
                 </div>
 
                 {/* Point 2 */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-2 md:space-y-4">
+                  <div className="flex items-center gap-3 md:gap-4">
                     <span
-                      className={`text-[#ff9a65] ${geistMono.className} text-xl`}
+                      className={`text-[#ff9a65] ${geistMono.className} text-sm md:text-lg`}
                     >
                       02
                     </span>
-                    <h3 className="font-[n27] text-2xl md:text-3xl text-white">
+                    <h3
+                      className={`${n27.className} text-lg md:text-xl lg:text-2xl text-white`}
+                    >
                       Bridging Research & Real-Time
                     </h3>
                   </div>
-                  <ul className="space-y-4 pl-10 border-l border-white/10 ml-2">
+                  <ul className="space-y-2 md:space-y-4 pl-6 md:pl-8 border-l border-white/10 ml-1.5 md:ml-2">
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       Academic datasets (UCDP) provide{" "}
                       <strong className="text-white">
@@ -399,7 +403,7 @@ export default function AboutPage() {
                       .
                     </li>
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       This creates a{" "}
                       <strong className="text-white">
@@ -411,20 +415,22 @@ export default function AboutPage() {
                 </div>
 
                 {/* Point 3 */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-2 md:space-y-4">
+                  <div className="flex items-center gap-3 md:gap-4">
                     <span
-                      className={`text-[#ff9a65] ${geistMono.className} text-xl`}
+                      className={`text-[#ff9a65] ${geistMono.className} text-sm md:text-lg`}
                     >
                       03
                     </span>
-                    <h3 className="font-[n27] text-2xl md:text-3xl text-white">
+                    <h3
+                      className={`${n27.className} text-lg md:text-xl lg:text-2xl text-white`}
+                    >
                       Use Cases & Application
                     </h3>
                   </div>
-                  <ul className="space-y-4 pl-10 border-l border-white/10 ml-2">
+                  <ul className="space-y-2 md:space-y-4 pl-6 md:pl-8 border-l border-white/10 ml-1.5 md:ml-2">
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       <strong className="text-white">
                         Humanitarian Operations:
@@ -433,14 +439,14 @@ export default function AboutPage() {
                       teams.
                     </li>
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       <strong className="text-white">Policy Making:</strong>{" "}
                       Data-driven decision support for regional stability and
                       resource allocation.
                     </li>
                     <li
-                      className={`${geistMono.className} text-white/60 text-lg leading-relaxed`}
+                      className={`${geistMono.className} text-white/60 text-xs md:text-base leading-relaxed`}
                     >
                       <strong className="text-white">
                         Journalism & Research:
@@ -459,11 +465,11 @@ export default function AboutPage() {
         <section className="w-full flex flex-col justify-center snap-start bg-black border-t border-white/10 px-6 py-20 relative">
           <div className="max-w-[1600px] mx-auto w-full text-center">
             <h2
-              className={`${n27.className} text-4xl md:text-6xl text-white mb-8`}
+              className={`${n27.className} text-3xl sm:text-4xl md:text-6xl text-white mb-8`}
             >
               READY TO EXPLORE?
             </h2>
-            <div className="flex justify-center gap-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 items-center">
               <Link href="/">
                 <BoldCornerButton className="h-12">
                   Return Home
@@ -478,7 +484,9 @@ export default function AboutPage() {
                   <span className="absolute -bottom-0.25 -left-0.25 w-1.5 h-1.5 border-b border-l border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:left-0 group-hover:border-[#ff9a65]/0" />
                   <span className="absolute -bottom-0.25 -right-0.25 w-1.5 h-1.5 border-b border-r border-[#ff9a65] transition-all group-hover:bottom-0 group-hover:right-0 group-hover:border-[#ff9a65]/0" />
 
-                  <button className="relative px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm font-[n27] uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10">
+                  <button
+                    className={`relative px-8 py-2 border bg-[#ff9a65]/10 border-[#ff9a65] text-white text-sm ${n27.className} uppercase tracking-[0.15em] hover:bg-[#ff9a65] transition-colors cursor-pointer z-10`}
+                  >
                     Open Dashboard
                   </button>
                 </div>
