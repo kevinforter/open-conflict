@@ -96,7 +96,7 @@ export default function MethodologyPage() {
                   className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
                 >
                   DATA
-                  <br />
+                  <br className="hidden xl:block" />
                   SILOS
                 </h2>
               </div>
@@ -179,7 +179,7 @@ export default function MethodologyPage() {
 
         {/* Tech Stack Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-32 md:py-32 lg:py-48 relative z-10">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-start">
               <div className="xl:col-span-4">
                 <span
@@ -188,10 +188,10 @@ export default function MethodologyPage() {
                   Architecture
                 </span>
                 <h2
-                  className={`${n27.className} text-4xl md:text-6xl text-white mb-6`}
+                  className={`${n27.className} text-5xl md:text-7xl text-white mb-6 leading-none`}
                 >
                   TECH
-                  <br />
+                  <br className="hidden xl:block" />
                   STACK
                 </h2>
                 <p
@@ -267,7 +267,7 @@ export default function MethodologyPage() {
           id="collect"
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-32 md:py-32 lg:py-48 relative z-10">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
               <div className="xl:col-span-5 flex flex-col justify-center space-y-8">
                 <span
@@ -315,7 +315,7 @@ export default function MethodologyPage() {
           id="normalize"
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-32 md:py-32 lg:py-48 relative z-10">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
               <div className="xl:col-span-5 flex flex-col justify-center space-y-8">
                 <span
@@ -446,7 +446,7 @@ export default function MethodologyPage() {
           id="aggregate"
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-32 md:py-32 lg:py-48 relative z-10">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
               <div className="xl:col-span-7 order-2 xl:order-1">
                 {/* Collection Visualization */}
@@ -541,7 +541,7 @@ export default function MethodologyPage() {
           id="visualize"
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
+          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-32 md:py-32 lg:py-48 relative z-10">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
               <div className="xl:col-span-5 flex flex-col justify-center space-y-8">
                 <span
