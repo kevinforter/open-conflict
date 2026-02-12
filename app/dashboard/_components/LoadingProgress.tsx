@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { geistMono } from "@/app/fonts/fonts";
 
 const LoadingProgress = () => {
   const [progress, setProgress] = useState(13);
@@ -22,7 +23,9 @@ const LoadingProgress = () => {
   return (
     <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#000112]">
       <div className="flex flex-col items-center gap-4">
-        <span className="text-[#ff9a65] font-[geistMono] text-sm tracking-widest uppercase animate-pulse">
+        <span
+          className={`text-[#ff9a65] text-sm tracking-widest uppercase animate-pulse ${geistMono.className}`}
+        >
           Initializing Globe... {Math.round(progress)}%
         </span>
         {/* Customized Progress Bar using standard HTML/CSS to avoid dependency issues */}

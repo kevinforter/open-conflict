@@ -22,6 +22,7 @@ import {
   type UCDPSource,
 } from "@/lib/db/selectCountrySources";
 import { ChevronDownIcon, CheckIcon } from "@radix-ui/react-icons";
+import { n27, geistMono } from "@/app/fonts/fonts";
 
 interface SidebarRightProps {
   visible: boolean;
@@ -360,21 +361,23 @@ export function SidebarRight({
         patternAlpha={15}
       />
       <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-2">
-        <h3 className="font-[n27] text-lg uppercase tracking-[0.1em] text-white">
+        <h3
+          className={`text-lg uppercase tracking-[0.1em] text-white ${n27.className}`}
+        >
           {countryName ?? "Details"}
         </h3>
         <div className="flex items-center gap-3 shrink-0">
           <button
             type="button"
             onClick={toggleExpanded}
-            className="cursor-pointer h-6 px-3 flex items-center text-[10px] font-[geistMono] uppercase tracking-[0.1em] text-white/70 transition hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/30 whitespace-nowrap"
+            className={`cursor-pointer h-6 px-3 flex items-center text-[10px] uppercase tracking-[0.1em] text-white/70 transition hover:text-white hover:bg-white/10 border border-white/10 hover:border-white/30 whitespace-nowrap ${geistMono.className}`}
           >
             {isExpanded ? "Less Detail" : "More Detail"}
           </button>
           <button
             type="button"
             onClick={handleClose}
-            className="cursor-pointer h-6 w-6 flex items-center justify-center p-0 text-[10px] font-[geistMono] uppercase tracking-[0.1em] text-white transition bg-white/10 hover:bg-white hover:text-black"
+            className={`cursor-pointer h-6 w-6 flex items-center justify-center p-0 text-[10px] uppercase tracking-[0.1em] text-white transition bg-white/10 hover:bg-white hover:text-black ${geistMono.className}`}
           >
             &#x2715;
           </button>
@@ -415,13 +418,19 @@ export function SidebarRight({
                 >
                   {data["conflict_index_rank"] && (
                     <div className="bg-white/5 p-4 border border-white/5 whitespace-nowrap">
-                      <h4 className="text-[#ff9a65] text-xs font-[geistMono] uppercase mb-2">
+                      <h4
+                        className={`text-[#ff9a65] text-xs uppercase mb-2 ${geistMono.className}`}
+                      >
                         Conflict Index
                       </h4>
-                      <div className="text-2xl font-[n27] flex items-baseline gap-2">
+                      <div
+                        className={`text-2xl flex items-baseline gap-2 ${n27.className}`}
+                      >
                         {data["conflict_index_rank"] || "N/A"}
                         {data["conflict_index_level"] && (
-                          <span className="text-sm font-[geistMono] text-white/40 uppercase tracking-widest truncate">
+                          <span
+                            className={`text-sm text-white/40 uppercase tracking-widest truncate ${geistMono.className}`}
+                          >
                             {String(data["conflict_index_level"])}
                           </span>
                         )}
@@ -429,10 +438,12 @@ export function SidebarRight({
                     </div>
                   )}
                   <div className="bg-white/5 p-4 border border-white/5 whitespace-nowrap">
-                    <h4 className="text-[#ff9a65] text-xs font-[geistMono] uppercase mb-2">
+                    <h4
+                      className={`text-[#ff9a65] text-xs uppercase mb-2 ${geistMono.className}`}
+                    >
                       Events
                     </h4>
-                    <div className="text-2xl font-[n27]">
+                    <div className={`text-2xl ${n27.className}`}>
                       {data["acled_events"]?.toLocaleString() || "0"}
                     </div>
                   </div>
@@ -467,10 +478,12 @@ export function SidebarRight({
                         key={key}
                         className="flex justify-between border-b border-white/5 py-0"
                       >
-                        <span className="text-xs uppercase font-[geistMono] text-white/50">
+                        <span
+                          className={`text-xs uppercase text-white/50 ${geistMono.className}`}
+                        >
                           {displayName}
                         </span>
-                        <span className="text-white font-[geistMono]">
+                        <span className={`text-white ${geistMono.className}`}>
                           {displayValue}
                         </span>
                       </div>
@@ -482,7 +495,9 @@ export function SidebarRight({
                 <div className="shrink-0 grid grid-cols-1 gap-3 mb-6">
                   {/* Events Trend */}
                   <div className="h-[100px] w-full bg-white/5 border border-white/5 relative">
-                    <h4 className="absolute top-1 left-2 text-[#ff9a65] text-[9px] font-[geistMono] uppercase pointer-events-none">
+                    <h4
+                      className={`absolute top-1 left-2 text-[#ff9a65] text-[9px] uppercase pointer-events-none ${geistMono.className}`}
+                    >
                       Events Trend
                     </h4>
                     <div className="w-full h-full pt-4 pb-1 px-1">
@@ -498,7 +513,9 @@ export function SidebarRight({
 
                   {/* Population Exposure */}
                   <div className="h-[100px] w-full bg-white/5 border border-white/5 relative">
-                    <h4 className="absolute top-1 left-2 text-[#ff9a65] text-[9px] font-[geistMono] uppercase pointer-events-none">
+                    <h4
+                      className={`absolute top-1 left-2 text-[#ff9a65] text-[9px] uppercase pointer-events-none ${geistMono.className}`}
+                    >
                       Pop. Exposure
                     </h4>
                     <div className="w-full h-full pt-4 pb-1 px-1">
@@ -514,7 +531,9 @@ export function SidebarRight({
 
                   {/* Fatalities */}
                   <div className="h-[100px] w-full bg-white/5 border border-white/5 relative">
-                    <h4 className="absolute top-1 left-2 text-[#ef4444] text-[9px] font-[geistMono] uppercase pointer-events-none">
+                    <h4
+                      className={`absolute top-1 left-2 text-[#ef4444] text-[9px] uppercase pointer-events-none ${geistMono.className}`}
+                    >
                       Fatalities
                     </h4>
                     <div className="w-full h-full pt-4 pb-1 px-1">
@@ -566,12 +585,14 @@ export function SidebarRight({
                           >
                             <div className="flex justify-between items-start gap-2 mb-1">
                               <span
-                                className="text-[10px] text-white/40 font-[geistMono] uppercase truncate max-w-[100px]"
+                                className={`text-[10px] text-white/40 uppercase truncate max-w-[100px] ${geistMono.className}`}
                                 title={source.source_office || "Unknown"}
                               >
                                 {source.source_office || "Unknown Source"}
                               </span>
-                              <span className="text-[10px] text-white/30 font-[geistMono] whitespace-nowrap">
+                              <span
+                                className={`text-[10px] text-white/30 whitespace-nowrap ${geistMono.className}`}
+                              >
                                 {source.source_date}
                               </span>
                             </div>
@@ -585,7 +606,9 @@ export function SidebarRight({
                             {source.fatalities > 0 && (
                               <div className="mt-1 flex items-center gap-1">
                                 <span className="w-1.5 h-1.5 rounded-full bg-red-500/70 block"></span>
-                                <span className="text-[9px] text-red-400 font-[geistMono]">
+                                <span
+                                  className={`text-[9px] text-red-400 ${geistMono.className}`}
+                                >
                                   {source.fatalities} fatalities
                                 </span>
                               </div>
@@ -629,13 +652,19 @@ export function SidebarRight({
                         <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 border-b border-r border-white/10 z-10" />
 
                         <div className="bg-[rgba(20,20,20,0.6)] p-3 border border-white/10 shadow-xl min-w-[140px]">
-                          <h4 className="text-[#ff9a65] text-[10px] font-[geistMono] uppercase mb-1">
+                          <h4
+                            className={`text-[#ff9a65] text-[10px] uppercase mb-1 ${geistMono.className}`}
+                          >
                             Conflict Index
                           </h4>
-                          <div className="text-xl font-[n27] flex items-baseline gap-2">
+                          <div
+                            className={`text-xl flex items-baseline gap-2 ${n27.className}`}
+                          >
                             {data["conflict_index_rank"] || "N/A"}
                             {data["conflict_index_level"] && (
-                              <span className="text-[10px] font-[geistMono] text-white/40 uppercase tracking-widest truncate">
+                              <span
+                                className={`text-[10px] text-white/40 uppercase tracking-widest truncate ${geistMono.className}`}
+                              >
                                 {String(data["conflict_index_level"])}
                               </span>
                             )}
@@ -650,10 +679,12 @@ export function SidebarRight({
                       <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 border-b border-r border-white/10 z-10" />
 
                       <div className="bg-[rgba(20,20,20,0.6)] p-3 border border-white/10 shadow-xl min-w-[140px]">
-                        <h4 className="text-[#ff9a65] text-[10px] font-[geistMono] uppercase mb-1">
+                        <h4
+                          className={`text-[#ff9a65] text-[10px] uppercase mb-1 ${geistMono.className}`}
+                        >
                           Total Events
                         </h4>
-                        <div className="text-xl font-[n27]">
+                        <div className={`text-xl ${n27.className}`}>
                           {data["acled_events"]?.toLocaleString() || "0"}
                         </div>
                       </div>
@@ -670,7 +701,9 @@ export function SidebarRight({
                         onClick={() => setIsFiltersOpen(!isFiltersOpen)}
                         className="flex items-center justify-between w-full text-left mb-2 group"
                       >
-                        <h4 className="text-[#ff9a65] text-xs font-[geistMono] uppercase group-hover:text-white transition-colors">
+                        <h4
+                          className={`text-[#ff9a65] text-xs uppercase group-hover:text-white transition-colors ${geistMono.className}`}
+                        >
                           Filters{" "}
                           {!isFiltersOpen && (
                             <span className="text-white/40 ml-2">
@@ -693,7 +726,9 @@ export function SidebarRight({
                         <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
                           {/* Source Toggles */}
                           <div>
-                            <div className="text-[10px] uppercase text-white/40 mb-2 font-[geistMono]">
+                            <div
+                              className={`text-[10px] uppercase text-white/40 mb-2 ${geistMono.className}`}
+                            >
                               Data Sources
                             </div>
                             <div className="flex gap-2">
@@ -717,7 +752,7 @@ export function SidebarRight({
                                   <button
                                     key={source}
                                     onClick={() => toggleSource(source)}
-                                    className={`px-3 py-1.5 text-[10px] font-[geistMono] border rounded-xs transition-all ${
+                                    className={`px-3 py-1.5 text-[10px] border rounded-xs transition-all ${geistMono.className} ${
                                       isActive
                                         ? activeColor
                                         : "bg-transparent text-white/30 border-white/10 hover:border-white/20"
@@ -733,7 +768,9 @@ export function SidebarRight({
                           {/* Event Types */}
                           <div>
                             <div className="flex items-center justify-between mb-2">
-                              <div className="text-[10px] uppercase text-white/40 font-[geistMono]">
+                              <div
+                                className={`text-[10px] uppercase text-white/40 ${geistMono.className}`}
+                              >
                                 Event Types
                               </div>
                               <div className="flex gap-2">
@@ -776,7 +813,7 @@ export function SidebarRight({
                                     )}
                                   </div>
                                   <span
-                                    className={`text-[10px] font-[geistMono] truncate transition-colors ${
+                                    className={`text-[10px] truncate transition-colors ${geistMono.className} ${
                                       selectedEventTypes.has(type)
                                         ? "text-white"
                                         : "text-white/50 group-hover:text-white/70"
@@ -828,7 +865,9 @@ export function SidebarRight({
                     {/* Risk Profile (Spider Chart) - 1 Col (conditional) */}
                     {hasRiskProfile ? (
                       <div className="relative w-full h-full bg-white/5 border border-white/10 rounded-sm">
-                        <h4 className="absolute top-2 left-3 z-10 text-[#ff9a65] text-[10px] font-[geistMono] uppercase pointer-events-none">
+                        <h4
+                          className={`absolute top-2 left-3 z-10 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
+                        >
                           Risk Profile
                         </h4>
                         <div className="w-full h-full pt-4 pb-3">
@@ -846,7 +885,9 @@ export function SidebarRight({
                     <div
                       className={`${hasRiskProfile ? "col-span-2" : "col-span-3"} relative w-full h-full bg-white/5 border border-white/10 rounded-sm overflow-hidden`}
                     >
-                      <h4 className="absolute top-2 left-3 z-10 text-[#ff9a65] text-[10px] font-[geistMono] uppercase pointer-events-none">
+                      <h4
+                        className={`absolute top-2 left-3 z-10 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
+                      >
                         Incident Timeline
                       </h4>
                       <div className="w-full h-full pt-6 pb-2 pl-2 pr-0">
@@ -860,7 +901,9 @@ export function SidebarRight({
 
                     {/* Combined Donut - 1 Col */}
                     <div className="relative w-full h-full bg-white/5 border border-white/10 rounded-sm flex flex-col">
-                      <h4 className="absolute top-2 left-2 text-[#ff9a65] text-[10px] font-[geistMono] uppercase pointer-events-none">
+                      <h4
+                        className={`absolute top-2 left-2 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
+                      >
                         Event Types
                       </h4>
                       <div className="flex-1 min-h-0 flex items-center justify-center p-2">

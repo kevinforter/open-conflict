@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback, Suspense } from "react";
 import Link from "next/link";
+import { majorMono, jetbrainsMono } from "@/app/fonts/fonts";
 import { BoldCornerButton } from "@/components/BoldCornerButton";
 import dynamic from "next/dynamic";
 import { useSearchParams, useRouter, usePathname } from "next/navigation"; // Import routing hooks
@@ -202,18 +203,26 @@ function DashboardContent() {
       <header className="absolute top-0 left-0 z-10 w-full px-8 py-4 pointer-events-none">
         <div className="relative z-20 flex items-center gap-4 pointer-events-auto w-full justify-center md:justify-start">
           <Link href="/">
-            <span className="text-sm text-white/60 font-[majorMono] font-bold">
+            <span
+              className={`text-sm text-white/60 font-bold ${majorMono.className}`}
+            >
               open
             </span>
-            <span className="text-sm text-[#ff9a65] font-[majorMono] font-bold">
+            <span
+              className={`text-sm text-[#ff9a65] font-bold ${majorMono.className}`}
+            >
               {" "}
               []{" "}
             </span>
-            <span className="text-sm text-white/60 font-[majorMono] font-bold">
+            <span
+              className={`text-sm text-white/60 font-bold ${majorMono.className}`}
+            >
               conflict
             </span>
           </Link>
-          <span className="text-sm text-white/60 font-[jetbrainsMono] hidden md:inline">
+          <span
+            className={`text-sm text-white/60 hidden md:inline ${jetbrainsMono.className}`}
+          >
             / GLOBE_VIEW / {selectedYear}{" "}
             {selectedCountryName && `/ ${selectedCountryName.toUpperCase()}`}
           </span>
@@ -268,7 +277,9 @@ function DashboardContent() {
             : "opacity-100 pointer-events-auto"
         }`}
       >
-        <h1 className="text-3xl font-bold text-white mb-6 tracking-wide font-[majorMono]">
+        <h1
+          className={`text-3xl font-bold text-white mb-6 tracking-wide ${majorMono.className}`}
+        >
           open conflict
         </h1>
         <p className="text-white/80 leading-relaxed whitespace-normal text-xs md:text-sm font-light">
@@ -302,7 +313,9 @@ function DashboardContent() {
 
           {/* Center Footer Links */}
           <div className="pointer-events-auto hidden md:block">
-            <span className="text-[12px] tracking-[0.15em] text-white/60 font-[jetbrainsMono]">
+            <span
+              className={`text-[12px] tracking-[0.15em] text-white/60 ${jetbrainsMono.className}`}
+            >
               <Link
                 href="/impressum"
                 className="hover:text-white transition-colors"
@@ -337,7 +350,7 @@ function DashboardContent() {
               duration={0.9}
               speed={0.6}
               scrambleChars=".:-"
-              className="font-[jetbrainsMono]"
+              className={jetbrainsMono.className}
               style={{
                 color: "white",
                 fontSize: "12px",

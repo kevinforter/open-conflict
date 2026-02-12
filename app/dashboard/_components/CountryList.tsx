@@ -1,3 +1,4 @@
+import { jetbrainsMono } from "@/app/fonts/fonts";
 interface CountryListProps {
   countries?: { country: string; code: string; rank?: number }[];
   isLoading: boolean;
@@ -27,7 +28,7 @@ export function CountryList({
       }}
     >
       <h3
-        className="font-[jetbrainsMono] font-light"
+        className={`font-light ${jetbrainsMono.className}`}
         style={{
           margin: "0 0 12px 0",
           color: "#ff9a65",
@@ -48,7 +49,7 @@ export function CountryList({
       >
         {isLoading ? (
           <p
-            className="font-[jetbrainsMono] font-light"
+            className={`font-light ${jetbrainsMono.className}`}
             style={{
               color: "rgba(255, 255, 255, 0.6)",
               fontSize: "14px",
@@ -67,7 +68,7 @@ export function CountryList({
           >
             {countries.map((item, index: number) => (
               <li
-                className="font-[jetbrainsMono] font-light"
+                className={`font-light ${jetbrainsMono.className}`}
                 key={item.code}
                 onClick={() => onSelectCountry(item.code)}
                 style={{
@@ -126,7 +127,7 @@ export function CountryList({
           </ul>
         ) : (
           <p
-            className="font-[jetbrainsMono] font-light"
+            className={`font-light ${jetbrainsMono.className}`}
             style={{
               color: "rgba(255, 255, 255, 0.6)",
               fontSize: "14px",

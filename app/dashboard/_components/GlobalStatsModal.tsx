@@ -7,6 +7,7 @@ import {
   type GlobalMonthStats,
 } from "@/lib/db/selectGlobalStatsMonth";
 import TimelineChart from "./charts/TimelineChart";
+import { n27, geistMono } from "@/app/fonts/fonts";
 
 interface GlobalStatsModalProps {
   visible: boolean;
@@ -73,27 +74,31 @@ export function GlobalStatsModal({
 
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <h3 className="font-[n27] text-3xl uppercase tracking-[0.1em] text-white">
+          <h3
+            className={`text-3xl uppercase tracking-[0.1em] text-white ${n27.className}`}
+          >
             Global Statistics [{year}]
           </h3>
           <button
             type="button"
             onClick={onClose}
-            className="cursor-pointer h-8 w-8 flex items-center justify-center p-0 text-xs font-[geistMono] uppercase tracking-[0.1em] text-white transition bg-white/10 hover:bg-white hover:text-black border border-white/10"
+            className={`cursor-pointer h-8 w-8 flex items-center justify-center p-0 text-xs uppercase tracking-[0.1em] text-white transition bg-white/10 hover:bg-white hover:text-black border border-white/10 ${geistMono.className}`}
           >
             &#x2715;
           </button>
         </div>
 
         {/* Body */}
-        <div className="font-[geistMono] text-white/80">
+        <div className={`text-white/80 ${geistMono.className}`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Active Conflicts */}
             <div className="bg-white/5 p-6 border border-white/5 relative overflow-hidden">
-              <h4 className="text-[#ff9a65] text-sm font-[geistMono] uppercase mb-3">
+              <h4
+                className={`text-[#ff9a65] text-sm uppercase mb-3 ${geistMono.className}`}
+              >
                 Total Active Conflicts
               </h4>
-              <div className="text-4xl font-[n27] text-white">
+              <div className={`text-4xl text-white ${n27.className}`}>
                 {stats?.ucdp_active_conflicts?.toLocaleString() ?? "-"}
               </div>
               {stats?.is_forecast && (
@@ -101,17 +106,21 @@ export function GlobalStatsModal({
                   PREDICTED
                 </div>
               )}
-              <div className="text-xs text-white/40 mt-2 font-[geistMono]">
+              <div
+                className={`text-xs text-white/40 mt-2 ${geistMono.className}`}
+              >
                 UCDP Recorded
               </div>
             </div>
 
             {/* Fatalities / Deaths */}
             <div className="bg-white/5 p-6 border border-white/5 relative overflow-hidden">
-              <h4 className="text-[#ff9a65] text-sm font-[geistMono] uppercase mb-3 text-red-400">
+              <h4
+                className={`text-[#ff9a65] text-sm uppercase mb-3 text-red-400 ${geistMono.className}`}
+              >
                 Conflict Fatalities
               </h4>
-              <div className="text-4xl font-[n27] text-white">
+              <div className={`text-4xl text-white ${n27.className}`}>
                 {stats?.ucdp_deaths?.toLocaleString() ?? "-"}
               </div>
               {stats?.is_forecast && (
@@ -119,43 +128,55 @@ export function GlobalStatsModal({
                   PREDICTED
                 </div>
               )}
-              <div className="text-xs text-white/40 mt-2 font-[geistMono]">
+              <div
+                className={`text-xs text-white/40 mt-2 ${geistMono.className}`}
+              >
                 UCDP Best Estimate
               </div>
             </div>
 
             {/* NGO Incidents */}
             <div className="bg-white/5 p-6 border border-white/5">
-              <h4 className="text-[#ff9a65] text-sm font-[geistMono] uppercase mb-3">
+              <h4
+                className={`text-[#ff9a65] text-sm uppercase mb-3 ${geistMono.className}`}
+              >
                 NGO Incidents
               </h4>
-              <div className="text-4xl font-[n27] text-white">
+              <div className={`text-4xl text-white ${n27.className}`}>
                 {stats?.ngo_incidents?.toLocaleString() ?? "-"}
               </div>
-              <div className="text-xs text-white/40 mt-2 font-[geistMono]">
+              <div
+                className={`text-xs text-white/40 mt-2 ${geistMono.className}`}
+              >
                 Reported events
               </div>
             </div>
 
             {/* ACLED Events */}
             <div className="bg-white/5 p-6 border border-white/5">
-              <h4 className="text-[#ff9a65] text-sm font-[geistMono] uppercase mb-3">
+              <h4
+                className={`text-[#ff9a65] text-sm uppercase mb-3 ${geistMono.className}`}
+              >
                 Total ACLED Events
               </h4>
-              <div className="text-4xl font-[n27] text-white">
+              <div className={`text-4xl text-white ${n27.className}`}>
                 {stats?.acled_events?.toLocaleString() ?? "-"}
               </div>
-              <div className="text-xs text-white/40 mt-2 font-[geistMono]">
+              <div
+                className={`text-xs text-white/40 mt-2 ${geistMono.className}`}
+              >
                 Verified incidents
               </div>
             </div>
 
             {/* Population Exposure */}
             <div className="bg-white/5 p-6 border border-white/5 md:col-span-2">
-              <h4 className="text-[#ff9a65] text-sm font-[geistMono] uppercase mb-3">
+              <h4
+                className={`text-[#ff9a65] text-sm uppercase mb-3 ${geistMono.className}`}
+              >
                 Population Exposed
               </h4>
-              <div className="text-4xl font-[n27] text-white">
+              <div className={`text-4xl text-white ${n27.className}`}>
                 {stats?.acled_population_exposure
                   ? stats.acled_population_exposure > 1000000
                     ? (stats.acled_population_exposure / 1000000).toFixed(1) +
@@ -163,7 +184,9 @@ export function GlobalStatsModal({
                     : stats.acled_population_exposure.toLocaleString()
                   : "-"}
               </div>
-              <div className="text-xs text-white/40 mt-2 font-[geistMono]">
+              <div
+                className={`text-xs text-white/40 mt-2 ${geistMono.className}`}
+              >
                 Direct proximity to conflict events
               </div>
             </div>
@@ -171,7 +194,9 @@ export function GlobalStatsModal({
 
           {monthlyStats.length > 0 && (
             <div className="w-full bg-white/5 p-6 border border-white/5">
-              <h4 className="text-[#ff9a65] text-sm font-[geistMono] uppercase mb-4">
+              <h4
+                className={`text-[#ff9a65] text-sm uppercase mb-4 ${geistMono.className}`}
+              >
                 Global Event Trend
               </h4>
               <div className="w-full h-[200px]">

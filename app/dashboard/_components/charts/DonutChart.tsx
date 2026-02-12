@@ -197,7 +197,7 @@ const DonutChart: React.FC<DonutChartProps> = ({
         .style("text-anchor", (l) => (l.isRight ? "start" : "end"))
         .style("font-size", "9px")
         .style("fill", "rgba(255,255,255,0.7)")
-        .style("font-family", "monospace")
+        .style("font-family", geistMono.style.fontFamily)
         .each(function (l) {
           const el = d3.select(this);
           const d = l.d;

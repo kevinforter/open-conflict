@@ -1,4 +1,5 @@
 import { type CSSProperties, useEffect, useRef, useState } from "react";
+import { jetbrainsMono } from "@/app/fonts/fonts";
 
 interface YearDropdownProps {
   years: number[];
@@ -45,7 +46,7 @@ export function YearDropdown({
     <div style={dropdownContainerStyle}>
       <div ref={dropdownRef} style={{ position: "relative" }}>
         <div
-          className="font-[jetbrainsMono] font-lighter"
+          className={`font-lighter ${jetbrainsMono.className}`}
           onClick={toggle}
           style={{
             width: "100%",
@@ -102,7 +103,7 @@ export function YearDropdown({
           >
             {years.map((year) => (
               <div
-                className="font-[jetbrainsMono] font-lighter"
+                className={`font-lighter ${jetbrainsMono.className}`}
                 key={year}
                 onClick={() => selectYear(year)}
                 style={{
