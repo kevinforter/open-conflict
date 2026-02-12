@@ -43,8 +43,8 @@ export default function MethodologyPage() {
             </h1>
             <div className="w-full h-px bg-white/20 mb-12" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-8">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
+              <div className="xl:col-span-8">
                 <h2
                   className={`${n27.className} text-5xl md:text-8xl leading-[0.85] tracking-tighter mb-8`}
                 >
@@ -60,7 +60,7 @@ export default function MethodologyPage() {
                   normalization, and aggregation.
                 </p>
               </div>
-              <div className="lg:col-span-4 flex justify-start lg:justify-end items-center">
+              <div className="xl:col-span-4 flex justify-start xl:justify-end items-center">
                 <Link href="/">
                   <BoldCornerButton className="h-12 text-sm">
                     Return to Home
@@ -85,8 +85,8 @@ export default function MethodologyPage() {
           <div className="absolute top-0 right-0 w-2/3 h-full pointer-events-none" />
 
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-              <div className="lg:col-span-4 self-end">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24">
+              <div className="xl:col-span-4 self-end">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
                 >
@@ -101,7 +101,7 @@ export default function MethodologyPage() {
                 </h2>
               </div>
 
-              <div className="lg:col-span-8 flex flex-col justify-center space-y-8">
+              <div className="xl:col-span-8 flex flex-col justify-center space-y-8">
                 <p
                   className={`font-light ${geistMono.className} text-white/60 leading-relaxed text-base md:text-lg max-w-4xl`}
                 >
@@ -180,8 +180,8 @@ export default function MethodologyPage() {
         {/* Tech Stack Section */}
         <section className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden">
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-              <div className="lg:col-span-4">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-start">
+              <div className="xl:col-span-4">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-4`}
                 >
@@ -202,7 +202,7 @@ export default function MethodologyPage() {
                 </p>
               </div>
 
-              <div className="lg:col-span-8">
+              <div className="xl:col-span-8">
                 <div className="border border-white/10 rounded-lg overflow-hidden">
                   <div
                     className={`grid grid-cols-12 bg-white/5 border-b border-white/10 p-4 ${geistMono.className} text-xs text-white/40 uppercase tracking-wider`}
@@ -268,8 +268,8 @@ export default function MethodologyPage() {
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
+              <div className="xl:col-span-5 flex flex-col justify-center space-y-8">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
                 >
@@ -291,7 +291,7 @@ export default function MethodologyPage() {
                 </p>
               </div>
 
-              <div className="lg:col-span-7">
+              <div className="xl:col-span-7">
                 {/* Collection Visualization */}
                 <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative flex items-center justify-center overflow-hidden p-6 group">
                   {/* Background Grid */}
@@ -316,8 +316,8 @@ export default function MethodologyPage() {
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
+              <div className="xl:col-span-5 flex flex-col justify-center space-y-8">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
                 >
@@ -422,7 +422,7 @@ export default function MethodologyPage() {
                 </ul>
               </div>
 
-              <div className="lg:col-span-7">
+              <div className="xl:col-span-7">
                 {/* Collection Visualization */}
                 <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative flex items-center justify-center overflow-hidden p-6 group">
                   {/* Background Grid */}
@@ -447,8 +447,8 @@ export default function MethodologyPage() {
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-7 order-2 lg:order-1">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
+              <div className="xl:col-span-7 order-2 xl:order-1">
                 {/* Collection Visualization */}
                 <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative flex items-center justify-center overflow-hidden p-6 group">
                   {/* Background Grid */}
@@ -464,7 +464,7 @@ export default function MethodologyPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-center space-y-8 lg:text-right">
+              <div className="xl:col-span-5 order-1 xl:order-2 flex flex-col justify-center space-y-8 xl:text-right">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
                 >
@@ -542,8 +542,8 @@ export default function MethodologyPage() {
           className="w-full min-h-screen flex items-center snap-start bg-black relative border-t border-white/10 overflow-hidden"
         >
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-20 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-              <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-24 items-center">
+              <div className="xl:col-span-5 flex flex-col justify-center space-y-8">
                 <span
                   className={`block text-[#ff9a65] ${geistMono.className} text-xs uppercase tracking-widest mb-1`}
                 >
@@ -576,7 +576,7 @@ export default function MethodologyPage() {
                 </p>
               </div>
 
-              <div className="lg:col-span-7">
+              <div className="xl:col-span-7">
                 {/* Placeholder for Dashboard Mockup */}
                 {/* Dashboard Visualization - Detailed Flow */}
                 <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative p-6 flex items-center justify-center overflow-hidden group">

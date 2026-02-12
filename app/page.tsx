@@ -35,7 +35,7 @@ export default function Home() {
                 hoverIntensity={0.5}
                 enableHover
                 fontSize={64}
-                color="#ff4d01ff"
+                color="#ff9a65"
               >
                 [ ]
               </FuzzyText>
