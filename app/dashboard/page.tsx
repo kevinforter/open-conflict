@@ -263,18 +263,18 @@ function DashboardContent() {
 
       {/* Description Overlay - Hides when Right Sidebar is open */}
       <div
-        className={`absolute top-4 right-2 z-10 max-w-sm text-left transition-opacity duration-500 ${
+        className={`absolute top-4 right-2 z-10 w-[200px] xl:w-[400px] max-w-sm text-left transition-opacity duration-500 ${
           rightSidebarVisible
             ? "opacity-0 pointer-events-none"
             : "opacity-100 pointer-events-auto"
         }`}
       >
         <h1
-          className={`text-3xl font-bold text-white mb-6 tracking-wide ${majorMono.className}`}
+          className={`text-2xl xl:text-3xl font-bold text-white mb-6 tracking-wide ${majorMono.className}`}
         >
           open conflict
         </h1>
-        <p className="text-white/80 leading-relaxed whitespace-normal text-xs md:text-sm font-light">
+        <p className="text-white/80 leading-relaxed whitespace-normal text-xs xl:text-sm font-light">
           By integrating datasets like UCDP, ACLED, and AWSD, it combines
           historical data with real-time events for a comprehensive view of
           global developments.

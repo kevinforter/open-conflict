@@ -70,14 +70,14 @@ export function CommandMenu({ countries, onSelectCountry }: CommandMenuProps) {
         // But we are mapping filteredCountries. So we should probably disable cmdk filter or pass all.
         // Let's pass all and let cmdk filter?
         // But `countries` is prop. Let's use internal filtering logic to control rendering so we don't render 200 items invisible.
-        className="relative w-[400px] flex flex-col"
+        className="relative w-[250px] xl:w-[400px] flex flex-col"
       >
         {/* Input Bar */}
         <div
           className={`
                 flex items-center justify-between gap-2 px-3 py-[10px] 
                 bg-transparent backdrop-blur-sm border border-[rgba(125,133,136,0.4)]
-                text-white text-[15px] font-light 
+                text-white text-[10px] xl:text-[15px] font-light 
                 hover:bg-white/5 transition-all
                 w-full
                 ${jetbrainsMono.className}
