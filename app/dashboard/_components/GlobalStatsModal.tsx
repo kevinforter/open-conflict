@@ -102,7 +102,9 @@ export function GlobalStatsModal({
                 {stats?.ucdp_active_conflicts?.toLocaleString() ?? "-"}
               </div>
               {stats?.is_forecast && (
-                <div className="absolute top-1 right-1 px-1 py-px bg-[#ff9a65]/20 text-[#ff9a65] text-[9px] font-[geistMono] border border-[#ff9a65]/30">
+                <div
+                  className={`absolute top-1 right-1 px-1 py-px bg-[#ff9a65]/20 text-[#ff9a65] text-[9px] ${geistMono.className} border border-[#ff9a65]/30`}
+                >
                   PREDICTED
                 </div>
               )}
@@ -124,7 +126,9 @@ export function GlobalStatsModal({
                 {stats?.ucdp_deaths?.toLocaleString() ?? "-"}
               </div>
               {stats?.is_forecast && (
-                <div className="absolute top-1 right-1 px-1 py-px bg-[#ff9a65]/20 text-[#ff9a65] text-[9px] font-[geistMono] border border-[#ff9a65]/30">
+                <div
+                  className={`absolute top-1 right-1 px-1 py-px bg-[#ff9a65]/20 text-[#ff9a65] text-[9px] ${geistMono.className} border border-[#ff9a65]/30`}
+                >
                   PREDICTED
                 </div>
               )}

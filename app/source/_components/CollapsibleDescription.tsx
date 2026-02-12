@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { geistMono } from "@/app/fonts/fonts";
 
 export default function CollapsibleDescription({
   children,
@@ -27,7 +28,7 @@ export default function CollapsibleDescription({
 
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 text-xs font-[geistMono] uppercase tracking-widest text-[#ff9a65] hover:text-white transition-colors md:hidden"
+        className={`flex items-center gap-2 text-xs ${geistMono.className} uppercase tracking-widest text-[#ff9a65] hover:text-white transition-colors md:hidden`}
       >
         {isExpanded ? (
           <>

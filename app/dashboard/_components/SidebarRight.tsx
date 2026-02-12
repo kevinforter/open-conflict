@@ -559,7 +559,9 @@ export function SidebarRight({
                       onClick={() => setIsSourcesOpen(!isSourcesOpen)}
                       className="w-full shrink-0 border-b border-white/5 flex items-center justify-between p-3 transition text-left hover:bg-white/5 bg-transparent h-[48px]"
                     >
-                      <span className="text-[#ff9a65] text-xs font-[geistMono] uppercase">
+                      <span
+                        className={`text-[#ff9a65] text-xs ${geistMono.className} uppercase`}
+                      >
                         Top Sources ({sources.length})
                       </span>
                       <span
@@ -596,7 +598,9 @@ export function SidebarRight({
                                 {source.source_date}
                               </span>
                             </div>
-                            <div className="text-white/90 text-[11px] leading-tight font-sans">
+                            <div
+                              className={`text-white/90 text-[11px] leading-tight ${geistMono.className}`}
+                            >
                               "
                               {source.source_headline ||
                                 source.source_article ||
@@ -828,7 +832,9 @@ export function SidebarRight({
                         </div>
                       )}
                     </div>
-                    <h4 className="text-[#ff9a65] text-xs font-[geistMono] uppercase mb-2 shrink-0">
+                    <h4
+                      className={`text-[#ff9a65] text-xs ${geistMono.className} uppercase mb-2 shrink-0`}
+                    >
                       Events by Region
                     </h4>
                     <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">

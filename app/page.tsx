@@ -25,7 +25,9 @@ export default function Home() {
       <main className="flex-1 overflow-y-auto flex flex-col items-center justify-center">
         <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-20">
           <div className="container flex max-w-5xl flex-col items-center gap-4 text-center mx-auto px-4">
-            <h1 className="flex flex-wrap items-center justify-center font-sans text-3xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1
+              className={`flex flex-wrap items-center justify-center ${geistMono.className} text-3xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl`}
+            >
               <span className={`${majorMono.className} antialiased text-white`}>
                 open
               </span>
