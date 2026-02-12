@@ -22,6 +22,8 @@ import Noise from "@/components/Noise";
 import { Sidebar } from "@/app/dashboard/_components/Sidebar";
 import { SidebarRight } from "@/app/dashboard/_components/SidebarRight";
 import { CommandMenu } from "@/app/dashboard/_components/CommandMenu";
+import { DashboardNavbar } from "@/app/dashboard/_components/DashboardNavbar";
+import { MobileControls } from "@/app/dashboard/_components/MobileControls";
 import { GlobalStatsModal } from "@/app/dashboard/_components/GlobalStatsModal";
 
 function DashboardContent() {
@@ -200,8 +202,8 @@ function DashboardContent() {
     <div className="relative flex h-screen w-full flex-col overflow-hidden bg-[#000112]">
       {showLoading && <LoadingProgress />}
 
-      {/* Header - Absolute Overlay */}
-      <header className="absolute top-0 left-0 z-10 w-full px-8 py-4 pointer-events-none">
+      {/* Header - Absolute Overlay (Desktop only) */}
+      <header className="absolute top-0 left-0 z-10 w-full px-8 py-4 pointer-events-none hidden lg:block">
         <div className="relative z-20 flex items-center gap-4 pointer-events-auto w-full justify-center md:justify-start">
           <Link href="/" className="group relative z-50">
             <Image
@@ -229,9 +231,30 @@ function DashboardContent() {
         </div>
       </header>
 
+      {/* Mobile/Tablet Navbar */}
+      <DashboardNavbar
+        countries={countries}
+        onSelectCountry={handleCountrySelect}
+        onGlobalStatsClick={() => setShowGlobalStats(true)}
+      />
+
       {/* Sidebars */}
-      <Sidebar
-        visible={true}
+      {/* Desktop Sidebar */}
+      <div className="hidden lg:block">
+        <Sidebar
+          visible={true}
+          years={uniqueYears}
+          selectedYear={selectedYear}
+          onYearChange={handleYearChange}
+          countries={countries}
+          isLoadingCountries={isLoading}
+          selectedCountry={selectedCountry}
+          onSelectCountry={handleCountrySelect}
+        />
+      </div>
+
+      {/* Mobile Controls (Bottom) */}
+      <MobileControls
         years={uniqueYears}
         selectedYear={selectedYear}
         onYearChange={handleYearChange}
@@ -263,7 +286,7 @@ function DashboardContent() {
 
       {/* Description Overlay - Hides when Right Sidebar is open */}
       <div
-        className={`absolute top-4 right-2 z-10 w-[200px] xl:w-[400px] max-w-sm text-left transition-opacity duration-500 ${
+        className={`absolute top-4 right-2 z-10 w-[200px] xl:w-[400px] max-w-sm text-left transition-opacity duration-500 hidden lg:block ${
           rightSidebarVisible
             ? "opacity-0 pointer-events-none"
             : "opacity-100 pointer-events-auto"
@@ -298,7 +321,7 @@ function DashboardContent() {
         <Noise />
       </main>
 
-      <footer className="absolute bottom-0 left-0 z-10 w-full py-6 md:px-8 md:py-0 bg-transparent pointer-events-none">
+      <footer className="absolute bottom-0 left-0 z-10 w-full py-6 md:px-8 md:py-0 bg-transparent pointer-events-none hidden lg:block">
         <div className="w-full flex flex-col md:flex-row items-center justify-between md:h-12">
           {/* Left Spacer to balance the flex layout so center item is truly centered */}
           <div className="flex-1 hidden md:block" />

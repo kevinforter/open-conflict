@@ -5,6 +5,7 @@ interface CountryListProps {
   selectedCountry: string | null;
   selectedYear: number;
   onSelectCountry: (code: string) => void;
+  orientation?: "vertical" | "horizontal";
 }
 
 export function CountryList({
@@ -13,7 +14,10 @@ export function CountryList({
   selectedCountry,
   selectedYear,
   onSelectCountry,
+  orientation = "vertical",
 }: CountryListProps) {
+  const isHorizontal = orientation === "horizontal";
+
   return (
     <div
       style={{
@@ -24,27 +28,34 @@ export function CountryList({
         flex: "1",
         overflow: "hidden",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: isHorizontal ? "row" : "column",
+        alignItems: isHorizontal ? "center" : "stretch",
       }}
     >
-      <h3
-        className={`font-light ${jetbrainsMono.className}`}
-        style={{
-          margin: "0 0 12px 0",
-          color: "#ff9a65",
-          fontSize: "16px",
-          fontWeight: "600",
-          textTransform: "uppercase",
-        }}
-      >
-        Countries [ {countries?.length || 0} ]
-      </h3>
+      {!isHorizontal && (
+        <h3
+          className={`font-light ${jetbrainsMono.className}`}
+          style={{
+            margin: "0 0 12px 0",
+            color: "#ff9a65",
+            fontSize: "16px",
+            fontWeight: "600",
+            textTransform: "uppercase",
+          }}
+        >
+          Countries [ {countries?.length || 0} ]
+        </h3>
+      )}
       <div
+        className={isHorizontal ? "thin-scrollbar" : ""}
         style={{
           flex: "1",
-          overflowY: "auto",
-          overflowX: "hidden",
-          paddingRight: "8px",
+          overflowY: isHorizontal ? "hidden" : "auto",
+          overflowX: isHorizontal ? "auto" : "hidden",
+          paddingRight: isHorizontal ? "0" : "8px",
+          display: isHorizontal ? "flex" : "block",
+          alignItems: "center",
+          whiteSpace: isHorizontal ? "nowrap" : "normal",
         }}
       >
         {isLoading ? (
@@ -64,6 +75,9 @@ export function CountryList({
               listStyle: "none",
               margin: 0,
               padding: 0,
+              display: isHorizontal ? "flex" : "block",
+              gap: isHorizontal ? "16px" : "0",
+              flexShrink: 0, // Prevent UL from shrinking
             }}
           >
             {countries.map((item, index: number) => (
@@ -75,23 +89,32 @@ export function CountryList({
                   color: selectedCountry === item.code ? "#ff9a65" : "white",
                   fontSize: selectedCountry === item.code ? "22px" : "18px",
                   fontWeight: "100",
-                  padding: "8px 12px",
-                  marginBottom: "4px",
+                  padding: isHorizontal ? "4px 8px" : "8px 12px",
+                  marginBottom: isHorizontal ? "0" : "4px",
                   background: "transparent",
                   borderRadius: "0px",
                   transition: "all 0.2s ease",
                   cursor: "pointer",
-                  borderLeft:
-                    selectedCountry === item.code
+                  borderLeft: !isHorizontal
+                    ? selectedCountry === item.code
                       ? "3px solid #ff9a65"
-                      : "3px solid transparent",
+                      : "3px solid transparent"
+                    : "none",
+                  borderBottom: isHorizontal
+                    ? selectedCountry === item.code
+                      ? "3px solid #ff9a65"
+                      : "3px solid transparent"
+                    : "none",
                   transform: "translateX(0)",
                   display: "flex",
                   alignItems: "center",
+                  flexShrink: 0, // Prevent LI from shrinking
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.transform = "translateX(8px)";
+                  if (!isHorizontal) {
+                    e.currentTarget.style.transform = "translateX(8px)";
+                  }
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "transparent";
@@ -101,7 +124,7 @@ export function CountryList({
                 <span
                   style={{
                     flex: 1,
-                    marginRight: "30px", // Force wrap earlier to avoid jump on selection
+                    marginRight: isHorizontal ? "0" : "30px", // Force wrap earlier to avoid jump on selection
                     lineHeight: "1.2",
                   }}
                 >

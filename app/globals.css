@@ -54,6 +54,38 @@ input[type='number']::-webkit-outer-spin-button {
   background: rgba(125, 133, 136, 0.6);
 }
 
+.thin-scrollbar::-webkit-scrollbar {
+  height: 4px; /* Visible */
+  width: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); /* Very subtle track */
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Clear visibility */
+  border-radius: 2px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin; /* Ensure scrollbar is visible in Firefox */
+  -ms-overflow-style: auto;
+}
+
+/* Fallback for webkit if we want to ensure it works */
+.thin-scrollbar::-webkit-scrollbar {
+   display: block;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
