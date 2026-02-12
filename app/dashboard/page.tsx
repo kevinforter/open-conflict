@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback, Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { majorMono, jetbrainsMono } from "@/app/fonts/fonts";
 import { BoldCornerButton } from "@/components/BoldCornerButton";
 import dynamic from "next/dynamic";
@@ -202,23 +203,14 @@ function DashboardContent() {
       {/* Header - Absolute Overlay */}
       <header className="absolute top-0 left-0 z-10 w-full px-8 py-4 pointer-events-none">
         <div className="relative z-20 flex items-center gap-4 pointer-events-auto w-full justify-center md:justify-start">
-          <Link href="/">
-            <span
-              className={`text-sm text-white/60 font-bold ${majorMono.className}`}
-            >
-              open
-            </span>
-            <span
-              className={`text-sm text-[#ff9a65] font-bold ${majorMono.className}`}
-            >
-              {" "}
-              []{" "}
-            </span>
-            <span
-              className={`text-sm text-white/60 font-bold ${majorMono.className}`}
-            >
-              conflict
-            </span>
+          <Link href="/" className="group relative z-50">
+            <Image
+              src="/oc_logo.svg"
+              alt="Open Conflict Logo"
+              width={40}
+              height={40}
+              className="w-8 h-8 md:w-10 md:h-10 group-hover:opacity-80 transition-opacity"
+            />
           </Link>
           <span
             className={`text-sm text-white/60 hidden md:inline ${jetbrainsMono.className}`}

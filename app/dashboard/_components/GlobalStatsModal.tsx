@@ -60,7 +60,7 @@ export function GlobalStatsModal({
 
       {/* Modal Content */}
       <div
-        className={`relative z-10 w-[80vw] max-w-4xl flex flex-col gap-6 bg-[rgba(5,20,50,0.95)] p-8 text-white shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+        className={`relative z-10 w-[95vw] md:w-[80vw] max-w-4xl max-h-[85vh] flex flex-col gap-6 bg-[rgba(5,20,50,0.95)] p-6 md:p-8 text-white shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
           isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
@@ -89,7 +89,9 @@ export function GlobalStatsModal({
         </div>
 
         {/* Body */}
-        <div className={`text-white/80 ${geistMono.className}`}>
+        <div
+          className={`flex-1 overflow-y-auto custom-scrollbar pr-2 text-white/80 ${geistMono.className} flex flex-col`}
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Active Conflicts */}
             <div className="bg-white/5 p-6 border border-white/5 relative overflow-hidden">
@@ -197,7 +199,7 @@ export function GlobalStatsModal({
           </div>
 
           {monthlyStats.length > 0 && (
-            <div className="w-full bg-white/5 p-6 border border-white/5">
+            <div className="w-full bg-white/5 p-6 border border-white/5 order-first md:order-none mb-6 md:mb-0 shrink-0">
               <h4
                 className={`text-[#ff9a65] text-sm uppercase mb-4 ${geistMono.className}`}
               >
