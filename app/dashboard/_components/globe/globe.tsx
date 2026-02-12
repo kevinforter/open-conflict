@@ -143,6 +143,8 @@ export function useGlobeScene({
           .subVectors(targetPos, globeGroupRef.current.position)
           .normalize();
 
+        const isMobile = window.innerWidth <= 768;
+
         // Calculate Right vector for screen-space offset
         // We want the country to appear on the LEFT (so sidebar doesn't cover it).
         // So we shift the camera to the RIGHT.
@@ -153,8 +155,9 @@ export function useGlobeScene({
           .normalize();
 
         // Distance to zoom in (e.g., 200 units from center, so 100 units above surface)
-        const zoomDistance = 220;
-        const horizontalOffset = 50; // Shift camera right by 50 units
+        // Zoom out slightly more on mobile to account for smaller screen real estate
+        const zoomDistance = isMobile ? 280 : 220;
+        const horizontalOffset = isMobile ? 0 : 50; // No offset on mobile (center it)
 
         const cameraTargetPos = globeGroupRef.current.position
           .clone()
@@ -204,10 +207,13 @@ export function useGlobeScene({
         ease: "power2.inOut",
       });
 
+      const isMobile = window.innerWidth <= 768;
+      const targetZ = isMobile ? 550 : 380;
+
       gsap.to(cameraRef.current.position, {
         x: 0,
         y: 0,
-        z: 380, // Updated to match new initial distance (before: 320)
+        z: targetZ,
         duration: 1.5,
         ease: "power2.inOut",
         onUpdate: () => {
@@ -229,8 +235,9 @@ export function useGlobeScene({
       4000, // Increased far plane
     );
     // Scale up camera position (was 3.75 -> 320 for radius 100 globe)
-    // User requested less zoom, so moving camera further back (320 -> 380)
-    camera.position.z = 380; //before: 320
+    // User requested less zoom on mobile (<= 768px)
+    const isMobile = window.innerWidth <= 768;
+    camera.position.z = isMobile ? 550 : 380;
     camera.position.y = 0;
     cameraRef.current = camera;
 
