@@ -362,7 +362,8 @@ export function SidebarRight({
       />
       <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-2">
         <h3
-          className={`text-lg uppercase tracking-[0.1em] text-white ${n27.className}`}
+          className={`text-lg uppercase tracking-[0.1em] text-white ${n27.className} flex-1 min-w-0 truncate mr-4`}
+          title={countryName ?? "Details"}
         >
           {countryName ?? "Details"}
         </h3>
@@ -419,7 +420,7 @@ export function SidebarRight({
                   {data["conflict_index_rank"] && (
                     <div className="bg-white/5 p-4 border border-white/5 whitespace-nowrap">
                       <h4
-                        className={`text-[#ff9a65] text-xs uppercase mb-2 ${geistMono.className}`}
+                        className={`text-[#ff9a65] text-xs uppercase mb-2 flex-1 min-w-0 truncate mr-4 ${geistMono.className}`}
                       >
                         Conflict Index
                       </h4>
