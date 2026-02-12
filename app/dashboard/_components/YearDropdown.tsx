@@ -5,6 +5,7 @@ interface YearDropdownProps {
   years: number[];
   selectedYear: number;
   onSelect: (year: number) => void;
+  direction?: "up" | "down";
 }
 
 const dropdownContainerStyle: CSSProperties = {
@@ -18,6 +19,7 @@ export function YearDropdown({
   years,
   selectedYear,
   onSelect,
+  direction = "down",
 }: YearDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -88,17 +90,18 @@ export function YearDropdown({
           <div
             style={{
               position: "absolute",
-              top: "100%",
+              ...(direction === "up"
+                ? { bottom: "100%", marginBottom: "4px" }
+                : { top: "100%", marginTop: "4px" }),
               left: 0,
               right: 0,
               background: "rgba(20, 20, 20, 0)",
               backdropFilter: "blur(10px)",
               border: "1px solid rgba(125, 133, 136, 0.4)",
               color: "white",
-              maxHeight: "400px",
+              maxHeight: "200px", // Reduced height to fit mobile screens better
               overflowY: "auto",
               zIndex: 10,
-              marginTop: "4px",
             }}
           >
             {years.map((year) => (

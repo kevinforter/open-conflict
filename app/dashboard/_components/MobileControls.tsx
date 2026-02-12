@@ -28,6 +28,7 @@ export function MobileControls({
           years={years}
           selectedYear={selectedYear}
           onSelect={onYearChange}
+          direction="up"
         />
       </div>
 
