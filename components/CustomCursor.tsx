@@ -7,7 +7,7 @@ export const CustomCursor = () => {
   const [isHovered, setIsHovered] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  
+
   const springConfig = { damping: 25, stiffness: 400, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
@@ -47,7 +47,7 @@ export const CustomCursor = () => {
     <>
       {/* Primary Dot - Strict Follow */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-10001 mix-blend-difference"
+        className="hidden lg:block fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-10001 mix-blend-difference"
         style={{
           x: cursorX,
           y: cursorY,
@@ -55,10 +55,10 @@ export const CustomCursor = () => {
           translateY: "-50%",
         }}
       />
-      
+
       {/* Secondary Ring - Spring Follow */}
       <motion.div
-        className="fixed top-0 left-0 border border-white rounded-full pointer-events-none z-10000 mix-blend-difference"
+        className="hidden lg:block fixed top-0 left-0 border border-white rounded-full pointer-events-none z-10000 mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -68,16 +68,17 @@ export const CustomCursor = () => {
         animate={{
           width: isHovered ? 40 : 20,
           height: isHovered ? 40 : 20,
-          borderColor: isHovered ? "rgba(255, 154, 101, 0.8)" : "rgba(255, 255, 255, 0.5)",
+          borderColor: isHovered
+            ? "rgba(255, 154, 101, 0.8)"
+            : "rgba(255, 255, 255, 0.5)",
           borderWidth: isHovered ? "2px" : "1px",
         }}
         transition={{
           type: "spring",
           stiffness: 300,
-          damping: 20
+          damping: 20,
         }}
-      >
-      </motion.div>
+      ></motion.div>
     </>
   );
 };

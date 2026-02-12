@@ -75,14 +75,14 @@ export function GlobalStatsModal({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <h3
-            className={`text-3xl uppercase tracking-[0.1em] text-white ${n27.className}`}
+            className={`text-2xl xl:text-3xl uppercase tracking-[0.1em] text-white ${n27.className}`}
           >
             Global Statistics [{year}]
           </h3>
           <button
             type="button"
             onClick={onClose}
-            className={`cursor-pointer h-8 w-8 flex items-center justify-center p-0 text-xs uppercase tracking-[0.1em] text-white transition bg-white/10 hover:bg-white hover:text-black border border-white/10 ${geistMono.className}`}
+            className={`cursor-pointer h-8 w-8 shrink-0 flex items-center justify-center p-0 text-xs uppercase tracking-[0.1em] text-white transition bg-white/10 hover:bg-white hover:text-black border border-white/10 ${geistMono.className}`}
           >
             &#x2715;
           </button>
