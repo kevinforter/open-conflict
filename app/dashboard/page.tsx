@@ -199,7 +199,7 @@ function DashboardContent() {
   }, []);
 
   return (
-    <div className="relative flex h-screen w-full flex-col overflow-hidden bg-[#000112]">
+    <div className="relative flex h-dvh w-full flex-col overflow-hidden bg-[#000112] overscroll-none">
       {showLoading && <LoadingProgress />}
 
       {/* Header - Absolute Overlay (Desktop only) */}

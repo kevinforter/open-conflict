@@ -673,7 +673,7 @@ export function SidebarRight({
                 return (
                   <>
                     {/* MOBILE LAYOUT (md:hidden) */}
-                    <div className="w-full h-full block md:hidden overflow-y-auto">
+                    <div className="w-full h-full block md:hidden overflow-y-auto overscroll-contain">
                       <SidebarLayoutMobile {...layoutProps} />
                     </div>
 
