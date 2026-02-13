@@ -267,7 +267,7 @@ const HorizontalBarChart: React.FC<HorizontalBarChartProps> = ({
       className={`w-full relative ${className}`}
       style={{ height }}
     >
-      <svg ref={svgRef} className="block overflow-visible"></svg>
+      <svg ref={svgRef} className="block overflow-hidden w-full h-full"></svg>
 
       {/* No Data Overlay */}
       {(!data || data.length === 0) && (

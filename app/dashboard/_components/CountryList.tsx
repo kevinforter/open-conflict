@@ -47,7 +47,7 @@ export function CountryList({
         </h3>
       )}
       <div
-        className={isHorizontal ? "thin-scrollbar" : ""}
+        className=""
         style={{
           flex: "1",
           overflowY: isHorizontal ? "hidden" : "auto",
