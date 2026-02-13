@@ -385,7 +385,7 @@ export function SidebarRight({
         </div>
       </div>
 
-      <div className="relative flex-1 overflow-hidden">
+      <div className="relative flex-1">
         {loading ? (
           <div className="absolute inset-0 p-1">
             <p className="animate-pulse text-white/50">Loading data...</p>
@@ -631,7 +631,7 @@ export function SidebarRight({
                     EXPANDED VIEW LAYER
                    ========================================================================================= */}
             <div
-              className={`absolute inset-0 w-full h-full min-w-[calc(100vw-200px)] transition-all duration-500 ease-in-out grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 auto-rows-max md:grid-rows-[2fr_1fr_1fr] lg:grid-rows-[6.5fr_3.5fr] gap-4 overflow-y-auto md:overflow-hidden pr-2 md:pr-0 ${
+              className={`absolute inset-0 w-full h-full min-w-[calc(100vw-200px)] transition-all duration-500 ease-in-out grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 auto-rows-max md:grid-rows-[2fr_1fr_1fr] lg:grid-rows-[6.5fr_3.5fr] gap-4 overflow-y-auto md:overflow-visible pr-2 md:pr-0 ${
                 isExpanded
                   ? "opacity-100 z-10"
                   : "opacity-0 z-0 pointer-events-none"
