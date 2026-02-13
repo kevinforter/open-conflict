@@ -205,6 +205,11 @@ input[type='number']::-webkit-outer-spin-button {
   }
   body {
     @apply bg-background text-foreground min-h-[100dvh] overflow-x-hidden;
+    background-color: #101010; /* Ensure overscroll area is dark */
     -webkit-text-size-adjust: 100%; /* Prevent iOS text inflation */
+  }
+
+  html {
+    background-color: #101010; /* Ensure overscroll area is dark */
   }
 }
