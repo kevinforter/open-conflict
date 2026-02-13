@@ -64,7 +64,7 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
       sortedData.pop();
     }
 
-    const margin = { top: 10, right: 10, bottom: 20, left: 30 };
+    const margin = { top: 10, right: 10, bottom: 25, left: 40 };
     const chartWidth = dimensions.width - margin.left - margin.right;
     const chartHeight = dimensions.height - margin.top - margin.bottom;
 
@@ -225,10 +225,7 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={`w-full relative overflow-hidden ${className}`}
-    >
+    <div ref={containerRef} className={`w-full relative ${className}`}>
       <svg ref={svgRef} className="block"></svg>
 
       {/* HTML Tooltip Overlay */}
