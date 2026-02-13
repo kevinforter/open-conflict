@@ -9,7 +9,7 @@ import { n27, majorMono, geistMono, jetbrainsMono, rx100 } from "./fonts/fonts";
 
 export default function Home() {
   return (
-    <div className="flex h-screen flex-col overflow-hidden relative">
+    <div className="flex h-[100dvh] flex-col overflow-hidden relative">
       <Noise />
       <video
         autoPlay

@@ -349,7 +349,7 @@ export function SidebarRight({
           : "translate-x-[120%] opacity-0 pointer-events-none"
       } ${
         isExpanded
-          ? "w-[calc(100vw-40px)] max-w-none h-[calc(100vh-40px)]"
+          ? "w-[calc(100vw-40px)] max-w-none h-[calc(100dvh-40px)]"
           : "w-[25vw] min-w-[280px] max-w-[420px]"
       }`}
     >
