@@ -45,8 +45,24 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
   useEffect(() => {
     if (!data || !svgRef.current || dimensions.width === 0) return;
 
-    // Use monthly data directly. Ensure it's sorted by month/date.
-    const sortedData = [...data].sort((a, b) => a.month - b.month);
+    // Normalize and sort data
+    let sortedData = data
+      .map((d) => {
+        // Handle potential YYYYMM format (e.g. 202501 -> 1)
+        const normalizedMonth = d.month > 12 ? d.month % 100 : d.month;
+        return { ...d, month: normalizedMonth };
+      })
+      .filter((d) => d.month >= 1 && d.month <= 12)
+      .sort((a, b) => a.month - b.month);
+
+    // Remove trailing months with 0 events
+    while (
+      sortedData.length > 0 &&
+      (sortedData[sortedData.length - 1].acled_events === 0 ||
+        sortedData[sortedData.length - 1].acled_events === null)
+    ) {
+      sortedData.pop();
+    }
 
     const margin = { top: 10, right: 10, bottom: 20, left: 30 };
     const chartWidth = dimensions.width - margin.left - margin.right;
@@ -108,7 +124,7 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
       );
 
     // Y axis
-    const maxVal = d3.max(sortedData, (d) => d.acled_events || 0) || 10;
+    const maxVal = d3.max(sortedData, (d) => Number(d.acled_events || 0)) || 10;
     const y = d3.scaleLinear().domain([0, maxVal]).range([chartHeight, 0]);
 
     g.append("g")
@@ -129,7 +145,7 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
       .defined((d) => d.acled_events !== undefined)
       .x((d) => x(d.month))
       .y0(chartHeight)
-      .y1((d) => y(d.acled_events || 0))
+      .y1((d) => y(Number(d.acled_events || 0)))
       .curve(d3.curveMonotoneX);
 
     // Line Generator (for the top stroke)
@@ -137,7 +153,7 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
       .line<any>()
       .defined((d) => d.acled_events !== undefined)
       .x((d) => x(d.month))
-      .y((d) => y(d.acled_events || 0))
+      .y((d) => y(Number(d.acled_events || 0)))
       .curve(d3.curveMonotoneX);
 
     // Render Area
@@ -209,8 +225,11 @@ const TimelineChart: React.FC<TimelineChartProps> = ({
   };
 
   return (
-    <div ref={containerRef} className={`w-full relative ${className}`}>
-      <svg ref={svgRef} className="block overflow-visible"></svg>
+    <div
+      ref={containerRef}
+      className={`w-full relative overflow-hidden ${className}`}
+    >
+      <svg ref={svgRef} className="block"></svg>
 
       {/* HTML Tooltip Overlay */}
       {tooltip.visible && tooltip.data && (
