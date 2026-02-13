@@ -32,11 +32,10 @@ export default function Home() {
                 open
               </span>
               <FuzzyText
-                className={`${rx100.className} antialiased`}
+                className={`${rx100.className} antialiased text-[32px] md:text-[64px]`}
                 baseIntensity={0.2}
                 hoverIntensity={0.5}
                 enableHover
-                fontSize={64}
                 color="#ff9a65"
               >
                 [ ]

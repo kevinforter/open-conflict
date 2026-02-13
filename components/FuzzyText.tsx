@@ -26,7 +26,7 @@ interface FuzzyTextProps {
 
 const FuzzyText: React.FC<FuzzyTextProps> = ({
   children,
-  fontSize = "clamp(2rem, 8vw, 8rem)",
+  fontSize,
   fontWeight = 900,
   fontFamily = "inherit",
   color = "#fff",
@@ -67,28 +67,29 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
           ? window.getComputedStyle(canvas).fontFamily || "sans-serif"
           : fontFamily;
 
-      const fontSizeStr =
-        typeof fontSize === "number" ? `${fontSize}px` : fontSize;
-      const fontString = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
-
-      try {
-        await document.fonts.load(fontString);
-      } catch {
-        await document.fonts.ready;
-      }
-      if (isCancelled) return;
-
       let numericFontSize: number;
+      let fontSizeStr = "";
+
       if (typeof fontSize === "number") {
         numericFontSize = fontSize;
-      } else {
+        fontSizeStr = `${fontSize}px`;
+      } else if (fontSize) {
+        // Explicit string prop provided
+        fontSizeStr = fontSize;
         const temp = document.createElement("span");
         temp.style.fontSize = fontSize;
         document.body.appendChild(temp);
         const computedSize = window.getComputedStyle(temp).fontSize;
         numericFontSize = parseFloat(computedSize);
         document.body.removeChild(temp);
+      } else {
+        // Fallback to computed style from canvas (handles className)
+        const computedStyle = window.getComputedStyle(canvas);
+        numericFontSize = parseFloat(computedStyle.fontSize);
+        fontSizeStr = computedStyle.fontSize;
       }
+
+      const fontString = `${fontWeight} ${fontSizeStr} ${computedFontFamily}`;
 
       const text = React.Children.toArray(children).join("");
 
@@ -367,7 +368,23 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
     letterSpacing,
   ]);
 
-  return <canvas ref={canvasRef} className={className} />;
+  // Calculate negative margins to compensate for internal canvas padding
+  const horizontalMargin = fuzzRange + 10;
+  const verticalMargin =
+    direction === "vertical" || direction === "both" ? fuzzRange + 10 : 0;
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className={className}
+      style={{
+        marginLeft: `-${horizontalMargin}px`,
+        marginRight: `-${horizontalMargin}px`,
+        marginTop: `-${verticalMargin}px`,
+        marginBottom: `-${verticalMargin}px`,
+      }}
+    />
+  );
 };
 
 export default FuzzyText;
