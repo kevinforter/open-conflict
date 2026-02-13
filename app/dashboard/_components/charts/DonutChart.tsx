@@ -38,8 +38,8 @@ const DonutChart: React.FC<DonutChartProps> = ({
 
     const resizeObserver = new ResizeObserver((entries) => {
       if (!entries || entries.length === 0) return;
-      const { width } = entries[0].contentRect;
-      setDimensions({ width, height });
+      const { width, height: observedHeight } = entries[0].contentRect;
+      setDimensions({ width, height: observedHeight || height });
     });
 
     resizeObserver.observe(containerRef.current);

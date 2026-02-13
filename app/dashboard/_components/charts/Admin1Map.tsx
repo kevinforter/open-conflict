@@ -53,6 +53,26 @@ const BoundsFitter = ({ data }: { data: Admin1MapProps["data"] }) => {
   return null;
 };
 
+// Component to handle map resize invalidation
+const MapResizer = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    const observer = new ResizeObserver(() => {
+      map.invalidateSize();
+    });
+
+    const container = map.getContainer();
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [map]);
+
+  return null;
+};
+
 const Admin1Map: React.FC<Admin1MapProps> = ({
   data,
   className,
@@ -159,6 +179,7 @@ const Admin1Map: React.FC<Admin1MapProps> = ({
         />
 
         <BoundsFitter data={data} />
+        <MapResizer />
 
         {markers.map((d, i) => (
           <Marker

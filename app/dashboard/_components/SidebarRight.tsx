@@ -631,235 +631,12 @@ export function SidebarRight({
                     EXPANDED VIEW LAYER
                    ========================================================================================= */}
             <div
-              className={`absolute inset-0 w-full h-full min-w-[calc(100vw-200px)] transition-all duration-500 ease-in-out flex flex-col gap-4 ${
+              className={`absolute inset-0 w-full h-full min-w-[calc(100vw-200px)] transition-all duration-500 ease-in-out grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 auto-rows-max md:grid-rows-[2fr_1fr_1fr] lg:grid-rows-[6.5fr_3.5fr] gap-4 overflow-y-auto md:overflow-hidden pr-2 md:pr-0 ${
                 isExpanded
                   ? "opacity-100 z-10"
                   : "opacity-0 z-0 pointer-events-none"
               }`}
             >
-              {/* TOP ROW: MAP & REGIONS */}
-              <div className="grid grid-cols-[3fr_2fr] gap-4 h-[65%] min-h-0">
-                {/* MAP CONTAINER */}
-                <div className="relative w-full h-full bg-white/5 border border-white/10 rounded-sm overflow-hidden group">
-                  <Admin1Map
-                    data={admin1Data}
-                    geometry={data["geometry"]}
-                    height="100%"
-                    className="w-full h-full absolute inset-0"
-                  />
-                  {/* KPI CARDS OVERLAY */}
-                  <div className="absolute top-4 left-4 flex flex-col gap-2 z-[1000]">
-                    {data["conflict_index_rank"] && (
-                      <div className="relative">
-                        <span className="absolute -top-0.5 -left-0.5 w-1.5 h-1.5 border-t border-l border-white/10 z-10" />
-                        <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 border-t border-r border-white/10 z-10" />
-                        <span className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 border-b border-l border-white/10 z-10" />
-                        <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 border-b border-r border-white/10 z-10" />
-
-                        <div className="bg-[rgba(20,20,20,0.6)] p-3 border border-white/10 shadow-xl min-w-[140px]">
-                          <h4
-                            className={`text-[#ff9a65] text-[10px] uppercase mb-1 ${geistMono.className}`}
-                          >
-                            Conflict Index
-                          </h4>
-                          <div
-                            className={`text-xl flex items-baseline gap-2 ${n27.className}`}
-                          >
-                            {data["conflict_index_rank"] || "N/A"}
-                            {data["conflict_index_level"] && (
-                              <span
-                                className={`text-[10px] text-white/40 uppercase tracking-widest truncate ${geistMono.className}`}
-                              >
-                                {String(data["conflict_index_level"])}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    <div className="relative">
-                      <span className="absolute -top-0.5 -left-0.5 w-1.5 h-1.5 border-t border-l border-white/10 z-10" />
-                      <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 border-t border-r border-white/10 z-10" />
-                      <span className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 border-b border-l border-white/10 z-10" />
-                      <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 border-b border-r border-white/10 z-10" />
-
-                      <div className="bg-[rgba(20,20,20,0.6)] p-3 border border-white/10 shadow-xl min-w-[140px]">
-                        <h4
-                          className={`text-[#ff9a65] text-[10px] uppercase mb-1 ${geistMono.className}`}
-                        >
-                          Total Events
-                        </h4>
-                        <div className={`text-xl ${n27.className}`}>
-                          {data["acled_events"]?.toLocaleString() || "0"}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* RIGHT COLUMN: REGIONS (Full Height) */}
-                <div className="flex flex-col h-full min-h-0">
-                  <div className="flex-1 w-full bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col min-h-0 overflow-hidden">
-                    {/* Filter Section (Collapsible) */}
-                    <div className="shrink-0 mb-4 border-b border-white/5 pb-4">
-                      <button
-                        onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-                        className="flex items-center justify-between w-full text-left mb-2 group"
-                      >
-                        <h4
-                          className={`text-[#ff9a65] text-xs uppercase group-hover:text-white transition-colors ${geistMono.className}`}
-                        >
-                          Filters{" "}
-                          {!isFiltersOpen && (
-                            <span className="text-white/40 ml-2">
-                              (
-                              {
-                                Array.from(selectedSources).filter((s) =>
-                                  visibleSources.includes(s),
-                                ).length
-                              }{" "}
-                              Sources, {selectedEventTypes.size} Types)
-                            </span>
-                          )}
-                        </h4>
-                        <ChevronDownIcon
-                          className={`text-white/50 transition-transform ${isFiltersOpen ? "rotate-180" : ""}`}
-                        />
-                      </button>
-
-                      {isFiltersOpen && (
-                        <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                          {/* Source Toggles */}
-                          <div>
-                            <div
-                              className={`text-[10px] uppercase text-white/40 mb-2 ${geistMono.className}`}
-                            >
-                              Data Sources
-                            </div>
-                            <div className="flex gap-2">
-                              {visibleSources.map((source) => {
-                                const isActive = selectedSources.has(source);
-                                let activeColor =
-                                  "bg-white/20 text-white border-white/30";
-                                if (isActive) {
-                                  if (source === "UCDP")
-                                    activeColor =
-                                      "bg-purple-500/20 text-purple-200 border-purple-500/50";
-                                  if (source === "ACLED")
-                                    activeColor =
-                                      "bg-blue-500/20 text-blue-200 border-blue-500/50";
-                                  if (source === "NGO")
-                                    activeColor =
-                                      "bg-yellow-500/20 text-yellow-200 border-yellow-500/50";
-                                }
-
-                                return (
-                                  <button
-                                    key={source}
-                                    onClick={() => toggleSource(source)}
-                                    className={`px-3 py-1.5 text-[10px] border rounded-xs transition-all ${geistMono.className} ${
-                                      isActive
-                                        ? activeColor
-                                        : "bg-transparent text-white/30 border-white/10 hover:border-white/20"
-                                    }`}
-                                  >
-                                    {source}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </div>
-
-                          {/* Event Types */}
-                          <div>
-                            <div className="flex items-center justify-between mb-2">
-                              <div
-                                className={`text-[10px] uppercase text-white/40 ${geistMono.className}`}
-                              >
-                                Event Types
-                              </div>
-                              <div className="flex gap-2">
-                                <button
-                                  onClick={() =>
-                                    setSelectedEventTypes(
-                                      new Set(availableEventTypes),
-                                    )
-                                  }
-                                  className="text-[9px] uppercase text-white/40 hover:text-white transition-colors"
-                                >
-                                  All
-                                </button>
-                                <button
-                                  onClick={() =>
-                                    setSelectedEventTypes(new Set())
-                                  }
-                                  className="text-[9px] uppercase text-white/40 hover:text-white transition-colors"
-                                >
-                                  None
-                                </button>
-                              </div>
-                            </div>
-                            <div className="grid grid-cols-2 gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar p-1">
-                              {availableEventTypes.map((type) => (
-                                <label
-                                  key={type}
-                                  onClick={() => toggleEventType(type)}
-                                  className="flex items-center gap-2 cursor-pointer group"
-                                >
-                                  <div
-                                    className={`w-3 h-3 border transition-colors flex items-center justify-center rounded-xs ${
-                                      selectedEventTypes.has(type)
-                                        ? "bg-[#ff9a65] border-[#ff9a65]"
-                                        : "border-white/20 group-hover:border-white/40"
-                                    }`}
-                                  >
-                                    {selectedEventTypes.has(type) && (
-                                      <CheckIcon className="text-black w-2.5 h-2.5" />
-                                    )}
-                                  </div>
-                                  <span
-                                    className={`text-[10px] truncate transition-colors ${geistMono.className} ${
-                                      selectedEventTypes.has(type)
-                                        ? "text-white"
-                                        : "text-white/50 group-hover:text-white/70"
-                                    }`}
-                                  >
-                                    {type}
-                                  </span>
-                                </label>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <h4
-                      className={`text-[#ff9a65] text-xs ${geistMono.className} uppercase mb-2 shrink-0`}
-                    >
-                      Events by Region
-                    </h4>
-                    <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
-                      <HorizontalBarChart
-                        data={admin1Data}
-                        keys={["ACLED", "UCDP", "NGO"]}
-                        labelKey="name"
-                        colors={{
-                          ACLED: "#3b82f6", // Blue
-                          UCDP: "#a855f7", // Purple
-                          NGO: "#eab308", // Yellow
-                        }}
-                        height={
-                          admin1Data.length > 0
-                            ? admin1Data.length * 40 + 40
-                            : "100%"
-                        }
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* BOTTOM ROW: Spider Chart + Beeswarm + Combined Donut */}
               {(() => {
                 const hasRiskProfile =
                   data.deadliness_rank ||
@@ -868,10 +645,290 @@ export function SidebarRight({
                   data.fragmentation_rank;
 
                 return (
-                  <div className="grid grid-cols-4 gap-4 h-[35%] min-h-0">
-                    {/* Risk Profile (Spider Chart) - 1 Col (conditional) */}
+                  <>
+                    {/* MAP CONTAINER - Mobile: Top (Row 1), Desktop: Top Left */}
+                    <div className="relative w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden group col-span-1 md:col-span-2 lg:col-span-7 row-span-1 aspect-square md:aspect-auto md:h-full lg:h-full flex flex-col md:block">
+                      {/* KPI CARDS - MOBILE (Above Map, Compact) - Hidden on Tablet/Desktop */}
+                      <div className="flex md:hidden flex-row gap-2 p-3 shrink-0">
+                        {data["conflict_index_rank"] && (
+                          <div className="flex flex-col">
+                            <h4
+                              className={`text-[#ff9a65] text-[10px] uppercase mb-0.5 ${geistMono.className}`}
+                            >
+                              Conflict Index
+                            </h4>
+                            <div
+                              className={`text-sm flex items-baseline gap-1.5 ${n27.className}`}
+                            >
+                              {data["conflict_index_rank"] || "N/A"}
+                              {data["conflict_index_level"] && (
+                                <span
+                                  className={`text-[9px] text-white/40 uppercase tracking-widest truncate ${geistMono.className}`}
+                                >
+                                  {String(data["conflict_index_level"]).split(
+                                    " ",
+                                  )[0] || String(data["conflict_index_level"])}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                        <div className="w-px bg-white/10 mx-1" />
+                        <div className="flex flex-col">
+                          <h4
+                            className={`text-[#ff9a65] text-[10px] uppercase mb-0.5 ${geistMono.className}`}
+                          >
+                            Total Events
+                          </h4>
+                          <div className={`text-sm ${n27.className}`}>
+                            {data["acled_events"]?.toLocaleString() || "0"}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Map Area */}
+                      <div className="relative flex-1 w-full md:h-full lg:h-full">
+                        <Admin1Map
+                          data={admin1Data}
+                          geometry={data["geometry"]}
+                          height="100%"
+                          className="w-full h-full absolute inset-0"
+                        />
+
+                        {/* KPI CARDS - DESKTOP/TABLET (Overlay, Original) */}
+                        <div className="hidden md:flex absolute top-4 left-4 flex-col gap-2 z-[1000]">
+                          {data["conflict_index_rank"] && (
+                            <div className="relative">
+                              <span className="absolute -top-0.5 -left-0.5 w-1.5 h-1.5 border-t border-l border-white/10 z-10" />
+                              <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 border-t border-r border-white/10 z-10" />
+                              <span className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 border-b border-l border-white/10 z-10" />
+                              <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 border-b border-r border-white/10 z-10" />
+
+                              <div className="bg-[rgba(20,20,20,0.6)] p-3 border border-white/10 shadow-xl min-w-[140px]">
+                                <h4
+                                  className={`text-[#ff9a65] text-[10px] uppercase mb-1 ${geistMono.className}`}
+                                >
+                                  Conflict Index
+                                </h4>
+                                <div
+                                  className={`text-xl flex items-baseline gap-2 ${n27.className}`}
+                                >
+                                  {data["conflict_index_rank"] || "N/A"}
+                                  {data["conflict_index_level"] && (
+                                    <span
+                                      className={`text-[10px] text-white/40 uppercase tracking-widest truncate ${geistMono.className}`}
+                                    >
+                                      {String(data["conflict_index_level"])}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                          <div className="relative">
+                            <span className="absolute -top-0.5 -left-0.5 w-1.5 h-1.5 border-t border-l border-white/10 z-10" />
+                            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 border-t border-r border-white/10 z-10" />
+                            <span className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 border-b border-l border-white/10 z-10" />
+                            <span className="absolute -bottom-0.5 -right-0.5 w-1.5 h-1.5 border-b border-r border-white/10 z-10" />
+
+                            <div className="bg-[rgba(20,20,20,0.6)] p-3 border border-white/10 shadow-xl min-w-[140px]">
+                              <h4
+                                className={`text-[#ff9a65] text-[10px] uppercase mb-1 ${geistMono.className}`}
+                              >
+                                Total Events
+                              </h4>
+                              <div className={`text-xl ${n27.className}`}>
+                                {data["acled_events"]?.toLocaleString() || "0"}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* REGIONS - Mobile: Row 2, Desktop: Top Right */}
+                    <div className="col-span-1 md:col-span-1 lg:col-span-5 row-span-1 flex flex-col min-h-0 aspect-square md:aspect-auto lg:h-full">
+                      <div className="flex-1 w-full bg-white/5 border border-white/10 rounded-sm p-4 flex flex-col min-h-0 overflow-hidden">
+                        {/* Filter Section (Collapsible) */}
+                        <div className="shrink-0 mb-2 border-b border-white/5 pb-1">
+                          <button
+                            onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+                            className="flex items-center justify-between w-full text-left mb-2 group"
+                          >
+                            <h4
+                              className={`text-[#ff9a65] text-[10px] uppercase group-hover:text-white transition-colors ${geistMono.className}`}
+                            >
+                              Filters{" "}
+                              {!isFiltersOpen && (
+                                <span className="text-white/40 ml-2">
+                                  (
+                                  {
+                                    Array.from(selectedSources).filter((s) =>
+                                      visibleSources.includes(s),
+                                    ).length
+                                  }{" "}
+                                  Sources, {selectedEventTypes.size} Types)
+                                </span>
+                              )}
+                            </h4>
+                            <ChevronDownIcon
+                              className={`text-white/50 transition-transform ${isFiltersOpen ? "rotate-180" : ""}`}
+                            />
+                          </button>
+
+                          {isFiltersOpen && (
+                            <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                              {/* Source Toggles */}
+                              <div>
+                                <div
+                                  className={`text-[10px] uppercase text-white/40 mb-2 ${geistMono.className}`}
+                                >
+                                  Data Sources
+                                </div>
+                                <div className="flex gap-2">
+                                  {visibleSources.map((source) => {
+                                    const isActive =
+                                      selectedSources.has(source);
+                                    let activeColor =
+                                      "bg-white/20 text-white border-white/30";
+                                    if (isActive) {
+                                      if (source === "UCDP")
+                                        activeColor =
+                                          "bg-purple-500/20 text-purple-200 border-purple-500/50";
+                                      if (source === "ACLED")
+                                        activeColor =
+                                          "bg-blue-500/20 text-blue-200 border-blue-500/50";
+                                      if (source === "NGO")
+                                        activeColor =
+                                          "bg-yellow-500/20 text-yellow-200 border-yellow-500/50";
+                                    }
+
+                                    return (
+                                      <button
+                                        key={source}
+                                        onClick={() => toggleSource(source)}
+                                        className={`px-3 py-1.5 text-[10px] border rounded-xs transition-all ${geistMono.className} ${
+                                          isActive
+                                            ? activeColor
+                                            : "bg-transparent text-white/30 border-white/10 hover:border-white/20"
+                                        }`}
+                                      >
+                                        {source}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+
+                              {/* Event Types */}
+                              <div>
+                                <div className="flex items-center justify-between mb-2">
+                                  <div
+                                    className={`text-[10px] uppercase text-white/40 ${geistMono.className}`}
+                                  >
+                                    Event Types
+                                  </div>
+                                  <div className="flex gap-2">
+                                    <button
+                                      onClick={() =>
+                                        setSelectedEventTypes(
+                                          new Set(availableEventTypes),
+                                        )
+                                      }
+                                      className="text-[9px] uppercase text-white/40 hover:text-white transition-colors"
+                                    >
+                                      All
+                                    </button>
+                                    <button
+                                      onClick={() =>
+                                        setSelectedEventTypes(new Set())
+                                      }
+                                      className="text-[9px] uppercase text-white/40 hover:text-white transition-colors"
+                                    >
+                                      None
+                                    </button>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-2 gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar p-1">
+                                  {availableEventTypes.map((type) => (
+                                    <label
+                                      key={type}
+                                      onClick={() => toggleEventType(type)}
+                                      className="flex items-center gap-2 cursor-pointer group"
+                                    >
+                                      <div
+                                        className={`w-3 h-3 border transition-colors flex items-center justify-center rounded-xs ${
+                                          selectedEventTypes.has(type)
+                                            ? "bg-[#ff9a65] border-[#ff9a65]"
+                                            : "border-white/20 group-hover:border-white/40"
+                                        }`}
+                                      >
+                                        {selectedEventTypes.has(type) && (
+                                          <CheckIcon className="text-black w-2.5 h-2.5" />
+                                        )}
+                                      </div>
+                                      <span
+                                        className={`text-[10px] truncate transition-colors ${geistMono.className} ${
+                                          selectedEventTypes.has(type)
+                                            ? "text-white"
+                                            : "text-white/50 group-hover:text-white/70"
+                                        }`}
+                                      >
+                                        {type}
+                                      </span>
+                                    </label>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <h4
+                          className={`text-[#ff9a65] text-[10px] ${geistMono.className} uppercase mb-2 shrink-0`}
+                        >
+                          Events by Region
+                        </h4>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+                          <HorizontalBarChart
+                            data={admin1Data}
+                            keys={["ACLED", "UCDP", "NGO"]}
+                            labelKey="name"
+                            colors={{
+                              ACLED: "#3b82f6", // Blue
+                              UCDP: "#a855f7", // Purple
+                              NGO: "#eab308", // Yellow
+                            }}
+                            height={
+                              admin1Data.length > 0
+                                ? admin1Data.length * 40 + 40
+                                : "100%"
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* EVENT TYPES (Donut) - Mobile: Row 3, Desktop: Bot Right */}
+                    <div className="relative w-full bg-white/5 border border-white/10 rounded-sm flex flex-col col-span-1 md:col-span-1 lg:col-span-3 lg:col-start-10 lg:row-start-2 aspect-square md:aspect-auto lg:h-full">
+                      <h4
+                        className={`absolute top-2 left-2 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
+                      >
+                        Event Types
+                      </h4>
+                      <div className="flex-1 min-h-0 flex items-center justify-center p-2">
+                        <DonutChart
+                          data={combinedDonutData}
+                          height={225}
+                          innerRadius={0.6}
+                          showLabels={true}
+                          className="w-full h-full"
+                        />
+                      </div>
+                    </div>
+
+                    {/* RISK PROFILE (Spider Chart) - Mobile: Row 4, Desktop: Bot Left */}
                     {hasRiskProfile ? (
-                      <div className="relative w-full h-full bg-white/5 border border-white/10 rounded-sm">
+                      <div className="relative w-full bg-white/5 border border-white/10 rounded-sm col-span-1 md:col-span-1 lg:col-span-3 lg:col-start-1 lg:row-start-2 aspect-square md:aspect-auto lg:h-full">
                         <h4
                           className={`absolute top-2 left-3 z-10 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
                         >
@@ -888,9 +945,13 @@ export function SidebarRight({
                       </div>
                     ) : null}
 
-                    {/* Beeswarm Timeline - Takes extra space if Risk Profile is missing */}
+                    {/* INCIDENT TIMELINE (Beeswarm) - Mobile: Row 5, Desktop: Bot Mid */}
                     <div
-                      className={`${hasRiskProfile ? "col-span-2" : "col-span-3"} relative w-full h-full bg-white/5 border border-white/10 rounded-sm overflow-hidden`}
+                      className={`${
+                        hasRiskProfile
+                          ? "col-span-1 md:col-span-1 lg:col-span-6 lg:col-start-4 lg:row-start-2 aspect-square md:aspect-auto"
+                          : "col-span-1 md:col-span-2 lg:col-span-9 lg:col-start-1 lg:row-start-2 aspect-square md:aspect-auto"
+                      } relative w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden lg:aspect-auto lg:h-full`}
                     >
                       <h4
                         className={`absolute top-2 left-3 z-10 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
@@ -905,24 +966,7 @@ export function SidebarRight({
                         />
                       </div>
                     </div>
-
-                    {/* Combined Donut - 1 Col */}
-                    <div className="relative w-full h-full bg-white/5 border border-white/10 rounded-sm flex flex-col">
-                      <h4
-                        className={`absolute top-2 left-2 text-[#ff9a65] text-[10px] uppercase pointer-events-none ${geistMono.className}`}
-                      >
-                        Event Types
-                      </h4>
-                      <div className="flex-1 min-h-0 flex items-center justify-center p-2">
-                        <DonutChart
-                          data={combinedDonutData}
-                          height={225}
-                          innerRadius={0.6}
-                          showLabels={true}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  </>
                 );
               })()}
             </div>
