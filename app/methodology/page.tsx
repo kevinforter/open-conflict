@@ -581,7 +581,7 @@ export default function MethodologyPage() {
               <div className="xl:col-span-7">
                 {/* Placeholder for Dashboard Mockup */}
                 {/* Dashboard Visualization - Detailed Flow */}
-                <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative p-6 flex items-center justify-center overflow-hidden group">
+                <div className="w-full aspect-[16/9] border border-white/10 bg-[#050505] relative flex items-center justify-center overflow-hidden group">
                   {/* Background Map Effect */}
                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/40 via-[#050505] to-[#050505]" />
 
@@ -718,7 +718,7 @@ export default function MethodologyPage() {
             >
               EXPLORE THE CODE
             </h2>
-            <div className="flex justify-center gap-6">
+            <div className="flex flex-col md:flex-row justify-center gap-6">
               <Link href="/">
                 <BoldCornerButton className="h-12">
                   Return Home
