@@ -1,8 +1,8 @@
 
-import { CountryStats } from "@/lib/db/selectCountryStats";
-import { CountryMonthStats } from "@/lib/db/selectCountryStatsMonth";
-import { UCDPSource } from "@/lib/db/selectCountrySources";
-import { CountryEventLocation } from "@/lib/db/selectCountryEventLocations";
+import { type CountryStats } from "@/lib/db/definitions";
+import { type CountryMonth as CountryMonthStats } from "@/lib/db/definitions";
+import { type UcdpSource as UCDPSource } from "@/lib/db/definitions";
+import { type CountryEventLocation } from "@/lib/db/definitions";
 
 export interface ChartDataItem {
   name: string;

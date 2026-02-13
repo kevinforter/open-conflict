@@ -1,23 +1,14 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = "http://localhost:8000";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE";
-
-// Use public schema (default) which is definitely exposed
-const supabase = createClient(supabaseUrl, supabaseKey, {
-    db: { schema: 'mart' },
-});
+import sql from './index';
 
 export async function selectMart() {
-    // Query the wrapper view in public schema
-    const { data, error } = await supabase
-        .from('country_year')
-        .select('year');
-
-    if (error) {
+    try {
+        const data = await sql`
+            SELECT year
+            FROM country_year
+        `;
+        return data;
+    } catch (error) {
         console.error('Error fetching countries list:', error);
         return [];
     }
-
-    return data;
 }

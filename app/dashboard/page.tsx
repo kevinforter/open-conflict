@@ -7,9 +7,13 @@ import { majorMono, jetbrainsMono } from "@/app/fonts/fonts";
 import { BoldCornerButton } from "@/components/BoldCornerButton";
 import dynamic from "next/dynamic";
 import { useSearchParams, useRouter, usePathname } from "next/navigation"; // Import routing hooks
-import { selectCountriesList } from "@/lib/db/selectCountriesList";
-import { selectGlobalStats, GlobalStats } from "@/lib/db/selectGlobalStats";
-import { type CountryEventLocation } from "@/lib/db/selectCountryEventLocations";
+import {
+  getCountriesList,
+  getGlobalStats,
+  getCountryEventLocations,
+} from "@/app/dashboard/actions";
+import { type GlobalStats } from "@/lib/db/definitions";
+import { type CountryEventLocation } from "@/lib/db/definitions";
 // Dynamic import for Globe to avoid window is not defined error in Next.js SSR
 const Globe = dynamic(() => import("@/app/dashboard/_components/globe/globe"), {
   ssr: false,
@@ -40,7 +44,7 @@ function DashboardContent() {
   // Fetch Global Stats when year changes
   useEffect(() => {
     async function fetchStats() {
-      const stats = await selectGlobalStats(selectedYear);
+      const stats = await getGlobalStats(selectedYear);
       setGlobalStats(stats);
     }
     fetchStats();
@@ -52,12 +56,8 @@ function DashboardContent() {
   // Fetch event locations whenever country is selected (so donuts/map work in collapsed view)
   useEffect(() => {
     if (selectedCountry && selectedYear) {
-      import("@/lib/db/selectCountryEventLocations").then(
-        ({ selectCountryEventLocations }) => {
-          selectCountryEventLocations(selectedCountry, selectedYear).then(
-            setEventLocations,
-          );
-        },
+      getCountryEventLocations(selectedCountry, selectedYear).then(
+        setEventLocations,
       );
     } else {
       setEventLocations([]);
@@ -110,7 +110,7 @@ function DashboardContent() {
       setIsLoading(true);
       // Wait for at least 2000ms effectively showing the loading screen
       const [data] = await Promise.all([
-        selectCountriesList(),
+        getCountriesList(),
         new Promise((resolve) => setTimeout(resolve, 2000)),
       ]);
 

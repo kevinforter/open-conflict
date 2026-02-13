@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import * as d3 from "d3";
 import { createPortal } from "react-dom";
-import { CountryEventLocation } from "@/lib/db/selectCountryEventLocations";
+import { type CountryEventLocation } from "@/lib/db/definitions";
 import { geistMono } from "@/app/fonts/fonts";
 
 interface BeeswarmChartProps {

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Noise from "@/components/Noise";
-import { GlobalStats } from "@/lib/db/selectGlobalStats";
-import {
-  selectGlobalStatsMonth,
-  type GlobalMonthStats,
-} from "@/lib/db/selectGlobalStatsMonth";
+import { type GlobalStats } from "@/lib/db/definitions";
+import { getGlobalStatsMonth } from "@/app/dashboard/actions";
+import { type GlobalMonth as GlobalMonthStats } from "@/lib/db/definitions";
 import TimelineChart from "./charts/TimelineChart";
 import { n27, geistMono } from "@/app/fonts/fonts";
 
@@ -28,7 +26,7 @@ export function GlobalStatsModal({
 
   useEffect(() => {
     if (visible && year) {
-      selectGlobalStatsMonth(year).then(setMonthlyStats);
+      getGlobalStatsMonth(year).then(setMonthlyStats);
     }
   }, [visible, year]);
 
@@ -184,10 +182,11 @@ export function GlobalStatsModal({
               </h4>
               <div className={`text-4xl text-white ${n27.className}`}>
                 {stats?.acled_population_exposure
-                  ? stats.acled_population_exposure > 1000000
-                    ? (stats.acled_population_exposure / 1000000).toFixed(1) +
-                      "M"
-                    : stats.acled_population_exposure.toLocaleString()
+                  ? Number(stats.acled_population_exposure) > 1000000
+                    ? (
+                        Number(stats.acled_population_exposure) / 1000000
+                      ).toFixed(1) + "M"
+                    : Number(stats.acled_population_exposure).toLocaleString()
                   : "-"}
               </div>
               <div

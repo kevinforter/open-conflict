@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { n27, geistMono } from "@/app/fonts/fonts";
 import { ChevronDownIcon, CheckIcon } from "@radix-ui/react-icons";
 import { SidebarLayoutProps } from "./types";
-import { UCDPSource } from "@/lib/db/selectCountrySources";
+import { type UcdpSource as UCDPSource } from "@/lib/db/definitions";
 
 // Charts
 import SpiderChart from "../charts/SpiderChart";

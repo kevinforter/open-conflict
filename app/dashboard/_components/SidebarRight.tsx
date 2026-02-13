@@ -9,18 +9,16 @@ import HorizontalBarChart from "./charts/HorizontalBarChart";
 const Admin1Map = dynamic(() => import("./charts/Admin1Map"), { ssr: false });
 import BeeswarmChart from "./charts/BeeswarmChart";
 import {
-  selectCountryStats,
+  getCountryStats,
+  getCountryStatsMonth,
+  getCountrySources,
+} from "@/app/dashboard/actions";
+import {
   type CountryStats,
-} from "@/lib/db/selectCountryStats";
-import {
-  selectCountryStatsMonth,
-  type CountryMonthStats,
-} from "@/lib/db/selectCountryStatsMonth";
-import { type CountryEventLocation } from "@/lib/db/selectCountryEventLocations";
-import {
-  selectCountrySources,
-  type UCDPSource,
-} from "@/lib/db/selectCountrySources";
+  type CountryMonth as CountryMonthStats,
+  type CountryEventLocation,
+  type UcdpSource as UCDPSource,
+} from "@/lib/db/definitions";
 import { ChevronDownIcon, CheckIcon } from "@radix-ui/react-icons";
 import { n27, geistMono } from "@/app/fonts/fonts";
 
@@ -159,9 +157,9 @@ export function SidebarRight({
       setLoading(true);
       // Parallel fetching
       Promise.all([
-        selectCountryStats(countryCode, year),
-        selectCountryStatsMonth(countryCode, year),
-        selectCountrySources(countryCode, year),
+        getCountryStats(countryCode, year),
+        getCountryStatsMonth(countryCode, year),
+        getCountrySources(countryCode, year),
       ])
         .then(([stats, monthly, fetchedSources]) => {
           setData(stats);
