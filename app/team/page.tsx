@@ -57,7 +57,7 @@ export default function TeamPage() {
               </div>
               <div className="lg:col-span-4 flex justify-start lg:justify-end w-full">
                 <Link href="/" className="w-full sm:w-auto">
-                  <BoldCornerButton className="h-12 text-sm w-full sm:w-auto max-w-full">
+                  <BoldCornerButton className="h-12 text-sm w-fit sm:w-auto max-w-full">
                     Return Home
                   </BoldCornerButton>
                 </Link>
