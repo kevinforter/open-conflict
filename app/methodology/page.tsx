@@ -297,13 +297,15 @@ export default function MethodologyPage() {
                   {/* Background Grid */}
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]" />
 
-                  <Image
-                    src="/methodology/collect.svg"
-                    alt="Collection Visualization"
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-contain"
-                  />
+                  <div className="relative w-full h-full p-1 md:p-6 flex items-center justify-center">
+                    <Image
+                      src="/methodology/collect.svg"
+                      alt="Collection Visualization"
+                      width={800}
+                      height={450}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
